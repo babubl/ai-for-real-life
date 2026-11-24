@@ -11,7 +11,7 @@ import json, re, pathlib
 
 SITE = "https://babubl.github.io/ai-for-real-life/"
 UPDATED = "November 2026"
-V = "20261124b"
+V = "20261124c"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 MARK = ('<svg viewBox="0 0 32 32" width="{s}" height="{s}" aria-hidden="true" focusable="false">'

@@ -81,7 +81,7 @@
 .track-panel .weeks li{margin:0;border-top:1px solid var(--line)}
 .track-panel .weeks a{display:flex;justify-content:space-between;gap:12px;padding:10px 0;color:var(--ink);text-decoration:none}
 .track-panel .weeks a:hover{color:var(--brand)}
-.track-panel .weeks small{color:var(--ink-3);white-space:nowrap}
+.track-panel .weeks small{color:var(--ink-3);white-space:nowrap;flex:none}
 
 .products .product{display:block;color:var(--ink);text-decoration:none;padding:32px;transition:border-color .15s}
 .products .product:hover{border-color:var(--ink-3);color:var(--ink)}
