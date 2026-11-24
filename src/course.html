@@ -1,0 +1,576 @@
+<!--META {"title": "12-Week AI Course: Learn by Doing | AI for Real Life", "og": "The free 12-week AI course", "desc": "A free, hands-on 12-week AI course for non-technical people: set up assistants, how LLMs work, prompting, image, video and voice tools, AI at work, nine helper agents and your own website.", "path": "course.html", "nav": "course", "css": ["assets/course.css"], "js": ["assets/course.js"], "cta": ["#week-1", "Start Week 1"], "subbar": "<div class=\"subbar\"><div class=\"container\"><label for=\"jump\">Jump to</label><select id=\"jump\"><option value=\"schedule\">Weekly schedule</option><option value=\"week-1\">Week 1 · Set up your assistants</option><option value=\"week-2\">Week 2 · How ChatGPT and Claude answer</option><option value=\"week-3\">Week 3 · Talk to AI well</option><option value=\"week-4\">Week 4 · AI in daily life</option><option value=\"week-5\">Week 5 · Images and slides</option><option value=\"week-6\">Week 6 · Video and voice</option><option value=\"week-7\">Week 7 · AI at work</option><option value=\"week-8\">Week 8 · Meet the agents</option><option value=\"week-9\">Week 9 · Agents: mornings, inbox, money</option><option value=\"week-10\">Week 10 · Agents: bills, meals, news</option><option value=\"week-11\">Week 11 · Agents: tutor, documents, content</option><option value=\"week-12\">Week 12 · Build and publish a website</option><option value=\"toolbox\">Toolbox</option><option value=\"finish\">Your progress card</option></select><span class=\"prog\" id=\"progText\" aria-live=\"polite\">0 of 60 missions done</span></div><div class=\"progline\" aria-hidden=\"true\"><i id=\"progLine\"></i></div></div>\n", "jsonld": {"@context": "https://schema.org", "@type": "Course", "name": "AI for Real Life: 12-week course", "description": "A free hands-on AI course for non-technical people, from setting up assistants to building agents and publishing a website.", "inLanguage": "en", "isAccessibleForFree": true, "provider": {"@type": "Organization", "name": "AI for Real Life", "url": "https://babubl.github.io/ai-for-real-life/"}, "offers": {"@type": "Offer", "price": 0, "priceCurrency": "INR", "category": "Free"}, "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT4H30M"}}} -->
+
+<section class="page-hero course-hero">
+  <div class="container">
+    <span class="eyebrow">The 12-week course</span>
+    <h1>Learn AI by using it, one week at a time.</h1>
+    <p class="lede">For non-technical people. Each week has a short idea, prompts you can copy, a Saturday build and five missions to tick. By the end you'll create with AI, run helper agents and have your own website online.</p>
+    <div class="meta"><div><b>12 weeks</b>one topic each</div><div><b>2–5 hrs</b>a week, your choice</div><div><b>60</b>missions</div><div><b>9</b>agent recipes</div><div><b>₹0</b>to start</div></div>
+    <ol class="route" id="route"><li><a href="#week-1"><span class="dot"></span><span class="wn">Week 1</span><span class="wt">Set up your assistants</span><span class="wp" data-p="1"></span></a></li><li><a href="#week-2"><span class="dot"></span><span class="wn">Week 2</span><span class="wt">How ChatGPT and Claude answer</span><span class="wp" data-p="2"></span></a></li><li><a href="#week-3"><span class="dot"></span><span class="wn">Week 3</span><span class="wt">Talk to AI well</span><span class="wp" data-p="3"></span></a></li><li><a href="#week-4"><span class="dot"></span><span class="wn">Week 4</span><span class="wt">AI in daily life</span><span class="wp" data-p="4"></span></a></li><li><a href="#week-5"><span class="dot"></span><span class="wn">Week 5</span><span class="wt">Images and slides</span><span class="wp" data-p="5"></span></a></li><li><a href="#week-6"><span class="dot"></span><span class="wn">Week 6</span><span class="wt">Video and voice</span><span class="wp" data-p="6"></span></a></li><li><a href="#week-7"><span class="dot"></span><span class="wn">Week 7</span><span class="wt">AI at work</span><span class="wp" data-p="7"></span></a></li><li><a href="#week-8"><span class="dot"></span><span class="wn">Week 8</span><span class="wt">Meet the agents</span><span class="wp" data-p="8"></span></a></li><li><a href="#week-9"><span class="dot"></span><span class="wn">Week 9</span><span class="wt">Agents: mornings, inbox, money</span><span class="wp" data-p="9"></span></a></li><li><a href="#week-10"><span class="dot"></span><span class="wn">Week 10</span><span class="wt">Agents: bills, meals, news</span><span class="wp" data-p="10"></span></a></li><li><a href="#week-11"><span class="dot"></span><span class="wn">Week 11</span><span class="wt">Agents: tutor, documents, content</span><span class="wp" data-p="11"></span></a></li><li><a href="#week-12"><span class="dot"></span><span class="wn">Week 12</span><span class="wt">Build and publish a website</span><span class="wp" data-p="12"></span></a></li></ol>
+    <p class="small muted" style="margin-top:20px">Weeks 1, 3 and 4 work fully on a phone. Weeks 9 to 12 are easier on a laptop. New to AI? <a href="basics.html">How AI works</a> covers the theory in eight short lessons.</p>
+  </div>
+</section>
+
+<section class="section tight" id="schedule">
+  <div class="container sched">
+    <div>
+      <span class="eyebrow">Your schedule</span>
+      <h2>The same slots every week.</h2>
+      <p class="muted">Fixed times beat motivation. Choose the pattern that fits your life, put it in your calendar once, and stop deciding. Each mission is tagged with its slot.</p>
+      <div class="field"><label for="tmpl">Schedule pattern</label><select id="tmpl"><option value="evening">Weekday evenings (about 4½ hrs)</option><option value="morning">Early mornings (about 4 hrs)</option><option value="weekend">Weekends only (about 3½ hrs)</option><option value="light">Light: 1 hour a week</option></select></div>
+      <div class="field"><label for="startDate">Start date (a Monday)</label><input type="date" id="startDate" value="2026-11-30"></div>
+      <p class="small muted" id="endLine"></p>
+    </div>
+    <div>
+      <ol class="slots" id="slots"></ol>
+      <div class="card rules-card">
+        <h3>House rules</h3>
+        <ul>
+          <li><b>Do, don't just read.</b> Every idea comes with something to try within 10 minutes.</li>
+          <li><b>Free first.</b> Pay for a tool only when you've hit its limit twice. Paid steps are labelled.</li>
+          <li><b>Keep an AI diary.</b> One phone note: what you tried, what surprised you.</li>
+          <li><b>Never paste secrets.</b> No passwords, OTPs, Aadhaar, PAN, card numbers or client data.</li>
+          <li><b>Check what matters.</b> AI can be confidently wrong. Verify money, health and legal answers.</li>
+          <li><b>Missed a slot?</b> Pick up at the next one. Don't try to catch up two weeks at once.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container weeks">
+<!-- WEEK 1 -->
+<article class="wk" id="week-1" data-w="1">
+  <div class="wkhead"><div class="big">1</div><div><h2>Set up your assistants<span class="mine-tag">Your path</span></h2><p>Get the three free AI assistants working on your phone, set them up safely, and learn how they differ.</p></div><div class="dates" data-d="1"></div></div>
+  <div class="two">
+    <div>
+      <p>This week is practical: by Sunday you'll have AI ready on your phone and know which assistant to use for what. If you want the theory first (what AI, machine learning and deep learning are), take <a href="basics.html">How AI works</a> alongside this week. It isn't required to start.</p>
+      <h3>The three free assistants</h3>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Assistant</th><th>Made by</th><th>Good at</th></tr></thead><tbody>
+        <tr><td>ChatGPT</td><td>OpenAI</td><td>All-rounder; voice mode, images, scheduled tasks, Custom GPTs</td></tr>
+        <tr><td>Claude</td><td>Anthropic</td><td>Long documents, careful writing, Projects with your own files</td></tr>
+        <tr><td>Gemini</td><td>Google</td><td>Works with Gmail, Drive and Android; good with Indian languages</td></tr>
+      </tbody></table></div>
+      <p>All three have free versions that are enough for most of this course. Paid plans (roughly ₹400 to ₹2,000 a month; check each app for current Indian pricing) give more usage and newer models. Don't pay for anything until you've hit a limit at least twice.</p>
+      <h3>Set them up safely</h3>
+      <ol>
+        <li>Install the official apps only. Check the publisher: <b>OpenAI</b> for ChatGPT, <b>Anthropic</b> for Claude, <b>Google</b> for Gemini.</li>
+        <li>Sign in with your Google account or email.</li>
+        <li>In each app's settings, look at <b>data controls</b>: you can turn off use of your chats for training, and review memory.</li>
+        <li>Find the <b>microphone</b> and <b>attach</b> buttons. You'll use both a lot.</li>
+      </ol>
+      <h3>Try this</h3>
+      <div class="prompt"><span class="lbl">Ask all three the same question</span><pre>Plan a 2-day Pondicherry trip for a family with a 6-year-old. Budget-friendly, little driving, one rainy-day backup plan.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">Spot the AI around you</span><pre>List 15 places an ordinary person in India meets AI in a normal day, from waking up to sleeping. For each, say in one line what the AI is doing.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="callout"><b>Optional, on a laptop:</b> open Google's free Teachable Machine (teachablemachine.withgoogle.com) and train it in 5 minutes to tell your "thumbs up" from "thumbs down" using the webcam. That's machine learning: examples in, pattern out.</div>
+      <h3>Saturday lab: your AI corner</h3>
+      <p>Compare the three Pondicherry answers side by side. Which was most useful? Which asked you a question? Which made something up (check one place it names)? Pick a favourite for daily use; you'll still use all three.</p>
+      <details class="check"><summary>Checkpoint: Why ask the same question to more than one assistant?</summary><p>They're trained differently, so they make different mistakes. Comparing them is the quickest way to spot an error and to learn which one suits which job.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m1-1"><span class="d">Mon</span><span>Install ChatGPT, Claude and Gemini from the official publishers</span></label></li>
+      <li><label><input type="checkbox" id="m1-2"><span class="d">Wed</span><span>Check data controls and memory settings in each</span></label></li>
+      <li><label><input type="checkbox" id="m1-3"><span class="d">Wed</span><span>Run both prompts in all three assistants</span></label></li>
+      <li><label><input type="checkbox" id="m1-4"><span class="d">Sat</span><span>Compare the answers and pick your daily assistant</span></label></li>
+      <li><label><input type="checkbox" id="m1-5"><span class="d">Sun</span><span>Show someone at home how to use voice mode</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+<!-- WEEK 2 -->
+<article class="wk" id="week-2" data-w="2">
+  <div class="wkhead"><div class="big">2</div><div><h2>Inside the LLM: how ChatGPT and Claude answer you<span class="mine-tag">Your path</span></h2><p>The one week that makes everything else click. All the jargon, decoded.</p></div><div class="dates" data-d="2"></div></div>
+  <div class="two">
+    <div>
+      <h3>The big secret: it's a super-powered autocomplete</h3>
+      <p>An <b>LLM (Large Language Model)</b> does one thing: given some text, it guesses the most likely next piece of text. Then it adds that piece and guesses again. Again. Again. Hundreds of times per answer. That's it. Everything else, essays, code, poems, comes from doing that one trick extremely well.</p>
+      <p>Play with it below. The model is choosing the next word. The <b>temperature</b> slider controls how adventurous it is: low means "always pick the safe favourite", high means "take more chances".</p>
+      <div class="game" id="game">
+        <p class="sent">My mother's sambar tastes <em id="blank">___</em></p>
+        <div class="rows" id="rows"></div>
+        <div class="ctrl"><label for="temp">Temperature <b id="tval">1.0</b></label><input type="range" id="temp" min="0.2" max="2" step="0.1" value="1"><button class="btn btn-primary" id="pick" type="button">Let the model pick</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+        <p class="small muted">Illustrative numbers. A real model scores every one of its ~100,000+ possible tokens at every step.</p>
+      </div>
+      <h3>What happens when you hit "send"</h3>
+      <ol class="flow">
+        <li><b>Your words are chopped into tokens</b>, small chunks of text.</li>
+        <li><b>Each token becomes a list of numbers</b> the model can do maths on.</li>
+        <li><b>The numbers flow through dozens to over a hundred layers</b>, each using billions of learned weights.</li>
+        <li><b>Out comes a score for every possible next token.</b></li>
+        <li><b>One token is picked</b> (temperature decides how), added to the text, and the loop repeats.</li>
+        <li><b>Tokens are joined back into words</b> and stream onto your screen.</li>
+      </ol>
+      <p>Before your message, the app quietly adds a <b>system prompt</b> (hidden instructions like "You are a helpful assistant") and your earlier chat. Modern assistants can also call <b>tools</b>: search the web, run code, read your files. The model decides "I need to search", the app does the search, and the results become more text for the model to read.</p>
+      <h3>The jargon, decoded</h3>
+      <div class="gloss">
+        <div><b>Token</b>A chunk of text, about ¾ of an English word. "Unbelievable" might be 3 tokens. Tamil or Hindi usually take more tokens per word. You pay and are limited by tokens.</div>
+        <div><b>Model</b>The finished "brain" file: the trained system you talk to. GPT, Claude, Gemini and Llama are model families.</div>
+        <div><b>Parameter</b>One adjustable number inside the model. Big models have hundreds of billions. More parameters ≈ more capacity to store patterns.</div>
+        <div><b>Weight</b>The value of a parameter after training. Think of millions of volume knobs; training is turning each knob until answers come out right. "Open weights" means the company lets you download the knobs.</div>
+        <div><b>Training</b>Showing the model trillions of words and nudging its weights every time it guesses the next word wrong. Takes months and costs hundreds of crores of rupees or more.</div>
+        <div><b>Inference</b>Using the trained model to answer. That's what happens each time you chat.</div>
+        <div><b>GPU</b>A chip originally built for video-game graphics. It does thousands of small sums at once, exactly what AI needs. Nvidia makes most of them; data centres hold tens of thousands.</div>
+        <div><b>Context window</b>How much text the model can "see" at once: your chat, files, instructions. Beyond it, it forgets.</div>
+        <div><b>Hallucination</b>When it confidently makes something up. Remember: it predicts plausible text, not checked facts.</div>
+      </div>
+      <div class="callout"><b>Challenge: Hallucination hunt.</b> Ask any chatbot "What did the 1987 Chennai Coffee Treaty say?" (it doesn't exist). See if it invents details or admits it doesn't know. Then ask it to search the web and compare. Write the result in your AI diary.</div>
+      <div class="prompt"><span class="lbl">Make it teach you</span><pre>I'm not technical. Explain tokens, parameters, weights and GPUs using a giant kitchen as the analogy. Then draw me a simple text diagram of what happens between me pressing send and you replying.</pre><button class="copy" type="button">Copy</button></div>
+      <h3>Saturday lab: see tokens for real</h3>
+      <p>Search "OpenAI tokenizer" and open the official tool. Paste an English sentence, then the same sentence in Tamil. Count tokens. You'll see why some languages cost more. Then watch 3Blue1Brown's short "Large Language Models explained briefly" on YouTube (about 8 minutes, with excellent animations).</p>
+      <details class="check"><summary>Checkpoint: Why can ChatGPT write a perfect essay but get a simple fact wrong?</summary><p>Because it predicts what text usually looks like, not what's verified true. Fluent writing is a pattern it has seen billions of times; a specific fact may be rare in its training data, so it fills the gap with something plausible.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m2-1"><span class="d">Mon</span><span>Play the next-word game at low and high temperature</span></label></li>
+      <li><label><input type="checkbox" id="m2-2"><span class="d">Wed</span><span>Run the kitchen-analogy prompt</span></label></li>
+      <li><label><input type="checkbox" id="m2-3"><span class="d">Wed</span><span>Complete the hallucination hunt</span></label></li>
+      <li><label><input type="checkbox" id="m2-4"><span class="d">Sat</span><span>Compare token counts: English vs Tamil</span></label></li>
+      <li><label><input type="checkbox" id="m2-5"><span class="d">Sun</span><span>Explain "fancy autocomplete" to someone in 60 seconds</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 3 -->
+<article class="wk" id="week-3" data-w="3">
+  <div class="wkhead"><div class="big">3</div><div><h2>Talk to it well: prompting without the hype<span class="mine-tag">Your path</span></h2><p>There are no magic words. Just give it what a smart new colleague would need.</p></div><div class="dates" data-d="3"></div></div>
+  <div class="two">
+    <div>
+      <h3>The idea, simply</h3>
+      <p>Imagine you hired a brilliant intern who knows everything but nothing about <i>you</i>. "Write an email" gets you something generic. Tell them who it's for, why, what tone, and show an example, and you get something genuinely useful. That's all prompting is.</p>
+      <p>Use the <b>RCTF recipe</b>:</p>
+      <ul class="tight">
+        <li><b>Role</b>: who should it act as? ("You're a patient school teacher")</li>
+        <li><b>Context</b>: what's the situation, who's the audience, what do they already know?</li>
+        <li><b>Task</b>: exactly what you want done.</li>
+        <li><b>Format</b>: length, bullet points or table, language, tone.</li>
+      </ul>
+      <p>Then the three habits that matter more than any recipe: <b>give examples</b> of what good looks like; <b>ask it to ask you questions</b> first; <b>iterate</b> ("shorter", "warmer", "add numbers") instead of starting over.</p>
+      <div class="prompt"><span class="lbl">Before: weak prompt</span><pre>Write a leave email.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">After: with context</span><pre>You're helping me write to my manager. Context: my son has his school annual day on Friday and I want to take a half-day. We have a client demo Thursday which I'll finish first. Task: write a short, polite leave request. Format: under 80 words, friendly but professional, no over-apologising.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">The "interview me" trick</span><pre>I want to plan my parents' 40th anniversary dinner. Before giving any suggestions, ask me up to 6 questions, one at a time, to understand what I need. Then give me a plan.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">Make it critique itself</span><pre>Review your previous answer like a tough editor. What's weak, missing or possibly wrong? Then give me an improved version.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="callout"><b>Challenge: Before-and-after test.</b> Pick something you need this week. Write the laziest prompt possible, save the answer. Then write the RCTF version. Ask a family member to judge both blind. The difference is usually obvious.</div>
+      <h3>Saturday lab: build your prompt library</h3>
+      <p>Make a note called "My Prompts". Save your 10 best prompts from this week with a one-line label. This becomes your personal toolkit. Bonus: ask AI to turn your rough voice note (use the mic button) into a clean prompt.</p>
+      <details class="check"><summary>Checkpoint: Name the single most powerful thing you can add to a prompt.</summary><p>An example of what good output looks like. Showing beats describing. Close second: context about who it's for and why.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m3-1"><span class="d">Mon</span><span>Learn RCTF and the three habits</span></label></li>
+      <li><label><input type="checkbox" id="m3-2"><span class="d">Wed</span><span>Run the before/after and interview-me prompts</span></label></li>
+      <li><label><input type="checkbox" id="m3-3"><span class="d">Wed</span><span>Do the before-and-after test with a blind judge</span></label></li>
+      <li><label><input type="checkbox" id="m3-4"><span class="d">Sat</span><span>Save 10 prompts in your "My Prompts" note</span></label></li>
+      <li><label><input type="checkbox" id="m3-5"><span class="d">Sun</span><span>Teach one person the "ask me questions first" trick</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 4 -->
+<article class="wk" id="week-4" data-w="4">
+  <div class="wkhead"><div class="big">4</div><div><h2>Make daily life easier with ChatGPT and Claude<span class="mine-tag">Your path</span></h2><p>From chores to big decisions: 20 real uses, plus the features most people never find.</p></div><div class="dates" data-d="4"></div></div>
+  <div class="two">
+    <div>
+      <h3>Features worth knowing</h3>
+      <ul class="tight">
+        <li><b>Voice mode</b>: talk while driving or cooking. Great for practising a tough conversation or a new language.</li>
+        <li><b>Photos</b>: snap a medicine label, a confusing bill, a plant leaf, a fridge full of leftovers, and ask.</li>
+        <li><b>Files</b>: upload a PDF (insurance policy, rental agreement, school circular) and ask questions about it.</li>
+        <li><b>Projects</b> (ChatGPT and Claude) or <b>Gems</b> (Gemini): a saved workspace with your own instructions and files, so you don't repeat yourself.</li>
+        <li><b>Memory</b>: the assistant can remember your preferences across chats. Review or switch it off in settings.</li>
+        <li><b>Web search and deep research</b>: up-to-date answers with sources you can click.</li>
+      </ul>
+      <h3>20 uses, by part of life</h3>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Area</th><th>Try asking it to…</th></tr></thead><tbody>
+        <tr><td>Home</td><td>Plan a week of meals from what's in the fridge (send a photo) · make a cleaning rota for the family · troubleshoot why the washing machine shows error E21</td></tr>
+        <tr><td>Money</td><td>Explain a term in your policy document · build a monthly budget table · compare two loan offers step by step (then verify the maths)</td></tr>
+        <tr><td>Health</td><td>Turn a doctor's advice into a simple daily checklist · plan a 20-minute home workout · prepare questions before an appointment. AI is not a doctor: confirm anything about medicines or symptoms with a doctor or pharmacist.</td></tr>
+        <tr><td>Family</td><td>Invent a bedtime story with your child as the hero · plan a birthday party on a budget · explain fractions with pizza</td></tr>
+        <tr><td>Work</td><td>Summarise a long email thread · rehearse a salary conversation in voice mode · turn messy meeting notes into actions</td></tr>
+        <tr><td>Learning</td><td>Quiz you on a topic · translate and explain a Tamil or Hindi phrase · make a 30-day plan for any skill</td></tr>
+        <tr><td>Paperwork</td><td>Draft a complaint to a telecom company · explain a government form field by field · write a polite reminder to a landlord</td></tr>
+      </tbody></table></div>
+      <div class="prompt"><span class="lbl">The fridge photo</span><pre>(attach a photo of your fridge) Suggest 3 dinners I can make tonight with mostly what's here, for 2 adults and 1 child who hates spicy food. Under 30 minutes each. Give a shopping list for anything missing.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">The decision helper</span><pre>I'm deciding between [option A] and [option B]. Ask me what I care about most, then build a simple scoring table, and finally tell me which way the scores lean and what I might be missing.</pre><button class="copy" type="button">Copy</button></div>
+      <h3>Stay safe</h3>
+      <p>Don't share ID numbers, passwords or bank details. For medical, legal or money decisions, use AI to understand and prepare questions, then confirm with a professional. The <a href="safety.html">family safety guide</a> covers scams and privacy settings.</p>
+      <div class="callout"><b>Challenge: The 7-day "ask AI first" challenge.</b> For one week, before you Google anything or ask someone, ask AI. Tally in your diary: helpful, meh, or wrong. Most people end the week with 3–4 new daily habits.</div>
+      <h3>Saturday lab: your personal assistant Project</h3>
+      <p>Create a Project (ChatGPT or Claude) called "Home HQ". In its instructions write: who lives at home, food preferences, city, budget style, how you like answers (short, bullet points). Add a couple of useful files (school calendar, appliance manuals). Now every chat inside it already knows your world.</p>
+      <details class="check"><summary>Checkpoint: What's the difference between a normal chat and a Project?</summary><p>A Project keeps standing instructions and files that apply to every chat inside it, so the assistant already has your context. A normal chat starts from zero (apart from any memory feature you've switched on).</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m4-1"><span class="d">Mon</span><span>Try voice mode and photo upload once each</span></label></li>
+      <li><label><input type="checkbox" id="m4-2"><span class="d">Wed</span><span>Try 5 uses from the table across 3 areas</span></label></li>
+      <li><label><input type="checkbox" id="m4-3"><span class="d">Wed</span><span>Upload one real PDF and ask 3 questions about it</span></label></li>
+      <li><label><input type="checkbox" id="m4-4"><span class="d">Sat</span><span>Build your "Home HQ" Project with instructions</span></label></li>
+      <li><label><input type="checkbox" id="m4-5"><span class="d">Sun</span><span>Start the 7-day "ask AI first" challenge</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 5 -->
+<article class="wk" id="week-5" data-w="5">
+  <div class="wkhead"><div class="big">5</div><div><h2>Create: images and presentations<span class="mine-tag">Your path</span></h2><p>Turn words into pictures and a rough idea into a finished deck in minutes.</p></div><div class="dates" data-d="5"></div></div>
+  <div class="two">
+    <div>
+      <h3>How image AI works (in one paragraph)</h3>
+      <p>Image models learned from millions of pictures with captions. Most start with pure visual "noise", like TV static, and step by step remove noise until an image matching your words appears, like a sculptor revealing a statue from marble. That's why it's called <b>diffusion</b>.</p>
+      <h3>The image prompt formula</h3>
+      <p><b>Subject + action + setting + style + lighting + camera/framing.</b><br>Weak: "a cat". Strong: "a ginger cat reading a newspaper at a Mylapore tea stall, watercolour illustration, warm morning light, wide shot".</p>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Tool</th><th>Best for</th></tr></thead><tbody>
+        <tr><td>ChatGPT images</td><td>Easiest start; edit by chatting ("make the sky pink"); good with text in images</td></tr>
+        <tr><td>Google Gemini (Nano Banana)</td><td>Editing your own photos while keeping faces consistent; quick fixes</td></tr>
+        <tr><td>Midjourney</td><td>The most artistic, stylish results</td></tr>
+        <tr><td>Ideogram</td><td>Posters, logos and anything with readable words</td></tr>
+        <tr><td>Adobe Firefly</td><td>Commercially safer images, works inside Photoshop</td></tr>
+        <tr><td>Canva AI</td><td>Social posts, invitations, everything in one place</td></tr>
+      </tbody></table></div>
+      <h3>Presentations</h3>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Tool</th><th>Best for</th></tr></thead><tbody>
+        <tr><td>Gamma</td><td>A full, good-looking deck from one prompt, a doc or a PDF</td></tr>
+        <tr><td>Canva</td><td>Design-heavy decks, huge template library, generous free tier</td></tr>
+        <tr><td>Copilot in PowerPoint</td><td>If your office runs on Microsoft 365</td></tr>
+        <tr><td>Beautiful.ai</td><td>Slides that auto-arrange neatly as you edit</td></tr>
+        <tr><td>Claude or ChatGPT</td><td>Write the storyline and speaker notes first, then build slides</td></tr>
+      </tbody></table></div>
+      <p class="small muted">Image tools still often misspell words inside pictures, and Indian scripts such as Tamil more so. Add text yourself in Canva if spelling matters.</p>
+      <p><b>Golden rule for decks:</b> AI is great at layout, bad at your argument. Write the story first (one sentence per slide), then let the tool design.</p>
+      <div class="prompt"><span class="lbl">Storyline first</span><pre>I need a 10-slide presentation for [audience] about [topic]. My goal: [what they should think or do afterwards]. Give me one headline sentence per slide that tells a story, plus 3 bullets and one visual idea each. No fluff.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="callout"><b>Challenge: Family comic strip.</b> Create a 4-panel comic of a funny family moment (the time the pressure cooker exploded, the lost car keys). Keep the same characters across panels. Print it and stick it on the fridge.</div>
+      <h3>Saturday lab: make a real deck</h3>
+      <p>Pick a real need: a talk at work, a school project, a pitch for a side idea. Run the storyline prompt, paste the result into Gamma or Canva, add 2 AI images, and present it to one person on Sunday.</p>
+      <details class="check"><summary>Checkpoint: Which tool would you pick for a wedding invitation with names spelled correctly?</summary><p>Ideogram, Canva or ChatGPT images handle text well. Always zoom in and check every letter before printing.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m5-1"><span class="d">Mon</span><span>Learn the image formula; make 3 images, weak vs strong prompts</span></label></li>
+      <li><label><input type="checkbox" id="m5-2"><span class="d">Wed</span><span>Try 3 image tools with the same prompt and compare</span></label></li>
+      <li><label><input type="checkbox" id="m5-3"><span class="d">Wed</span><span>Make the family comic strip</span></label></li>
+      <li><label><input type="checkbox" id="m5-4"><span class="d">Sat</span><span>Build a full deck with the storyline-first method</span></label></li>
+      <li><label><input type="checkbox" id="m5-5"><span class="d">Sun</span><span>Present the deck to one person</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 6 -->
+<article class="wk" id="week-6" data-w="6">
+  <div class="wkhead"><div class="big">6</div><div><h2>Create: video and voiceovers<span class="mine-tag">Your path</span></h2><p>Make a 30-second film with narration, music and zero camera crew.</p></div><div class="dates" data-d="6"></div></div>
+  <div class="two">
+    <div>
+      <h3>Three kinds of video AI</h3>
+      <ul class="tight">
+        <li><b>Generators</b> make footage from a text or image prompt. Leaders: Google Veo 3.1, OpenAI Sora 2, Kling, Runway, Seedance, Pika. Many now create sound and dialogue too.</li>
+        <li><b>Avatar tools</b> make a presenter talk on screen from your script: HeyGen, Synthesia. Ideal for training or explainer videos.</li>
+        <li><b>Editors with AI</b> cut, caption and resize your own clips: CapCut, Descript, VEED, Canva, Filmora.</li>
+      </ul>
+      <p><b>Pro trick:</b> make a still image first (Week 5), then animate it ("image-to-video"). You control the look far better than text-only.</p>
+      <h3>Voice AI</h3>
+      <ul class="tight">
+        <li><b>ElevenLabs</b>: the most natural voices, many languages, sound effects, and voice cloning.</li>
+        <li><b>Murf, WellSaid</b>: clean narration for training and business videos.</li>
+        <li><b>Built-in voices</b> in ChatGPT, Gemini and your phone for quick read-alouds.</li>
+      </ul>
+      <p>Always listen to Indian names, places and Tamil words before publishing; spell them phonetically if needed ("Thiru-vaan-mi-yur").</p>
+      <p><b>Ethics, non-negotiable:</b> only clone your own voice or one you have clear permission for. Never make a real person appear to say something they didn't. Label AI content when you share it.</p>
+      <div class="prompt"><span class="lbl">Video shot prompt</span><pre>Slow cinematic drone shot rising over Marina Beach at sunrise, fishing boats on the sand, soft golden light, gentle waves, 8 seconds, no text on screen.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">Script your film</span><pre>Write a 30-second voiceover script (about 75 words) for a short film about [topic]. Then break it into 4 shots, and for each give: a video prompt, what the narrator says, and a music mood.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="callout"><b>Challenge: A 30-second short film.</b> Make a movie trailer for your family's next trip, or for "The Mystery of the Missing TV Remote". Script with AI, 4 shots, ElevenLabs narration, assemble in CapCut or Canva, add captions.</div>
+      <h3>Saturday lab: produce it</h3>
+      <p>Run the script prompt, generate 4 clips (use free credits across two tools if needed), record the voiceover, assemble, export vertical (9:16) for phones. Share on Sunday.</p>
+      <details class="check"><summary>Checkpoint: Why make an image first, then animate it?</summary><p>You lock in the look, characters and composition you want, and the video model only has to add motion. Pure text-to-video is more of a lottery.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m6-1"><span class="d">Mon</span><span>Learn the 3 kinds of video tools and the ethics rules</span></label></li>
+      <li><label><input type="checkbox" id="m6-2"><span class="d">Wed</span><span>Generate 2 clips: one text-to-video, one image-to-video</span></label></li>
+      <li><label><input type="checkbox" id="m6-3"><span class="d">Wed</span><span>Make a voiceover in your favourite AI voice</span></label></li>
+      <li><label><input type="checkbox" id="m6-4"><span class="d">Sat</span><span>Produce the 30-second short film</span></label></li>
+      <li><label><input type="checkbox" id="m6-5"><span class="d">Sun</span><span>Show it to your family</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 7 -->
+<article class="wk" id="week-7" data-w="7">
+  <div class="wkhead"><div class="big">7</div><div><h2>AI at work: finance, trading, manufacturing, design, literature<span class="mine-tag">Your path</span></h2><p>How real industries use it today, and an exercise for each so you feel it yourself.</p></div><div class="dates" data-d="7"></div></div>
+  <div class="two">
+    <div>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Field</th><th>How it's used</th><th>Your exercise</th></tr></thead><tbody>
+        <tr><td>Finance</td><td>Reading invoices and statements automatically, fraud alerts, summarising annual reports, credit checks, customer chatbots, spreadsheet formulas</td><td>Upload a company's annual report PDF and ask: "Summarise revenue, profit, debt and 3 risks in a table, citing page numbers."</td></tr>
+        <tr><td>Markets &amp; investing</td><td>Summarising news and company filings, testing ideas on past data, keeping a decision journal. Understanding, not predicting.</td><td>Ask AI to explain a concept (e.g. expense ratio, or what a moving-average crossover is) and its risks, then ask it to argue the opposite side. AI cannot predict prices; treat "AI stock tips" as a red flag.</td></tr>
+        <tr><td>Manufacturing</td><td>Cameras spotting defects on assembly lines, predicting machine breakdowns from sensor data, demand forecasting, safety manuals turned into Q&amp;A</td><td>Ask: "I run a small garment unit. Give 5 ways to use AI for quality, inventory and maintenance, cheapest first."</td></tr>
+        <tr><td>Design</td><td>Moodboards in seconds, 50 logo directions, product renders, AI features in Figma, Canva and Photoshop</td><td>Generate 10 logo concepts for an imaginary filter-coffee brand, pick one, refine it 3 times.</td></tr>
+        <tr><td>Literature</td><td>Brainstorming plots, editing, translation, research, audiobooks. Writers keep the voice; AI is the sparring partner</td><td>Write a 300-word story opening yourself, then ask AI to act as a tough editor. Rewrite it. Your words, sharper.</td></tr>
+      </tbody></table></div>
+      <div class="callout warn"><b>Not investment advice.</b> Nothing on this site is a recommendation to buy or sell anything. Before acting on anyone's financial advice, check that they are registered with SEBI at <a href="https://www.sebi.gov.in/">sebi.gov.in</a>.</div>
+      <h3>The universal productivity playbook</h3>
+      <ul class="tight">
+        <li><b>Draft</b>: never start from a blank page again.</li>
+        <li><b>Digest</b>: long documents, threads and reports shrunk to what matters.</li>
+        <li><b>Decide</b>: options laid out, pros and cons, a devil's advocate.</li>
+        <li><b>Do</b>: spreadsheet formulas, data cleaning, repetitive emails.</li>
+        <li><b>Double-check</b>: you remain the one accountable. Verify numbers and names.</li>
+      </ul>
+      <div class="prompt"><span class="lbl">Find your hours back</span><pre>Here's what a typical work week looks like for me: [describe tasks]. Identify the 5 tasks where AI could save me the most time, how much roughly, and the exact first prompt I should use for each.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">Excel helper</span><pre>I have a Google Sheet with columns Date, Description, Amount. Write a formula that totals the Amount for the current month only, and explain it like I've never used formulas.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="callout"><b>Challenge: AI job swap.</b> Spend 10 minutes being an "AI-powered" version of someone else's job (a CA, a factory manager, a novelist). Ask AI to give you their 3 hardest weekly tasks and help you do one. You'll see where AI shines and where humans still rule.</div>
+      <h3>Saturday lab: automate one real task</h3>
+      <p>Pick the top task from "Find your hours back". Do it with AI from start to finish. Time yourself versus the old way and record the minutes saved.</p>
+      <details class="check"><summary>Checkpoint: Why is "AI predicted this stock will go up" a red flag?</summary><p>Markets react to new, unknowable information. LLMs predict plausible text, not future prices. AI helps analyse and organise, not foresee. Anyone selling certainty is selling something.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m7-1"><span class="d">Mon</span><span>Read all 5 industry rows and the playbook</span></label></li>
+      <li><label><input type="checkbox" id="m7-2"><span class="d">Wed</span><span>Do 3 of the 5 industry exercises</span></label></li>
+      <li><label><input type="checkbox" id="m7-3"><span class="d">Wed</span><span>Run "Find your hours back" on your own week</span></label></li>
+      <li><label><input type="checkbox" id="m7-4"><span class="d">Sat</span><span>Automate one task and record minutes saved</span></label></li>
+      <li><label><input type="checkbox" id="m7-5"><span class="d">Sun</span><span>Share one work tip with a colleague</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 8 -->
+<article class="wk" id="week-8" data-w="8">
+  <div class="wkhead"><div class="big">8</div><div><h2>Meet the agents<span class="mine-tag">Your path</span></h2><p>A chatbot talks. An agent does things. Here's how they work and where to build them.</p></div><div class="dates" data-d="8"></div></div>
+  <div class="two">
+    <div>
+      <h3>The idea, simply</h3>
+      <p>Ask a chatbot "book me a table" and it tells you how. Ask an <b>agent</b> and it opens the website, picks a slot and books it. An agent is an LLM given <b>a goal, tools and permission to act in a loop</b>: think, act, look at the result, think again, until done.</p>
+      <p>Every agent has five parts:</p>
+      <ul class="tight">
+        <li><b>Brain</b>: the LLM (Claude, GPT, Gemini) that reasons.</li>
+        <li><b>Instructions</b>: its job description and rules.</li>
+        <li><b>Tools</b>: what it can touch: Gmail, Calendar, Sheets, web search, WhatsApp/Telegram.</li>
+        <li><b>Memory</b>: notes, files or a spreadsheet it can read and update.</li>
+        <li><b>Trigger</b>: what wakes it up: a time (7 am daily), an event (new email), or you.</li>
+      </ul>
+      <h3>Five levels, from easy to expert</h3>
+      <div class="levels">
+        <div><b>1</b><strong>Chat</strong>You ask, it answers. No actions.</div>
+        <div><b>2</b><strong>Custom assistant</strong>Custom GPTs, Claude Projects, Gemini Gems. Instructions + files.</div>
+        <div><b>3</b><strong>Automation + AI</strong>Zapier, Make, n8n: a trigger, steps, and an AI step in the middle.</div>
+        <div><b>4</b><strong>Autonomous agent</strong>ChatGPT agent mode, Claude with browser use: it clicks and types for you.</div>
+        <div><b>5</b><strong>Code</strong>OpenAI Agents SDK, Claude Agent SDK, LangGraph, CrewAI.</div>
+      </div>
+      <h3>Which platform?</h3>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Platform</th><th>Good for</th><th>Skill needed</th></tr></thead><tbody>
+        <tr><td>Custom GPTs / Claude Projects / Gems</td><td>Personal assistants that know your stuff</td><td>None</td></tr>
+        <tr><td>Zapier (with Zapier Agents)</td><td>Connecting thousands of apps; the easiest to learn. Free plan: two-step automations only</td><td>Low</td></tr>
+        <tr><td>Make</td><td>Visual builder; its free plan allows multi-step automations within a monthly limit</td><td>Low–medium</td></tr>
+        <tr><td>n8n</td><td>Powerful, flexible, can self-host free</td><td>Medium</td></tr>
+        <tr><td>Lindy, Relay.app</td><td>Plain-English agents for email, meetings, admin</td><td>Low</td></tr>
+        <tr><td>OpenAI Agent Builder</td><td>Visual agent workflows on OpenAI models</td><td>Medium</td></tr>
+        <tr><td>Agent SDKs, LangGraph, CrewAI</td><td>Full control, multi-agent teams</td><td>Coding</td></tr>
+      </tbody></table></div>
+      <p><b>Course pick:</b> Claude or ChatGPT Projects and Custom GPTs for assistants, and <b>Zapier</b> for automations because it's the easiest to learn.</p>
+      <div class="callout"><b>What this costs.</b> Each agent recipe is labelled <span class="tag free">Free</span> or <span class="tag paid">Paid plan</span>. Zapier's free plan only runs simple two-step automations with a small monthly task limit, so agents 1, 2, 3, 4 and 9 need a paid Zapier plan (around $20 a month; check <a href="https://zapier.com/pricing">zapier.com/pricing</a>). Every paid recipe also comes with a free way to get most of the benefit. Agents 5, 6, 7 and 8 are free.</div>
+      <h3>"How do I program one?" Here's every agent, in plain words</h3>
+      <div class="prompt"><span class="lbl">The agent loop (pseudo-code, read it like English)</span><pre>goal = "Find my unpaid bills and remind me"
+history = [instructions, goal]
+
+repeat:
+    decision = brain.think(history)          # LLM decides next step
+    if decision is "use a tool":
+        result = run(decision.tool, decision.inputs)   # e.g. read Gmail
+        history.add(result)                  # it sees what happened
+    if decision is "finished":
+        send(decision.answer)
+        stop</pre><button class="copy" type="button">Copy</button></div>
+      <p>That's genuinely the core of every agent. No-code platforms build this loop for you; you just fill in the instructions, tools and trigger.</p>
+      <div class="callout"><b>Challenge: Watch an agent work.</b> In ChatGPT (agent mode) or Claude (with its browser extension), give it a harmless task: "Find three highly rated South Indian restaurants in Bengaluru open after 10 pm and make a comparison table." Watch it browse, click and decide. Stop it any time.</div>
+      <h3>Saturday lab: get your workshop ready</h3>
+      <p>Create a free Zapier account and connect Gmail, Google Calendar and Google Sheets (the free plan is enough to learn and test; upgrade only if you keep an agent running). Install Telegram and create a bot via @BotFather (search "Telegram BotFather tutorial", 5 minutes) so agents can message you. Make a Google Sheet called "Agent HQ" for their notes.</p>
+      <details class="check"><summary>Checkpoint: What turns a chatbot into an agent?</summary><p>Tools plus a loop. It can take actions in other apps, look at the results and decide the next step on its own, usually started by a trigger.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m8-1"><span class="d">Mon</span><span>Learn the 5 parts and 5 levels of agents</span></label></li>
+      <li><label><input type="checkbox" id="m8-2"><span class="d">Wed</span><span>Read the agent loop and explain it in your own words</span></label></li>
+      <li><label><input type="checkbox" id="m8-3"><span class="d">Wed</span><span>Watch an agent complete a browsing task</span></label></li>
+      <li><label><input type="checkbox" id="m8-4"><span class="d">Sat</span><span>Set up Zapier, Telegram bot and "Agent HQ" sheet</span></label></li>
+      <li><label><input type="checkbox" id="m8-5"><span class="d">Sun</span><span>List 9 annoying chores you'd love an agent to do</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 9 -->
+<article class="wk" id="week-9" data-w="9">
+  <div class="wkhead"><div class="big">9</div><div><h2>Agent lab 1: mornings, inbox and money<span class="mine-tag">Your path</span></h2><p>Three agents that run while you sleep. Each one: what it does, where to build it, steps, and the exact instructions.</p></div><div class="dates" data-d="9"></div></div>
+  <div class="two">
+    <div>
+      <div class="agent"><h3><span>Agent 1</span> Morning Briefing</h3>
+        <div class="meta"><span class="tag paid">Paid plan, or free via ChatGPT scheduled tasks</span><span>Platform: Zapier (or ChatGPT scheduled tasks)</span><span>Time: 45 min</span></div>
+        <p>Every day at 6:30 am, a Telegram message: today's meetings, weather, one reminder, and a motivating line.</p>
+        <ol><li>Zapier → Create Zap → Trigger: <b>Schedule by Zapier</b>, every day 6:30 am.</li><li>Action: <b>Google Calendar → Find events</b> for today.</li><li>Action: <b>Weather by Zapier</b> for your city (or a weather app's step).</li><li>Action: <b>AI by Zapier</b> (or ChatGPT/Claude step) with the instructions below, inserting the calendar and weather data.</li><li>Action: <b>Telegram → Send message</b> to yourself.</li><li>Test, then switch it on.</li></ol>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>You are my friendly morning briefer. Using today's calendar events and weather below, write a Telegram message under 120 words: 1) a one-line greeting, 2) meetings with times as bullets, 3) weather in one line with what to carry, 4) the single most important thing to prepare. Warm, brief, no fluff.</pre><button class="copy" type="button">Copy</button></div>
+        <p class="small muted">Upgrade: add "top 3 headlines on topics I care about" using an RSS step.</p>
+        <p class="small"><b>Free version:</b> in ChatGPT, create a scheduled task for 6:30 am daily: "Give me a short briefing: weather in [city], one motivating line, and remind me to check my calendar." It can't read your calendar, but it builds the habit.</p></div>
+      <div class="agent"><h3><span>Agent 2</span> Inbox Triage</h3>
+        <div class="meta"><span class="tag paid">Paid plan</span><span>Platform: Zapier + Gmail</span><span>Time: 60 min</span></div>
+        <p>Every new email gets sorted into Urgent, Bills, Newsletters or Personal. Urgent ones get a draft reply waiting for you.</p>
+        <ol><li>In Gmail, create labels: AI-Urgent, AI-Bills, AI-News, AI-Personal.</li><li>Trigger: <b>Gmail → New email</b>.</li><li>AI step: classify with the instructions below. Output a single word.</li><li>Add <b>Paths</b>: for each category, add the matching Gmail label.</li><li>On the Urgent path, add another AI step "draft a reply" and <b>Gmail → Create draft</b>. It drafts; you send.</li></ol>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>Classify this email into exactly one word: URGENT (needs my reply within 24h, from a real person), BILLS (payments, invoices, renewals, statements), NEWS (newsletters, promotions, updates), PERSONAL (friends and family, not urgent). Reply with the word only.</pre><button class="copy" type="button">Copy</button></div>
+        <p class="small muted">Safety: keep it on "draft", never auto-send.</p>
+        <p class="small"><b>Free version:</b> set up Gmail filters for bills and newsletters (Settings → Filters). Once a day, paste the subject lines of unread mail into your assistant and ask "Which 3 need me today, and draft short replies."</p></div>
+      <div class="agent"><h3><span>Agent 3</span> Money Diary</h3>
+        <div class="meta"><span class="tag paid">Paid plan, or free manual version</span><span>Platform: Zapier + Gmail + Google Sheets</span><span>Time: 60 min</span></div>
+        <p>Your bank's transaction alert emails become neat rows in a spreadsheet, auto-categorised. A Sunday summary tells you where the money went.</p>
+        <ol><li>Make a sheet "Money Diary" with columns: Date, Merchant, Amount, Category, Note.</li><li>Trigger: <b>Gmail → New email matching search</b> (e.g. from your bank's alerts address, subject contains "debited").</li><li>AI step: extract fields with the instructions below.</li><li>Action: <b>Google Sheets → Create row</b>.</li><li>Second Zap: Schedule every Sunday 8 pm → read rows for last 7 days → AI summary → Telegram.</li></ol>
+        <div class="callout warn"><b>Privacy first.</b> This sends your bank alerts to outside services. Only do it if you are comfortable with that, and make sure account and card numbers are never stored. If not, use the free manual version below.</div>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>From this bank alert, return JSON only: {"date": "YYYY-MM-DD", "merchant": "", "amount": number, "category": one of Groceries, Fuel, Food out, Shopping, Bills, Health, Education, Travel, Other}. Never include account or card numbers.</pre><button class="copy" type="button">Copy</button></div>
+        <p class="small"><b>Free manual version:</b> once a month, download your statement as a spreadsheet, delete the account number and balance columns, upload it to ChatGPT or Claude and ask: "Categorise these expenses and show totals by category, with the 3 biggest surprises."</p></div>
+      <details class="check"><summary>Checkpoint: Why should the inbox agent draft and not send?</summary><p>Agents make mistakes. "Human in the loop" means AI does the boring part and you approve anything that leaves your name. Give agents the least permission they need.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m9-1"><span class="d">Mon</span><span>Read all three agent recipes</span></label></li>
+      <li><label><input type="checkbox" id="m9-2"><span class="d">Wed</span><span>Build Agent 1: Morning Briefing</span></label></li>
+      <li><label><input type="checkbox" id="m9-3"><span class="d">Sat</span><span>Build Agent 2: Inbox Triage</span></label></li>
+      <li><label><input type="checkbox" id="m9-4"><span class="d">Sat</span><span>Build Agent 3: Money Diary</span></label></li>
+      <li><label><input type="checkbox" id="m9-5"><span class="d">Sun</span><span>Review a week of their output and tweak instructions</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 10 -->
+<article class="wk" id="week-10" data-w="10">
+  <div class="wkhead"><div class="big">10</div><div><h2>Agent lab 2: bills, meals and news<span class="mine-tag">Your path</span></h2><p>Three agents for the household admin nobody enjoys.</p></div><div class="dates" data-d="10"></div></div>
+  <div class="two">
+    <div>
+      <div class="agent"><h3><span>Agent 4</span> Renewals Guardian</h3>
+        <div class="meta"><span class="tag paid">Paid plan, or free via Google Calendar</span><span>Platform: Zapier + Google Sheets + Telegram</span><span>Time: 45 min</span></div>
+        <p>Never miss an insurance renewal, vehicle service, subscription, passport expiry or school fee again.</p>
+        <ol><li>Sheet "Renewals": Item, Due date, Amount, Where to pay, Notes. Fill in everything you can think of.</li><li>Trigger: <b>Schedule</b>, daily 9 am.</li><li>Action: <b>Google Sheets → Lookup rows</b> (or use a Filter step) for items due in the next 15 days.</li><li>AI step: write the reminder with instructions below.</li><li>Telegram → Send message. Only fires when something's due.</li></ol>
+        <p class="small"><b>Free version:</b> paste your renewals list into your assistant and ask it to turn each into a Google Calendar event with a reminder 15 days before. Add them once; your phone reminds you every year.</p>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>For each item below, write one reminder line: what's due, in how many days, amount, and the very next action I should take. Most urgent first. If something is due in 3 days or less, start that line with "URGENT".</pre><button class="copy" type="button">Copy</button></div></div>
+      <div class="agent"><h3><span>Agent 5</span> Meal &amp; Grocery Planner</h3>
+        <div class="meta"><span class="tag free">Free</span><span>Platform: Custom GPT or Claude Project (optional weekly Zap)</span><span>Time: 30 min</span></div>
+        <p>A family chef that knows your tastes, plans the week's meals and hands you a grocery list sorted by shop section.</p>
+        <ol><li>Create a Custom GPT (ChatGPT → Explore GPTs → Create) or a Claude Project named "Kitchen Captain".</li><li>Paste the instructions below and fill in your family details.</li><li>Each Sunday, open it and say "Plan next week. We have guests Saturday."</li><li>Optional: a Zap that sends the list to your Telegram or to the family WhatsApp group via copy-paste.</li></ol>
+        <div class="prompt"><span class="lbl">Assistant instructions</span><pre>You are Kitchen Captain, our family meal planner. Family: [members, ages]. Food: [vegetarian/non-veg, cuisine likes, dislikes, spice level]. Weekday cooking time max 30 min. Plan breakfast, lunch box and dinner Mon–Sun, reuse ingredients to cut waste, one treat day. Then give a grocery list grouped: Vegetables, Fruits, Dairy, Grains & dals, Masalas, Other, with quantities. Ask what's already at home before finalising.</pre><button class="copy" type="button">Copy</button></div></div>
+      <div class="agent"><h3><span>Agent 6</span> Weekly Research Digest</h3>
+        <div class="meta"><span class="tag free">Free with ChatGPT tasks</span><span>Platform: ChatGPT scheduled tasks, or Zapier + RSS</span><span>Time: 30 min</span></div>
+        <p>Every Sunday morning: the 5 things worth knowing this week on topics you choose (AI, markets, your industry, your city), with links.</p>
+        <ol><li>Easiest: in ChatGPT, ask it to run a scheduled task weekly with the prompt below (look for "Tasks" or "Schedule").</li><li>Builder route: Zapier → <b>RSS by Zapier</b> on 3–5 news feeds → collect the week → AI step summary → email or Telegram.</li></ol>
+        <div class="prompt"><span class="lbl">Task prompt</span><pre>Every Sunday at 8 am: search the web for the most important developments this week in [topic 1], [topic 2], [topic 3]. Give 5 bullets, each: what happened in one sentence, why it matters to an ordinary person in India, and the source link. Skip rumours and anything without a credible source.</pre><button class="copy" type="button">Copy</button></div></div>
+      <details class="check"><summary>Checkpoint: Agent 5 has no trigger or Zapier. Is it still an agent?</summary><p>It's a level-2 custom assistant: instructions plus memory of your preferences, run when you ask. Add a schedule and a tool that sends the list, and it becomes a level-3 agent. Not every helper needs to be fully autonomous.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m10-1"><span class="d">Mon</span><span>Fill your Renewals sheet with at least 10 items</span></label></li>
+      <li><label><input type="checkbox" id="m10-2"><span class="d">Wed</span><span>Build Agent 4: Renewals Guardian</span></label></li>
+      <li><label><input type="checkbox" id="m10-3"><span class="d">Sat</span><span>Build Agent 5: Kitchen Captain, plan a real week</span></label></li>
+      <li><label><input type="checkbox" id="m10-4"><span class="d">Sat</span><span>Build Agent 6: Weekly Research Digest</span></label></li>
+      <li><label><input type="checkbox" id="m10-5"><span class="d">Sun</span><span>Cook one meal from Kitchen Captain's plan</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 11 -->
+<article class="wk" id="week-11" data-w="11">
+  <div class="wkhead"><div class="big">11</div><div><h2>Agent lab 3: tutor, second brain and creator<span class="mine-tag">Your path</span></h2><p>Three agents that make you and your family smarter and more creative.</p></div><div class="dates" data-d="11"></div></div>
+  <div class="two">
+    <div>
+      <div class="agent"><h3><span>Agent 7</span> Family Tutor</h3>
+        <div class="meta"><span class="tag free">Free</span><span>Platform: Claude Project or Custom GPT</span><span>Time: 30 min</span></div>
+        <p>A patient tutor that never just hands over answers. It asks guiding questions, gives hints and quizzes, like the best teacher you had.</p>
+        <ol><li>Create the Project/GPT "Study Buddy" and paste the instructions.</li><li>Upload the syllabus or textbook chapter PDFs for the term.</li><li>Sit with your child for the first session. Agree the rule: Buddy helps think, doesn't do homework.</li></ol>
+        <div class="prompt"><span class="lbl">Assistant instructions</span><pre>You are Study Buddy, a warm tutor for a student in class [X], [board]. Never give the final answer straight away. First ask what they already know, then give one hint at a time, and celebrate progress. Use Indian everyday examples. After each topic, give a 3-question quiz. Keep replies short, under 80 words, and use simple words.</pre><button class="copy" type="button">Copy</button></div>
+        <p class="small muted">Same recipe works for you: a tutor for any exam or skill you're learning.</p></div>
+      <div class="agent"><h3><span>Agent 8</span> Second Brain</h3>
+        <div class="meta"><span class="tag free">Free</span><span>Platform: Google NotebookLM (free) or Claude Project</span><span>Time: 40 min</span></div>
+        <p>Ask questions across all your important documents: "Does my health policy cover cataract surgery?", "What's the warranty on the fridge?", "When does the lease lock-in end?"</p>
+        <ol><li>Collect PDFs: insurance policies, appliance manuals and warranties, lease, school handbook, important letters. Remove ID and account numbers first.</li><li>In NotebookLM, create a notebook "Home Documents" and upload them.</li><li>Ask questions. It answers with citations pointing to the exact passage, so you can verify.</li><li>Bonus: click "Audio overview" to get a podcast-style summary of your health policy.</li></ol>
+        <div class="prompt"><span class="lbl">Good first questions</span><pre>Make a table of every document here: what it is, key dates, renewal or expiry, and the one clause I'm most likely to need. Then list anything that expires in the next 6 months.</pre><button class="copy" type="button">Copy</button></div></div>
+      <div class="agent"><h3><span>Agent 9</span> Content Creator</h3>
+        <div class="meta"><span class="tag paid">Paid plan, or free manual version</span><span>Platform: Zapier + Google Sheets + Buffer (or manual post)</span><span>Time: 60 min</span></div>
+        <p>You drop a one-line idea in a sheet. The agent drafts a post in your voice, you approve, it schedules.</p>
+        <ol><li>Sheet "Ideas": Idea, Platform, Status, Draft.</li><li>Trigger: <b>Google Sheets → New row</b>.</li><li>AI step: draft with the instructions below plus 3 of your past posts as examples of your voice.</li><li>Update the row's Draft column and set Status to "Review".</li><li>Second Zap: when you change Status to "Approved", send to <b>Buffer</b> to schedule.</li></ol>
+        <p class="small"><b>Free version:</b> make a Claude Project or Custom GPT with the instructions below and your 3 example posts. Paste an idea, approve the draft, post it yourself.</p>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>Write a [LinkedIn/Instagram/X] post from this idea in my voice. My voice, shown in these examples: [paste 3 past posts]. Hook in the first line, short lines, one clear takeaway, no hashtag spam (max 3), under 150 words. Don't invent facts or numbers.</pre><button class="copy" type="button">Copy</button></div></div>
+      <details class="check"><summary>Checkpoint: Why does the Second Brain cite sources?</summary><p>So you can check the exact passage before acting. Grounding answers in your own documents (often called RAG) cuts hallucinations a lot, but you still verify anything important.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m11-1"><span class="d">Mon</span><span>Collect and clean your important PDFs</span></label></li>
+      <li><label><input type="checkbox" id="m11-2"><span class="d">Wed</span><span>Build Agent 7: Study Buddy, run one session</span></label></li>
+      <li><label><input type="checkbox" id="m11-3"><span class="d">Sat</span><span>Build Agent 8: Second Brain in NotebookLM</span></label></li>
+      <li><label><input type="checkbox" id="m11-4"><span class="d">Sat</span><span>Build Agent 9: Content Creator, approve one post</span></label></li>
+      <li><label><input type="checkbox" id="m11-5"><span class="d">Sun</span><span>Celebrate: all 9 agents running. Note which you use most.</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 12 -->
+<article class="wk" id="week-12" data-w="12">
+  <div class="wkhead"><div class="big">12</div><div><h2>Vibe coding: build a website and put it on the internet<span class="mine-tag">Your path</span></h2><p>Describe an app in plain words, get working software, and share a link the whole world can open.</p></div><div class="dates" data-d="12"></div></div>
+  <div class="two">
+    <div>
+      <h3>What is vibe coding?</h3>
+      <p>The term was coined in early 2025 by AI researcher Andrej Karpathy: you describe what you want, the AI writes all the code, you look at the result and say "make the button bigger" or "add a dark mode". You steer by vibes, not by syntax. It's like being a film director: you don't operate the camera, you tell the crew what you want and judge each take.</p>
+      <h3>The tools</h3>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Tool</th><th>Best for</th><th>Publishing</th></tr></thead><tbody>
+        <tr><td>Lovable</td><td>Non-technical builders, polished apps with login and database</td><td>One-click publish</td></tr>
+        <tr><td>Bolt.new</td><td>Fast prototypes in the browser</td><td>One-click publish</td></tr>
+        <tr><td>Replit</td><td>All-in-one: build, run, host, many app types</td><td>One-click deploy</td></tr>
+        <tr><td>v0 by Vercel</td><td>Beautiful web interfaces</td><td>Vercel, built in</td></tr>
+        <tr><td>Claude, ChatGPT, Gemini</td><td>Simple single-page sites and tools, free</td><td>You host the file (below)</td></tr>
+        <tr><td>Claude Code, Cursor</td><td>Bigger projects once you're curious about code</td><td>GitHub + any host</td></tr>
+      </tbody></table></div>
+      <h3>How does everyone see it? The 4 pieces of being "on the internet"</h3>
+      <ol class="flow">
+        <li><b>Files</b>: your site is just files (HTML etc.) the AI wrote.</li>
+        <li><b>Hosting</b>: a computer that's always on, serving those files. Free options are plenty.</li>
+        <li><b>Address</b>: a free one (yourname.netlify.app) or your own domain (yourname.in) bought yearly from a registrar.</li>
+        <li><b>Being found</b>: share the link, and add the site to Google Search Console so Google indexes it.</li>
+      </ol>
+      <p><b>Three ways to go live, easiest first:</b></p>
+      <ul class="tight">
+        <li><b>Built-in publish</b>: in Lovable, Bolt or Replit, press Publish. Done. You get a public link.</li>
+        <li><b>Netlify Drop</b>: if AI gave you an HTML file, go to app.netlify.com/drop and drag the folder in. It goes live in seconds; sign in and claim the site so it stays online.</li>
+        <li><b>GitHub Pages</b>: free and permanent. Create a GitHub account, a new repository, upload index.html, Settings → Pages → deploy from main. Your site is at username.github.io/repo.</li>
+      </ul>
+      <p><b>Own domain:</b> buy from any registrar (GoDaddy, Namecheap, Cloudflare, Hostinger), then follow your host's "custom domain" guide: you paste two DNS records. Free HTTPS is automatic on Netlify, Vercel and GitHub Pages.</p>
+      <p><b>Safety:</b> never paste API keys or passwords into a public site's code. If your app stores user data, use the tool's built-in database with login switched on, and ask the AI "review this app for security problems a beginner would miss".</p>
+      <div class="prompt"><span class="lbl">Your first vibe-coded site</span><pre>Build me a single-file website (HTML, CSS, JavaScript in one file) called "Family Trip Splitter". Users add people and expenses (who paid, how much, for whom), and it shows who owes whom with the fewest transfers. Mobile-friendly, cheerful colours, saves data in the browser. Explain how to publish it free on Netlify Drop.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">The fix-it loop</span><pre>When I click "Add expense" nothing happens. Here's what I see: [describe or paste screenshot]. Find the bug, fix it, and give me the complete updated file.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="callout"><b>Challenge: Demo day.</b> Build your personal homepage or a tiny tool your family will actually use (chore tracker, cricket score keeper, recipe box). Put it live, buy a domain if you love it, and send the link to five people. You're now a person who ships software.</div>
+      <h3>Saturday lab: capstone</h3>
+      <p>Build, publish, and submit to Google Search Console. Then write your "AI journey" one-pager: the 3 agents you use most, hours saved per week, and what you'll learn next.</p>
+      <details class="check"><summary>Checkpoint: You built a site in Claude and it works on your laptop. Why can't your friend open it?</summary><p>It's only a file on your computer. It needs hosting (Netlify, GitHub Pages, Vercel) to live on an always-on server with a public address.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m12-1"><span class="d">Mon</span><span>Learn vibe coding and the 4 pieces of going live</span></label></li>
+      <li><label><input type="checkbox" id="m12-2"><span class="d">Wed</span><span>Build the Trip Splitter from the prompt</span></label></li>
+      <li><label><input type="checkbox" id="m12-3"><span class="d">Wed</span><span>Publish it on Netlify Drop or GitHub Pages</span></label></li>
+      <li><label><input type="checkbox" id="m12-4"><span class="d">Sat</span><span>Capstone: build and publish your own idea</span></label></li>
+      <li><label><input type="checkbox" id="m12-5"><span class="d">Sun</span><span>Demo day: send your link to five people</span></label></li>
+    </ul><p class="small muted">5 missions this week</p></aside>
+  </div>
+</article>
+
+<section class="wk" id="toolbox">
+  <span class="eyebrow">Reference</span>
+  <h2>The toolbox, on one page</h2>
+  <p class="muted">Last reviewed November 2026. Tools change monthly and some may not be available in India; most have a free version, so try free first.</p>
+  <div class="tbl scroll"><table class="stack"><thead><tr><th>Job</th><th>Start here</th><th>Also great</th></tr></thead><tbody>
+    <tr><td>Chat assistant</td><td>ChatGPT, Claude, Gemini</td><td>Perplexity (search-first), Microsoft Copilot</td></tr>
+    <tr><td>Images</td><td>ChatGPT images, Gemini</td><td>Midjourney, Ideogram, Adobe Firefly, Canva</td></tr>
+    <tr><td>Presentations</td><td>Gamma</td><td>Canva, Copilot in PowerPoint, Beautiful.ai</td></tr>
+    <tr><td>Video generation</td><td>Google Veo 3.1, Sora 2</td><td>Kling, Runway, Seedance, Pika</td></tr>
+    <tr><td>Talking avatars</td><td>HeyGen</td><td>Synthesia</td></tr>
+    <tr><td>Video editing</td><td>CapCut, Canva</td><td>Descript, VEED, Filmora</td></tr>
+    <tr><td>Voiceovers</td><td>ElevenLabs</td><td>Murf, WellSaid Labs</td></tr>
+    <tr><td>Your documents</td><td>NotebookLM</td><td>Claude Projects, ChatGPT Projects</td></tr>
+    <tr><td>Automations &amp; agents</td><td>Zapier</td><td>Make, n8n, Lindy, Relay.app, OpenAI Agent Builder</td></tr>
+    <tr><td>Agents in code</td><td>OpenAI Agents SDK, Claude Agent SDK</td><td>LangGraph, CrewAI</td></tr>
+    <tr><td>Vibe coding</td><td>Lovable</td><td>Bolt.new, Replit, v0, Claude Code, Cursor</td></tr>
+    <tr><td>Hosting</td><td>Netlify, GitHub Pages</td><td>Vercel, Cloudflare Pages</td></tr>
+  </tbody></table></div>
+</section>
+<p class="small muted">Words you don't know? See the <a href="glossary.html">glossary</a>. Free courses and certificates: <a href="about.html#certificates">see the FAQ</a>.</p>
+
+<section class="wk" id="finish">
+  <span class="eyebrow">Your progress</span>
+  <h2>Your progress card</h2>
+  <div class="cardwrap">
+    <div>
+      <p>Your card fills in as you tick missions. Download it and share it on WhatsApp, Instagram or LinkedIn, whether you've finished or you're on your way.</p>
+      <div class="field"><label for="finName">Name on the card</label><input id="finName" type="text" autocomplete="name" maxlength="40"></div>
+      <div class="btn-row"><button class="btn btn-primary" id="finDl" type="button">Download card</button><a class="btn btn-secondary" id="finWa" href="https://wa.me/">Share on WhatsApp</a></div>
+      <p class="small muted" style="margin-top:24px">Progress is saved on this device only. <button class="linkbtn" id="clearAll" type="button">Erase my progress</button></p>
+    </div>
+    <canvas id="fin" width="1080" height="1080" role="img" aria-label="Your progress card"></canvas>
+  </div>
+</section>
+</div>

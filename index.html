@@ -3,330 +3,241 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI for Real Life</title>
-<meta name="description" content="Where do I start with AI? A free, practical path for everyone: a 2-minute quiz, a 15-minute first win, a 12-week hands-on course, tracks for students, parents, professionals, business owners, retirees and creators, and AI safety basics.">
-<meta property="og:title" content="AI for Real Life: where to start with AI">
-<meta property="og:description" content="Free and practical. Take the 2-minute quiz, get your own path, and build real things with AI in 15 minutes.">
+<title>AI for Real Life: Where to Start with AI (Free Course)</title>
+<meta name="description" content="Free, practical AI learning for everyone in India. Take a 2-minute quiz for your own path, get a useful result in 15 minutes, then learn how AI works and build real things. No coding, no sign-up.">
+<link rel="canonical" href="https://babubl.github.io/ai-for-real-life/">
+<meta name="theme-color" content="#FBF8F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1115" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="AI for Real Life">
+<meta property="og:title" content="AI for Real Life: where to start with AI">
+<meta property="og:description" content="Free, practical AI learning for everyone in India. Take a 2-minute quiz for your own path, get a useful result in 15 minutes, then learn how AI works and build real things. No coding, no sign-up.">
+<meta property="og:url" content="https://babubl.github.io/ai-for-real-life/">
+<meta property="og:image" content="https://babubl.github.io/ai-for-real-life/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-/* VOICE warm, plain, for everyone: the friend who already figured AI out
-   IDEA a metro map and ticket counter: pick your line, get your stations
-   PICTURE the quiz itself at the top, its result drawn as your personal route of stations
-   COLOUR ice ground, deep ink bands, one hot pink for your route and what matters
-   TYPE Space Grotesk 500/700 + Inter
-   LAYOUT laptop: title band, quiz card left with route result right; phone: title, quiz, result stacked */
-:root{color-scheme:light dark;--bg:light-dark(#dff1f7,#06222e);--ink:light-dark(#06222e,#dff1f7);--panel:light-dark(#ffffff,#0b3244);--line:light-dark(#b9dbe6,#1d4a5c);--mute:light-dark(#3d5a66,#a8c7d2);--pink:#ff2e7e;--pinkSoft:light-dark(#ffe1ec,#4a1530);--deep:#06222e;--ice:#dff1f7}
-:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
-*{box-sizing:border-box;min-width:0}
-html{scroll-padding-top:110px;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
-h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;margin:0;text-wrap:balance}
-h1{font-size:clamp(34px,5.6vw,58px);font-weight:700}
-h2{font-size:clamp(28px,3.6vw,40px);font-weight:700}
-h3{font-size:20px;font-weight:700}
-p{margin:.6em 0}
-a{color:inherit;text-decoration-color:var(--pink);text-underline-offset:3px}
-.band{padding-block:clamp(32px,4.5vw,68px);padding-inline:max(5vw,16px)}
-.wrap{max-width:1240px;margin:0 auto}
-.dark{background:var(--deep);color:var(--ice)}
-.mute{color:var(--mute)}
-.dark .mute{color:#a8c7d2}
-.top{position:sticky;top:0;z-index:5;background:var(--deep);color:var(--ice);border-bottom:1px solid #1d4a5c}
-.top .wrap{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;padding:10px max(5vw,16px)}
-.top b{font:700 18px "Space Grotesk";margin-right:auto}
-.top nav{display:flex;gap:6px;overflow-x:auto;max-width:100%}
-.top nav a{flex:none;font-size:14px;text-decoration:none;padding:6px 12px;border:1px solid #1d4a5c;border-radius:20px}
-.top nav a:hover,.top nav a:focus-visible{background:#123848;outline:none}
-.top nav a.go{background:var(--pink);border-color:var(--pink);color:#fff}
-.hero h1{max-width:18ch}
-.hero .lede{font-size:18px;max-width:60ch;color:#cfe6ee}
-.qs{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.qs span{font-size:14px;padding:6px 12px;border-radius:20px;background:#123848;color:#cfe6ee}
-/* quiz */
-.quiz{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:-34px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
-.step{border:0;margin:0 0 18px;padding:0}
-.step legend{font:700 18px "Space Grotesk";margin-bottom:10px;padding:0}
-.opts{display:flex;flex-wrap:wrap;gap:8px}
-.opts input{position:absolute;opacity:0;pointer-events:none}
-.opts label{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:22px;cursor:pointer;font-size:15px;background:var(--bg)}
-.opts input:checked+label{background:var(--pink);border-color:var(--pink);color:#fff}
-.opts input:focus-visible+label{outline:3px solid var(--ink);outline-offset:2px}
-.btn{display:inline-flex;align-items:center;justify-content:center;font:600 15px Inter;background:var(--pink);color:#fff;border:0;border-radius:10px;padding:0 18px;min-height:44px;cursor:pointer;text-decoration:none}
-.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.res h3{font-size:24px}
-.res .pace{font-size:15px;color:var(--mute);margin:6px 0 14px}
-.line{list-style:none;margin:0;padding:0 0 0 6px}
-.line li{position:relative;padding:0 0 14px 34px}
-.line li::before{content:"";position:absolute;left:9px;top:8px;bottom:-8px;width:5px;background:var(--pink)}
-.line li:last-child::before{display:none}
-.line li::after{content:"";position:absolute;left:2px;top:2px;width:19px;height:19px;border-radius:50%;background:var(--panel);border:5px solid var(--pink)}
-.line a{font-weight:600;text-decoration:none}
-.line a:hover{text-decoration:underline}
-.line small{display:block;color:var(--mute);font-size:14px}
-.win{background:var(--pinkSoft);border-radius:12px;padding:12px 14px;margin:14px 0;font-size:15px}
-.empty{color:var(--mute)}
-/* sections */
-.sec{border-top:1px solid var(--line)}
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:36px;align-items:start}
-.steps{list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{position:relative;padding:14px 0 14px 52px;border-top:1px solid var(--line);counter-increment:s}
-.steps li::before{content:counter(s);position:absolute;left:0;top:14px;width:36px;height:36px;border-radius:50%;background:var(--pink);color:#fff;font:700 17px/36px "Space Grotesk";text-align:center}
-.prompt{position:relative;background:var(--deep);color:var(--ice);border-radius:12px;padding:14px 16px;margin:10px 0}
-.prompt pre{margin:0;white-space:pre-wrap;font:14.5px/1.55 ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere;padding-right:70px}
-.copy{position:absolute;top:10px;right:10px;font:600 13px Inter;background:#123848;color:var(--ice);border:1px solid #3d6b7c;border-radius:8px;padding:0 12px;min-height:36px;cursor:pointer}
-.timer{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:14px}
-.clock{font:700 clamp(40px,6vw,56px)/1 "Space Grotesk";font-variant-numeric:tabular-nums;color:var(--pink)}
-.tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
-.track h3{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.track h3 small{font:400 14px Inter;color:var(--mute)}
-.track ul{padding-left:1.2em;margin:.4em 0}
-.track li{margin:.3em 0;font-size:15px}
-.track .first{font-size:15px;border-left:4px solid var(--pink);padding-left:10px;margin:10px 0}
-.track .wks{font-size:14px;color:var(--mute)}
-.track .wks a{color:var(--ink)}
-.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
-.cols ul{padding-left:1.2em;margin:.4em 0}
-.cols li{margin:.4em 0;font-size:15px}
-.flag li::marker{color:var(--pink)}
-.safe{display:grid;grid-template-columns:repeat(auto-fit,minmax(16em,1fr));gap:14px;margin-top:20px}
-.safe div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.safe b{display:block;font:700 18px "Space Grotesk";margin-bottom:4px}
-.alert{background:var(--pink);color:#fff;border-radius:14px;padding:18px 20px;margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center}
-.alert strong{font:700 clamp(28px,4vw,40px) "Space Grotesk"}
-.news{list-style:none;padding:0;margin:18px 0 0}
-.news>li{display:grid;grid-template-columns:11em minmax(0,1fr);gap:18px;padding:16px 0;border-top:1px solid var(--line)}
-.news .m{font:700 20px "Space Grotesk"}
-.news ul{margin:0;padding-left:1.2em}
-.news ul li{margin:.3em 0}
-.together{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:start}
-.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-footer{font-size:14px}
-@media(max-width:900px){.quiz,.split,.together{grid-template-columns:minmax(0,1fr)}.tracks,.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.tracks,.cols{grid-template-columns:minmax(0,1fr)}.news>li{grid-template-columns:minmax(0,1fr);gap:4px}.quiz{margin-top:-24px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=Mukta:wght@400;600;700&family=IBM+Plex+Mono&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=20261124b">
+<link rel="stylesheet" href="assets/home.css?v=20261124b">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "AI for Real Life", "url": "https://babubl.github.io/ai-for-real-life/", "inLanguage": "en"}, {"@type": "Organization", "name": "AI for Real Life", "url": "https://babubl.github.io/ai-for-real-life/", "logo": "https://babubl.github.io/ai-for-real-life/favicon.svg"}]}</script>
 </head>
 <body>
-
-<div class="top"><div class="wrap"><b>AI for Real Life</b><nav aria-label="Sections"><a href="#start">Start here</a><a href="basics.html">AI School</a><a href="#first-win">First win</a><a href="#tracks">Tracks</a><a href="#paid-courses">Paid courses?</a><a href="#safety">Safety</a><a href="#whats-new">What's new</a><a href="#together">Learn together</a><a class="go" href="course.html">The course</a></nav></div></div>
-
-<header class="band dark hero" style="padding-bottom:70px">
-  <div class="wrap">
-    <h1>Where do I start with AI? Right here.</h1>
-    <p class="lede">A free, practical path for everyone, not just techies. Answer three questions, get your own route through the course, and make something useful with AI in the next 15 minutes. No videos to binge, no coding, no ₹4,999 course.</p>
-    <div class="qs"><span>Is there a good Udemy course?</span><span>Which AI tool should I use?</span><span>Will AI take my job?</span><span>Is it safe?</span></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="container head-row">
+    <a class="brand" href="./" aria-label="AI for Real Life, home"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="var(--brand)"/><g fill="#fff"><circle cx="9" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><circle cx="23" cy="9" r="2"/><circle cx="9" cy="16" r="2"/><circle cx="23" cy="16" r="2"/><circle cx="9" cy="23" r="2"/><circle cx="16" cy="23" r="2"/></g><path d="M9 23 16 16 23 9" stroke="#F2A93B" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="16" cy="16" r="3" fill="#F2A93B"/></svg><span class="wm">AI <i>for</i> Real Life</span></a>
+    <nav class="main-nav" aria-label="Main"><a href="./#start" aria-current="page">Start here</a><a href="basics.html">How AI works</a><a href="course.html">12-week course</a><a href="guides.html">Guides</a><a href="safety.html">Safety</a><a href="about.html">About &amp; FAQ</a></nav>
+    <a class="btn btn-primary head-cta" href="#start">Find my path</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</button>
   </div>
 </header>
-
-<section class="band" id="start" style="padding-top:0">
-  <div class="wrap quiz">
-    <form class="card" id="quiz">
-      <fieldset class="step"><legend>1. Who are you?</legend><div class="opts" id="q1"></div></fieldset>
-      <fieldset class="step"><legend>2. What do you want most from AI?</legend><div class="opts" id="q2"></div></fieldset>
-      <fieldset class="step"><legend>3. How much time can you give each week?</legend><div class="opts" id="q3"></div></fieldset>
-      <p class="mute" style="font-size:14px;margin:0">Your answers stay in this browser. Nothing is sent anywhere.</p>
-    </form>
-    <div class="card res" id="result" aria-live="polite"></div>
+<nav class="menu-sheet" id="menu" aria-label="Menu" hidden><a class="row" href="./#start" aria-current="page">Start here</a><a class="row" href="basics.html">How AI works</a><a class="row" href="course.html">12-week course</a><a class="row" href="guides.html">Guides</a><a class="row" href="safety.html">Safety</a><a class="row" href="about.html">About &amp; FAQ</a><a class="btn btn-primary" href="#start">Find my path</a></nav>
+<main id="main">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Free · For everyone in India · No coding</span>
+      <h1>Learn AI the way you'll actually use it.</h1>
+      <p class="lede">Start with one useful result today. Then understand how AI works, and go on to create, automate and build, at your own pace.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="#start">Find my path · 2 min</a><a class="btn btn-secondary" href="#first-win">Try a 15-minute win</a></div>
+      <p class="trust">8 lessons · 12 weeks · 6 tracks · ₹0 · no sign-up</p>
+    </div>
+    <figure class="route-card" aria-label="Example of a personal learning route">
+      <figcaption><span class="small muted">Example route</span><b>Working professional · 3 hours a week</b></figcaption>
+      <ol class="rail">
+        <li class="done"><span>15-minute first win</span><small>Today</small></li>
+        <li class="done"><span>Week 1 · Set up your assistants</span><small>Week 1</small></li>
+        <li class="now"><span>Week 3 · Talk to AI well</span><small>You are here</small></li>
+        <li><span>Week 4 · AI in daily life</span><small>Week 3</small></li>
+        <li><span>How AI works · 8 lessons</span><small>Weeks 4–5</small></li>
+        <li><span>Week 7 · AI at work</span><small>Week 7</small></li>
+        <li><span>Week 9 · Your first agents</span><small>Week 9</small></li>
+      </ol>
+      <div class="rc-foot"><span>Progress</span><span class="bar"><i style="width:28%"></i></span><span class="num">2 of 7</span></div>
+    </figure>
   </div>
 </section>
 
-<section class="band sec" id="first-win">
-  <div class="wrap split">
-    <div>
-      <h2>Your first win, in 15 minutes</h2>
-      <p>Most people quit AI courses because they spend hours watching and never feel the "wow". So start the other way round: do one useful thing today. Open ChatGPT, Claude or Gemini on your phone (all free), start the timer and follow three steps.</p>
-      <div class="timer"><span class="clock" id="clock">15:00</span><button class="btn" id="tStart" type="button">Start timer</button><button class="btn ghost" id="tReset" type="button">Reset</button></div>
-      <p class="mute" id="tDone" style="min-height:1.6em"></p>
-    </div>
-    <ol class="steps">
-      <li><b>Explain something confusing (5 min).</b> Take a photo of an electricity bill, a school circular, an insurance letter or a medicine strip, attach it, and paste:
-        <div class="prompt"><pre>Explain this to me like I'm 12. What is it, what are the important numbers or dates, and do I need to do anything?</pre><button class="copy" type="button">Copy</button></div></li>
-      <li><b>Talk to it (5 min).</b> Tap the voice or microphone button and just speak: "I want to plan a weekend trip near my city for a family of four on a small budget. Ask me questions first." Answer out loud like a conversation.</li>
-      <li><b>Make it yours (5 min).</b> Pick a real problem from this week and paste:
-        <div class="prompt"><pre>Here's something I need to sort out this week: [describe it]. Ask me up to 5 questions, one at a time, then give me a simple step-by-step plan.</pre><button class="copy" type="button">Copy</button></div></li>
-      <li style="border-bottom:1px solid var(--line)"><b>Done?</b> You just used vision, voice and planning, three of the most powerful AI skills. Now take the quiz above for your full path, or start with <a href="basics.html">AI School</a>, the basics everyone needs first.</li>
+<section class="section tight people" aria-labelledby="who">
+  <div class="container">
+    <h2 id="who" class="visually-h">Who it's for</h2>
+    <ul class="persona-row">
+      <li><a href="#tracks" data-track="student"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10v5c2 2 8 2 10 0v-5"/></svg>Students</a></li>
+      <li><a href="#tracks" data-track="pro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2"/></svg>Working professionals</a></li>
+      <li><a href="#tracks" data-track="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg>Parents &amp; home-makers</a></li>
+      <li><a href="#tracks" data-track="biz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9l1-5h14l1 5"/><path d="M4 9h16v11H4z"/><path d="M9 20v-6h6v6"/></svg>Business owners</a></li>
+      <li><a href="#tracks" data-track="senior"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Retired</a></li>
+      <li><a href="#tracks" data-track="creator"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>Creators</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how">
+  <div class="container">
+    <div class="sec-head"><span class="eyebrow">How it works</span><h2 id="how">Use it first. Understand it next. Then build.</h2></div>
+    <ol class="steps3">
+      <li><span class="n num">1</span><h3>Use AI every day</h3><p>Set up a free assistant, learn to ask well, and handle real tasks: bills, plans, emails, homework. Weeks 1, 3 and 4.</p><a class="link-arrow" href="course.html#week-1">Start Week 1</a></li>
+      <li><span class="n num">2</span><h3>Understand how it works</h3><p>What AI, machine learning and deep learning really are, how ChatGPT answers you, and where it goes wrong. Eight short lessons.</p><a class="link-arrow" href="basics.html">How AI works</a></li>
+      <li><span class="n num">3</span><h3>Create and automate</h3><p>Images, slides, video and voice. Then helper agents that run on their own, and a website of your own on the internet. Weeks 5 to 12.</p><a class="link-arrow" href="course.html#week-5">See the course</a></li>
     </ol>
   </div>
 </section>
 
-<section class="band sec" id="tracks">
-  <div class="wrap">
-    <h2>One course, six tracks</h2>
-    <p style="max-width:70ch">Everyone starts at <a href="basics.html">AI School</a> (the basics: AI, machine learning, deep learning, data, neural networks), then the same first four weeks. After that, your track decides which weeks to focus on and what your examples and projects look like.</p>
-    <div class="tracks" id="trackCards"></div>
-  </div>
-</section>
-
-<section class="band sec" id="paid-courses">
-  <div class="wrap">
-    <h2>"Should I buy a Udemy course?" An honest answer</h2>
-    <p style="max-width:72ch"><b>To get started: no.</b> The basics are free, and the best free material comes from the companies building AI and from universities. It's also more current: AI tools change every few months, and a course recorded last year is already teaching old screens. Watching hours of video also isn't the same as using AI. You learn by doing small real tasks, which is what this site is built around.</p>
-    <div class="cols">
-      <div class="card"><h3>Free, and better for beginners</h3><ul>
-        <li><a href="https://www.elementsofai.com/">Elements of AI</a>: University of Helsinki's gentle intro</li>
-        <li><a href="https://anthropic.skilljar.com/">Anthropic Academy</a> and <a href="https://academy.openai.com/">OpenAI Academy</a>: straight from the makers</li>
-        <li><a href="https://www.3blue1brown.com/topics/neural-networks">3Blue1Brown</a>: beautiful visual explanations</li>
-        <li><a href="https://www.deeplearning.ai/">DeepLearning.AI</a>: "AI for Everyone" and short courses, free to audit</li>
-        <li>This site's <a href="basics.html">AI School</a> and <a href="course.html">12-week course</a>: hands-on, in order</li>
-      </ul></div>
-      <div class="card"><h3>When paying is worth it</h3><ul>
-        <li>You need a <b>recognised certificate</b> for a job or promotion (from Google, Microsoft, AWS, or a university)</li>
-        <li>You want <b>deep technical skills</b>: Python, machine learning engineering, data science</li>
-        <li>You need a <b>live cohort with a mentor</b> who reviews your work and keeps you on deadline</li>
-        <li>You've finished the free basics and know exactly what gap you're filling</li>
-      </ul></div>
-      <div class="card flag"><h3>Red flags in any course</h3><ul>
-        <li>Promises of income ("earn ₹1 lakh a month with ChatGPT")</li>
-        <li>"Secret prompts" or "1,000-prompt packs"</li>
-        <li>Countdown timers and a "sale" that never ends</li>
-        <li>No date of last update, or older than 6 months for a tools course</li>
-        <li>All videos, no projects or exercises</li>
-        <li>An instructor with no real work you can look at</li>
-      </ul></div>
+<section class="section alt" id="start" aria-labelledby="quiz-h">
+  <div class="container quiz-grid">
+    <div class="quiz-card card">
+      <span class="eyebrow">Find my path</span>
+      <h2 id="quiz-h">Three questions, your own route.</h2>
+      <form id="quiz" novalidate>
+        <div class="q-progress small muted" id="qProg">Question 1 of 3</div>
+        <fieldset class="q" data-step="0"><legend>Which describes you best?</legend><div class="chips" id="q1"></div></fieldset>
+        <fieldset class="q" data-step="1" hidden><legend>What do you want most from AI?</legend><div class="chips" id="q2"></div></fieldset>
+        <fieldset class="q" data-step="2" hidden><legend>How much time can you give each week?</legend><div class="chips" id="q3"></div></fieldset>
+        <div class="q-nav"><button type="button" class="btn btn-secondary" id="qBack" hidden>Back</button><button type="button" class="btn btn-secondary" id="qRestart" hidden>Start again</button></div>
+      </form>
+      <p class="small muted">Your answers stay on this device. Nothing is sent anywhere.</p>
     </div>
-    <p class="mute" style="margin-top:16px">Before you buy anything: check the last-updated date, watch the free preview, read the 3-star reviews (they're the most honest), and check the refund policy.</p>
-  </div>
-</section>
-
-<section class="band sec" id="safety">
-  <div class="wrap">
-    <h2>AI safety for your family</h2>
-    <p style="max-width:72ch">AI makes scams more convincing: a cloned voice, a fake video of a celebrity, a perfect-looking investment app. Ten minutes on this section can save someone you love a lot of money. Share it with parents and grandparents first.</p>
-    <div class="safe">
-      <div><b>The "emergency" call</b>A crying voice that sounds exactly like your child or relative, asking for money urgently. Voices can be cloned from a few seconds of audio. Agree on a family code word, hang up, and call back on the number you have saved.</div>
-      <div><b>Celebrity investment videos</b>A famous face promoting a trading app or a "government AI scheme" with guaranteed returns. These are usually deepfakes. Real investments never guarantee high monthly returns.</div>
-      <div><b>"AI trading bots"</b>Anyone promising fixed profits from an AI bot is selling a scam. Check that an adviser is registered with SEBI before trusting any advice.</div>
-      <div><b>What never to paste</b>OTPs, passwords, Aadhaar, PAN, card or bank details, other people's private information. Not in any chatbot, and not to any "AI agent" message.</div>
-      <div><b>Fake AI apps</b>Download only official apps, and check the publisher's name: OpenAI for ChatGPT, Anthropic for Claude, Google for Gemini. Look-alikes steal data or charge hidden fees.</div>
-      <div><b>Kids and AI</b>Talk about it openly. AI can be wrong, it isn't a friend, and you should never share photos or your address with it. Use it together for homework at first.</div>
-      <div><b>Check before you share</b>Shocking photo or video on WhatsApp? Look for odd hands, blurry text, strange lighting, and search for it on a news site before forwarding.</div>
-      <div><b>Privacy settings</b>In ChatGPT, Claude and Gemini settings, you can turn off training on your chats and review what's remembered about you. Take two minutes to check.</div>
+    <div class="result card" id="result">
+      <p class="sr-status" role="status" id="qStatus"></p>
+      <div id="resultBody"></div>
     </div>
-    <div class="alert"><strong>1930</strong><span>Lost money to a cyber fraud in India? Call the national cyber crime helpline 1930 immediately, or report at cybercrime.gov.in. The faster you report, the better the chance of freezing the money.</span></div>
   </div>
 </section>
 
-<section class="band sec" id="whats-new">
-  <div class="wrap">
-    <h2>What's new in AI this month</h2>
-    <p class="mute">Updated monthly, so you don't need to follow 50 channels. Only changes that matter to ordinary users.</p>
-    <ul class="news" id="news"></ul>
-  </div>
-</section>
-
-<section class="band sec dark" id="together">
-  <div class="wrap together">
+<section class="section" id="first-win" aria-labelledby="fw-h">
+  <div class="container split">
     <div>
-      <h2>Don't learn alone</h2>
-      <p>The number one reason people stop is that nobody notices when they do. So find one learning buddy: a friend, spouse, colleague or cousin. Do the same week together and share one thing you made every Sunday.</p>
-      <h3 style="margin-top:22px">This week's challenge</h3>
-      <p id="challenge"></p>
-      <div class="row"><a class="btn" id="invite" href="#">Invite a buddy on WhatsApp</a><button class="btn ghost" style="color:var(--ice);border-color:#3d6b7c" id="copyInvite" type="button">Copy invite</button><a class="btn ghost" style="color:var(--ice);border-color:#3d6b7c;display:none" id="group" href="#">Join the group</a></div>
+      <span class="eyebrow">Start today</span>
+      <h2 id="fw-h">Your first useful result, in 15 minutes.</h2>
+      <p class="lede">Most people give up on AI courses after hours of videos without one useful result. So start the other way round. Open ChatGPT, Claude or Gemini on your phone (all have free versions), start the timer, and follow three steps.</p>
+      <div class="timer"><span class="clock num" id="clock" aria-live="off">15:00</span><div class="btn-row"><button class="btn btn-primary" id="tStart" type="button">Start timer</button><button class="btn btn-secondary" id="tReset" type="button">Reset</button></div></div>
+      <p class="small muted" id="tDone" role="status"></p>
     </div>
-    <div class="card" style="color:var(--ink)">
-      <h3>Your finish-line card</h3>
-      <p>Finish the course and you'll get a shareable card showing your stations and the 9 agents you built. Post it, send it to family, add it to LinkedIn. Track your progress in the <a href="course.html">course</a>; the card appears at the end.</p>
-      <p class="mute" style="font-size:14px">Progress is saved in your own browser, so use the same phone or laptop each week.</p>
+    <ol class="win-steps">
+      <li><h3>Explain something confusing</h3><p class="small muted">5 minutes</p><p>Photograph an electricity bill, a school circular or an insurance letter. Attach it and paste:</p>
+        <div class="prompt"><pre>Explain this in simple words. What is it, what are the important numbers or dates, and do I need to do anything?</pre><button class="copy" type="button">Copy</button></div>
+        <p class="small muted">For a medicine label, ask the same, then confirm with your doctor or pharmacist.</p></li>
+      <li><h3>Talk to it</h3><p class="small muted">5 minutes</p><p>Tap the microphone or voice button and speak naturally: "I want to plan a weekend trip near my city for a family of four on a small budget. Ask me questions first." Answer out loud, like a conversation.</p></li>
+      <li><h3>Make it yours</h3><p class="small muted">5 minutes</p><p>Pick a real task from this week:</p>
+        <div class="prompt"><pre>Here's something I need to sort out this week: [describe it]. Ask me up to 5 questions, one at a time, then give me a simple step-by-step plan.</pre><button class="copy" type="button">Copy</button></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section alt" id="tracks" aria-labelledby="tr-h">
+  <div class="container">
+    <div class="sec-head"><span class="eyebrow">Tracks</span><h2 id="tr-h">One course, shaped around your life.</h2><p class="muted">Everyone covers the same essentials. Your track decides which weeks to focus on and what you'll build.</p></div>
+    <div class="tabs" role="tablist" aria-label="Tracks" id="trackTabs"></div>
+    <div class="track-panel card" id="trackPanel" role="tabpanel" tabindex="0"></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="pr-h">
+  <div class="container">
+    <div class="sec-head"><span class="eyebrow">What's inside</span><h2 id="pr-h">Two parts. Take them in any order.</h2></div>
+    <div class="grid-2 products">
+      <a class="product card" href="basics.html">
+        <div class="mini-nest" aria-hidden="true"><div>AI<div>Machine learning<div>Deep learning<div>Generative AI<div>LLMs</div></div></div></div></div></div>
+        <h3>How AI works</h3><p class="muted">Eight lessons on what AI, machine learning, deep learning and generative AI really are. Two hands-on experiments and a final quiz. About 4 hours.</p><span class="link-arrow">Open the lessons</span>
+      </a>
+      <a class="product card" href="course.html">
+        <ol class="mini-rail" aria-hidden="true"><li>Set up</li><li>How LLMs work</li><li>Ask well</li><li>Daily life</li><li>Images &amp; slides</li><li>Video &amp; voice</li><li>At work</li><li>Agents</li><li>Agents</li><li>Agents</li><li>Agents</li><li>Go live</li></ol>
+        <h3>The 12-week course</h3><p class="muted">Weekly missions with ready-to-copy prompts. Image, video and voice tools, nine helper agents with step-by-step recipes, and your own website. About 2 to 5 hours a week.</p><span class="link-arrow">See all 12 weeks</span>
+      </a>
     </div>
   </div>
 </section>
 
-<footer class="band dark" style="border-top:1px solid #1d4a5c">
-  <div class="wrap"><p><b>AI for Real Life</b> is free. Tamil version coming soon. Have a question you'd like answered here? Ask the person who shared this site with you.</p><p class="mute">AI tools change fast. Check prices and features on each tool's own website before you rely on them.</p></div>
+<section class="section alt" id="paid-courses" aria-labelledby="pc-h">
+  <div class="container">
+    <div class="pull">
+      <span class="eyebrow">Do I need a paid course?</span>
+      <h2 id="pc-h">To get started, no.</h2>
+      <p class="lede measure">The basics are free, and the best free material comes from the companies building AI and from universities. It's also more current: AI tools change every few months, and a course recorded last year may show tools that have already changed. And watching videos isn't the same as using AI.</p>
+    </div>
+    <div class="grid-3 plain-cols">
+      <div><h3>Better free options</h3><ul>
+        <li>This site: <a href="basics.html">How AI works</a> and the <a href="course.html">12-week course</a></li>
+        <li><a href="https://www.elementsofai.com/">Elements of AI</a>, University of Helsinki, with a free certificate</li>
+        <li><a href="https://anthropic.skilljar.com/">Anthropic Academy</a> and <a href="https://academy.openai.com/">OpenAI Academy</a></li>
+        <li><a href="https://www.deeplearning.ai/">DeepLearning.AI</a> "AI for Everyone", free to audit</li>
+        <li><a href="https://swayam.gov.in/">SWAYAM</a> and <a href="https://nptel.ac.in/">NPTEL</a> for India-recognised certificates</li>
+      </ul></div>
+      <div><h3>When paying is worth it</h3><ul>
+        <li>You need a <b>recognised certificate</b> for a job or promotion</li>
+        <li>You want <b>technical skills</b>: Python, machine learning, data science</li>
+        <li>You need a <b>live cohort and a mentor</b> who reviews your work</li>
+        <li>You've done the free basics and know exactly what's missing</li>
+      </ul></div>
+      <div><h3>Warning signs</h3><ul>
+        <li>Income promises: "earn ₹1 lakh a month with ChatGPT"</li>
+        <li>"Secret prompts" or "1,000-prompt packs"</li>
+        <li>Countdown timers and a sale that never ends</li>
+        <li>No last-updated date, or older than six months</li>
+        <li>All videos, no exercises or projects</li>
+      </ul></div>
+    </div>
+    <p class="small muted" style="margin-top:32px">Before buying any course: check when it was last updated, watch the free preview, read the 3-star reviews, and check the refund policy. <a href="about.html#certificates">Free certificates you can earn</a></p>
+  </div>
+</section>
+
+<section class="section band" aria-labelledby="sf-h">
+  <div class="container">
+    <div class="sec-head"><span class="eyebrow">Family AI safety</span><h2 id="sf-h">AI makes scams more convincing. Ten minutes here protects your family.</h2></div>
+    <ul class="safe-list">
+      <li><b>The "emergency" call</b>A cloned voice of a relative asking for money. Agree a family code word; hang up and call back.</li>
+      <li><b>Celebrity investment videos</b>Famous faces promoting apps with guaranteed returns are usually deepfakes.</li>
+      <li><b>"AI trading bots"</b>Fixed profits from a bot is a scam. Check SEBI registration of any adviser.</li>
+      <li><b>Never paste</b>OTPs, passwords, Aadhaar, PAN, card or bank details into any chatbot.</li>
+      <li><b>Fake AI apps</b>Install only official apps. Check the publisher: OpenAI, Anthropic, Google.</li>
+      <li><b>Children and AI</b>It can be wrong and it isn't a friend. Use it together at first.</li>
+      <li><b>Check before forwarding</b>Shocking photo or video? Look for odd details and check a news site.</li>
+      <li><b>Privacy settings</b>Turn off training on your chats and review what the assistant remembers.</li>
+    </ul>
+    <div class="helpline"><a class="hl-num num" href="tel:1930">1930</a><p>Lost money to cyber fraud in India? Call the national cyber crime helpline <b>1930</b> straight away, or report at <a href="https://cybercrime.gov.in/">cybercrime.gov.in</a>. The faster you report, the better the chance of stopping the money.</p></div>
+    <p style="margin-top:28px"><a class="btn btn-secondary" href="safety.html">Read the full safety guide</a></p>
+  </div>
+</section>
+
+<section class="section" id="whats-new" aria-labelledby="wn-h">
+  <div class="container split">
+    <div><span class="eyebrow">What's new</span><h2 id="wn-h">Only the changes that matter.</h2><p class="muted">A short note each month, so you don't need to follow fifty channels.</p></div>
+    <ol class="changelog" id="news"></ol>
+  </div>
+</section>
+
+<section class="section alt" id="together" aria-labelledby="tg-h">
+  <div class="container split">
+    <div>
+      <span class="eyebrow">Learn together</span>
+      <h2 id="tg-h">Find one learning buddy.</h2>
+      <p class="lede">Learning with someone makes it much easier to keep going. Pick a friend, spouse, colleague or cousin. Do the same week together, and show each other one thing you made every Sunday.</p>
+      <div class="btn-row"><a class="btn btn-primary" id="invite" href="https://wa.me/">Invite a buddy on WhatsApp</a><button class="btn btn-secondary" id="copyInvite" type="button">Copy invite</button><a class="btn btn-secondary" id="group" href="#" hidden>Join the group</a></div>
+    </div>
+    <div class="card challenge"><span class="eyebrow">This week's challenge</span><p id="challenge" class="lede" style="color:var(--ink)"></p><p class="small muted">Finish the course and you'll get a shareable progress card.</p></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-foot">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="./" aria-label="AI for Real Life, home"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#2A36B1"/><g fill="#fff"><circle cx="9" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><circle cx="23" cy="9" r="2"/><circle cx="9" cy="16" r="2"/><circle cx="23" cy="16" r="2"/><circle cx="9" cy="23" r="2"/><circle cx="16" cy="23" r="2"/></g><path d="M9 23 16 16 23 9" stroke="#F2A93B" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="16" cy="16" r="3" fill="#F2A93B"/></svg><span class="wm">AI <i>for</i> Real Life</span></a>
+        <p>A free, practical way for anyone in India to learn AI by using it. Made in Chennai. No ads, no sign-up, no tracking.</p>
+      </div>
+      <div><h4>Learn</h4><ul><li><a href="./#start">Find my path</a></li><li><a href="basics.html">How AI works</a></li><li><a href="course.html">12-week course</a></li><li><a href="glossary.html">Glossary</a></li></ul></div>
+      <div><h4>Guides</h4><ul><li><a href="safety.html">Family AI safety</a></li><li><a href="guides.html#shop">AI for your shop</a></li><li><a href="guides.html#indian-languages">AI in Indian languages</a></li><li><a href="guides.html#jobs">AI and your job</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="about.html">About this site</a></li><li><a href="about.html#faq">FAQ</a></li><li><a href="about.html#privacy">Privacy</a></li><li><a href="https://github.com/babubl/ai-for-real-life/issues">Contact &amp; feedback</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 AI for Real Life · Last reviewed November 2026</span><span>English · தமிழ் coming soon</span><span>AI tools change fast. Check each tool's own site for current prices and features.</span></div>
+  </div>
 </footer>
-
-<script>
-{
-  /* ===== Edit these to update the site ===== */
-  const COMMUNITY_LINK = ''; // paste a WhatsApp or Telegram group invite link to show the "Join the group" button
-  const CHALLENGE = 'Make a 4-panel comic of a funny family moment using any AI image tool (ChatGPT, Gemini or Canva). Share it with your buddy by Sunday.';
-  const NEWS = [
-    {m:'November 2026', items:[
-      'This site launched with a free 12-week course, six tracks and nine step-by-step agent recipes.',
-      'Video: Google Veo 3.1, OpenAI Sora 2 and Kling lead for quality, and most now create sound along with the picture.',
-      'Agents: no-code builders such as Zapier, n8n and OpenAI Agent Builder are the easiest way for non-coders to start.',
-      'Vibe coding: Lovable, Bolt and Replit let you build an app by chatting and publish it with one click.'
-    ]}
-  ];
-  /* ========================================= */
-
-  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
-  const WEEKS={1:'What is AI?',2:'Inside the LLM',3:'Talk to it well',4:'AI in daily life',5:'Images & slides',6:'Video & voice',7:'AI at work',8:'Meet the agents',9:'Agents: mornings, inbox, money',10:'Agents: bills, meals, news',11:'Agents: tutor, second brain, creator',12:'Vibe code & go live'};
-  const TRACKS={
-    student:{name:'Student',tag:'school & college',weeks:[1,2,3,4,5,8,11,12],
-      first:'Paste a chapter or your notes and ask: "Make a 10-question quiz from this, one question at a time, and explain any I get wrong."',
-      build:['Your own Study Buddy that gives hints instead of answers','A 10-minute presentation for a class project','A portfolio website with your projects, live on the internet'],
-      tip:'Use AI to understand, not to copy. Teachers can tell, and you lose the learning.'},
-    pro:{name:'Working professional',tag:'any job',weeks:[1,2,3,4,7,8,9,12],
-      first:'Paste messy meeting notes and ask: "Turn this into decisions, action items with owners, and a 5-line summary email."',
-      build:['An inbox agent that sorts mail and drafts replies','A morning briefing on your phone at 6:30 am','Your "find my hours back" plan for the weekly work grind'],
-      tip:'Check your company\'s AI policy before pasting work data into any tool.'},
-    home:{name:'Home & family',tag:'parents & home-makers',weeks:[1,2,3,4,5,8,10,11],
-      first:'Send a photo of your fridge and ask for three dinners in under 30 minutes, plus a shopping list.',
-      build:['Kitchen Captain: weekly meal plan and grocery list','Renewals Guardian: never miss a bill, policy or fee again','A patient homework tutor for the kids'],
-      tip:'Start with the Safety section and share it with your parents.'},
-    biz:{name:'Small business owner',tag:'shops, services, freelancers',weeks:[1,2,3,4,5,7,8,9,10,12],
-      first:'Ask: "Write WhatsApp Business catalogue descriptions for these 5 products: [list]. Short, friendly, with price, in English and Tamil."',
-      build:['Instagram posts and posters from your product photos','A money diary that logs every sale and expense','A simple website for your business with your own domain'],
-      tip:'Never let AI promise prices, delivery dates or discounts to customers without you checking.'},
-    senior:{name:'Retired & curious',tag:'60+ and proud of it',weeks:[1,2,3,4,5,8,11],
-      first:'Tap the microphone and ask out loud: "Plan a relaxed 2-day temple trip near my city with little walking." Then ask follow-up questions just by talking.',
-      build:['A "second brain" that answers questions from your policy papers and documents','A weekly news digest on topics you love','Photo stories and greetings for grandchildren'],
-      tip:'Read the Safety section first, and set up a family code word this week.'},
-    creator:{name:'Creator',tag:'YouTube, Instagram, writing',weeks:[1,2,3,5,6,8,11,12],
-      first:'Give one idea and ask: "Give me 10 hooks for a 30-second reel on this, then the best one as a full script with shots."',
-      build:['A content agent that drafts posts in your voice for your approval','A 30-second video with AI voiceover and captions','Thumbnails and a brand kit made with image AI'],
-      tip:'Label AI-generated content and never clone anyone\'s voice or face without permission.'}
-  };
-  const Q1=[['student','Student'],['pro','Working professional'],['home','Home & family'],['biz','Business owner'],['senior','Retired'],['creator','Creator']];
-  const Q2=[['work','Save time at work',[7,9]],['create','Create content',[5,6]],['home','Run my home better',[10]],['business','Grow my business',[7,9,12]],['career','Grow my career',[7,12]],['curious','Just understand it',[]]];
-  const Q3=[['1','About 1 hour',2.5,'Keep just the Saturday lab and 15 minutes on Monday. One station every 2–3 weeks is perfectly fine.'],['3','2–3 hours',1.5,'Keep Monday, Wednesday and Saturday. One station every week or two.'],['5','4–5 hours',1,'Keep all five weekly slots. One station a week.']];
-  const opts=(id,name,list)=>{document.getElementById(id).innerHTML=list.map((o,i)=>'<input type="radio" name="'+name+'" id="'+name+i+'" value="'+o[0]+'"><label for="'+name+i+'">'+esc(o[1])+'</label>').join('')};
-  opts('q1','who',Q1);opts('q2','want',Q2);opts('q3','time',Q3);
-  const form=document.getElementById('quiz'),res=document.getElementById('result');
-  const val=n=>{const c=form.querySelector('input[name='+n+']:checked');return c?c.value:null};
-  const show=()=>{
-    const w=val('who'),g=val('want'),t=val('time');
-    store.set('aiQuiz',JSON.stringify({w,g,t}));
-    if(!w||!g||!t){res.innerHTML='<h3>Your route appears here</h3><p class="empty">Pick one answer for each of the three questions. Your personal list of stations, your first win and your weekly pace will show up right here.</p><ol class="line"><li><span class="mute">AI School · the basics</span></li><li><span class="mute">Week 1 · What is AI?</span></li><li><span class="mute">…your stations</span></li></ol>';return}
-    const tr=TRACKS[w];const extra=(Q2.find(q=>q[0]===g)||[0,0,[]])[2];
-    const path=[...new Set([...tr.weeks,...extra])].sort((a,b)=>a-b);
-    const tm=Q3.find(q=>q[0]===t);const total=Math.round((path.length+2)*tm[2]);
-    store.set('aiPath',JSON.stringify(path));
-    res.innerHTML='<h3>Your route: '+esc(tr.name)+'</h3><p class="pace">AI School + '+path.length+' stations · about '+total+' weeks at your pace</p>'+
-      '<div class="win"><b>Today\'s first win:</b> '+esc(tr.first)+'</div>'+
-      '<ol class="line"><li><a href="basics.html">AI School · the basics (2 weeks)</a><small>Required first: what AI, ML and deep learning really are</small></li>'+path.map(n=>'<li><a href="course.html#week-'+n+'">Week '+n+' · '+esc(WEEKS[n])+'</a></li>').join('')+'</ol>'+
-      '<p style="font-size:15px"><b>Your pace:</b> '+esc(tm[3])+'</p><p style="font-size:15px"><b>Tip:</b> '+esc(tr.tip)+'</p>'+
-      '<div class="row"><a class="btn" href="basics.html">Start AI School</a><a class="btn ghost" href="#first-win">Do the 15-minute win</a></div>';
-  };
-  form.addEventListener('change',show);
-  try{const s=JSON.parse(store.get('aiQuiz')||'{}');['who','want','time'].forEach((n,i)=>{const v=[s.w,s.g,s.t][i];if(v){const el=form.querySelector('input[name='+n+'][value="'+v+'"]');if(el)el.checked=true}})}catch(e){}
-  show();
-
-  document.getElementById('trackCards').innerHTML=Object.values(TRACKS).map(t=>'<div class="card track"><h3>'+esc(t.name)+' <small>'+esc(t.tag)+'</small></h3><p class="first"><b>First win:</b> '+esc(t.first)+'</p><b style="font-size:15px">You\'ll build</b><ul>'+t.build.map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul><p class="wks">Focus weeks: '+t.weeks.map(n=>'<a href="course.html#week-'+n+'">'+n+'</a>').join(', ')+'</p></div>').join('');
-
-  document.getElementById('news').innerHTML=NEWS.map(n=>'<li><span class="m">'+esc(n.m)+'</span><ul>'+n.items.map(i=>'<li>'+esc(i)+'</li>').join('')+'</ul></li>').join('');
-  document.getElementById('challenge').textContent=CHALLENGE;
-  const inviteText='I\'m learning AI with a free hands-on course. Want to be my learning buddy? We do one station a week together: '+location.href.split('#')[0];
-  document.getElementById('invite').href='https://wa.me/?text='+encodeURIComponent(inviteText);
-  if(COMMUNITY_LINK){const g=document.getElementById('group');g.href=COMMUNITY_LINK;g.style.display='inline-flex'}
-
-  const copyText=async(btn,t)=>{try{await navigator.clipboard.writeText(t);btn.textContent='Copied'}catch(e){btn.textContent='Select & copy'}setTimeout(()=>{btn.textContent=btn.dataset.l||'Copy'},1600)};
-  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>copyText(b,b.parentElement.querySelector('pre').textContent)));
-  const ci=document.getElementById('copyInvite');ci.dataset.l='Copy invite';ci.addEventListener('click',()=>copyText(ci,inviteText));
-
-  let left=900,tick=null;const clock=document.getElementById('clock'),done=document.getElementById('tDone'),ts=document.getElementById('tStart');
-  const paint=()=>{clock.textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0')};
-  ts.addEventListener('click',()=>{if(tick){clearInterval(tick);tick=null;ts.textContent='Resume';return}ts.textContent='Pause';done.textContent='';tick=setInterval(()=>{left--;paint();if(left<=0){clearInterval(tick);tick=null;ts.textContent='Start timer';left=900;done.textContent='Time! How did it go? Write one line about what surprised you.'}},1000)});
-  document.getElementById('tReset').addEventListener('click',()=>{clearInterval(tick);tick=null;left=900;paint();ts.textContent='Start timer';done.textContent=''});
-}
-</script>
+<script src="assets/site.js?v=20261124b"></script>
+<script src="assets/home.js?v=20261124b"></script>
 </body>
 </html>

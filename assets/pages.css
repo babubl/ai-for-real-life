@@ -1,0 +1,43 @@
+/* inner reading pages: safety, guides, glossary, about */
+.doc{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr);gap:64px;align-items:start;padding-block:64px 96px}
+.toc{position:sticky;top:calc(var(--head) + 24px);font-size:15px}
+.toc h2{font:700 13px var(--font-text);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc li{margin:0}
+.toc a{display:block;padding:7px 0 7px 12px;border-left:2px solid var(--line);color:var(--ink-2);text-decoration:none}
+.toc a:hover{color:var(--ink);border-left-color:var(--ink-3)}
+.prose{max-width:720px}
+.prose>section{padding-top:8px;margin-bottom:72px}
+.prose>section:last-child{margin-bottom:0}
+.prose h2{margin-bottom:16px}
+.prose h3{margin:32px 0 6px}
+.prose li{margin:.5em 0}
+.prose .tbl{margin:24px 0}
+.helpbox{display:flex;align-items:center;gap:28px;padding:28px;border-radius:var(--r-card);background:var(--danger-tint);border-left:4px solid var(--danger);margin:0 0 56px}
+.helpbox .hl{font:500 64px/1 var(--font-display);color:var(--danger);text-decoration:none;font-variant-numeric:tabular-nums}
+.helpbox p{margin:0}
+.steps-n{list-style:none;padding:0;margin:20px 0;counter-reset:s}
+.steps-n li{position:relative;padding:14px 0 14px 52px;border-top:1px solid var(--line);margin:0;counter-increment:s}
+.steps-n li:last-child{border-bottom:1px solid var(--line)}
+.steps-n li::before{content:counter(s);position:absolute;left:0;top:10px;font:500 32px/1 var(--font-display);color:var(--brand)}
+.say{font:400 20px/1.5 var(--font-display);font-style:italic;border-left:3px solid var(--marigold);padding:4px 0 4px 18px;margin:20px 0;color:var(--ink)}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;font:700 18px/1.4 var(--font-text);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:14px;font:400 26px/1 var(--font-text);color:var(--ink-3)}
+.faq details[open] summary::after{content:"–"}
+.faq details>div{padding:0 0 20px}
+.gl-search{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 32px}
+.gl-search input{font:17px var(--font-text);color:var(--ink);background:var(--surface);border:1px solid var(--control);border-radius:var(--r-btn);min-height:50px;padding:0 16px;width:100%;max-width:28em}
+.gl{margin:0}
+.gl>div{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr);gap:24px;padding:18px 0;border-top:1px solid var(--line)}
+.gl dt{font:600 20px/1.3 var(--font-display);margin:0}
+.gl dd{margin:0;color:var(--ink-2)}
+.gl dd a{white-space:nowrap}
+.gl-none{color:var(--ink-3)}
+.share-row{margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.nf{padding:120px 0;text-align:left}
+.nf h1{max-width:14ch}
+@media (max-width:900px){.doc{grid-template-columns:minmax(0,1fr);gap:24px;padding-block:40px 72px}.toc{position:static;border-bottom:1px solid var(--line);padding-bottom:16px}.toc ol{display:flex;flex-wrap:wrap;gap:4px 16px}.toc a{border-left:0;padding:6px 0}}
+@media (max-width:600px){.helpbox{flex-direction:column;align-items:flex-start;gap:10px;padding:20px}.gl>div{grid-template-columns:minmax(0,1fr);gap:4px}}

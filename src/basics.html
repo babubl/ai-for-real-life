@@ -1,0 +1,295 @@
+<!--META {"title": "How AI Works: AI, Machine Learning and Deep Learning Explained | AI for Real Life", "og": "How AI works, in plain words", "desc": "The foundations of AI in plain words: AI vs machine learning vs deep learning vs generative AI, data, training, neural networks, transformers, limits and ethics. Eight short lessons with hands-on experiments and a quiz.", "path": "basics.html", "nav": "basics", "css": ["assets/basics.css"], "js": ["assets/basics.js"], "cta": ["#l1", "Start lesson 1"], "subbar": "<div class=\"subbar\"><div class=\"container\"><label for=\"lessonJump\">Jump to</label><select id=\"lessonJump\"><option value=\"l1\" data-l=\"1\" data-t=\"Lesson 1 · What is AI\">Lesson 1 · What is AI</option><option value=\"l2\" data-l=\"2\" data-t=\"Lesson 2 · Data\">Lesson 2 · Data</option><option value=\"l3\" data-l=\"3\" data-t=\"Lesson 3 · Machine learning\">Lesson 3 · Machine learning</option><option value=\"l4\" data-l=\"4\" data-t=\"Lesson 4 · Training and testing\">Lesson 4 · Training and testing</option><option value=\"l5\" data-l=\"5\" data-t=\"Lesson 5 · Neural networks\">Lesson 5 · Neural networks</option><option value=\"l6\" data-l=\"6\" data-t=\"Lesson 6 · Branches of AI\">Lesson 6 · Branches of AI</option><option value=\"l7\" data-l=\"7\" data-t=\"Lesson 7 · Generative AI and LLMs\">Lesson 7 · Generative AI and LLMs</option><option value=\"l8\" data-l=\"8\" data-t=\"Lesson 8 · Limits and ethics\">Lesson 8 · Limits and ethics</option><option value=\"exam\">Final quiz</option></select><span class=\"prog\" id=\"lessonProg\" aria-live=\"polite\">0 of 8 lessons done</span></div><div class=\"progline\" aria-hidden=\"true\"><i id=\"lessonLine\"></i></div></div>\n", "jsonld": {"@context": "https://schema.org", "@type": "Course", "name": "How AI works: the foundations", "description": "Eight short lessons on AI, machine learning, deep learning, generative AI, data, training, neural networks and ethics, with experiments and a quiz.", "inLanguage": "en", "isAccessibleForFree": true, "provider": {"@type": "Organization", "name": "AI for Real Life", "url": "https://babubl.github.io/ai-for-real-life/"}, "offers": {"@type": "Offer", "price": 0, "priceCurrency": "INR", "category": "Free"}, "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT4H"}}} -->
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Foundations</span>
+    <h1>How AI works, in plain words.</h1>
+    <p class="lede">What AI, machine learning, deep learning and generative AI really are, how machines learn, and where it goes wrong. Eight short lessons, two experiments you can touch, a question after each lesson and a final quiz. No maths needed.</p>
+    <div class="meta"><div><b>8 lessons</b>about 30 min each</div><div><b>2 experiments</b>learn by doing</div><div><b>1 quiz</b>10 questions</div><div><b>Any order</b>before or alongside the course</div></div>
+  </div>
+</section>
+<section class="section tight">
+  <div class="container">
+<div class="nest" role="figure" aria-label="AI contains machine learning, which contains deep learning, which contains generative AI, which contains large language models">
+      <div class="box b1"><div class="lab"><b>Artificial Intelligence</b><span>Any machine doing something we'd call smart</span></div>
+        <div class="box b2"><div class="lab"><b>Machine Learning</b><span>Learns patterns from examples, not hand-written rules</span></div>
+          <div class="box b3"><div class="lab"><b>Deep Learning</b><span>Machine learning with many-layered neural networks</span></div>
+            <div class="box b4"><div class="lab"><b>Generative AI</b><span>Deep learning that creates new text, images, audio, video</span></div>
+              <div class="box b5"><div class="lab"><b>Large Language Models</b><span style="color:var(--ink)">Generative AI for language: ChatGPT, Claude, Gemini</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="nestnote">Each box sits inside the one before it. Every LLM is generative AI, every generative AI is deep learning, and so on. But not all AI is machine learning: a chess program built only from rules is AI without learning.</p>
+    </div>
+    <div class="plan-note">
+      <h2>Fitting it into your week</h2>
+      <p class="muted measure">Take it in two weeks using your usual slots: lessons 1 to 4 in the first week (the mango experiment on Saturday), lessons 5 to 8 and the quiz in the second. Many people do it after Weeks 1, 3 and 4 of the course, once they've used AI a little. Either way works.</p>
+    </div>
+  </div>
+</section>
+<div class="container lessons">
+<!-- L1 -->
+<article class="lesson" id="l1">
+  <div class="lh"><div class="lnum">1</div><div><h2>What is AI, and where did it come from?</h2><p>Intelligence, rules versus learning, and 75 years in one list.</p></div></div>
+  <div class="two">
+    <div>
+      <p><b>Artificial Intelligence</b> is the science of making machines do things that need intelligence when people do them: recognising a face, understanding speech, translating, planning a route, making a decision, writing a letter.</p>
+      <h3>Two ways to make a machine smart</h3>
+      <ul class="t">
+        <li><b>Rules (old AI, "expert systems")</b>: humans write every rule. "If temperature above 100°F and cough, suggest flu." Works for narrow, predictable jobs. Breaks the moment reality doesn't match a rule.</li>
+        <li><b>Learning (modern AI)</b>: show the machine thousands of examples and let it work out the rules itself. This is machine learning, and it's behind almost everything called AI today.</li>
+      </ul>
+      <div class="callout"><b>Example:</b> Writing rules to recognise a cat is nearly impossible (ears? some cats fold them; fur? some are hairless). Show a machine a million cat photos and it learns "cat" better than any rulebook.</div>
+      <h3>Narrow AI vs general AI</h3>
+      <p><b>Narrow AI</b> is good at one job: Google Maps can't write poems, and a chess engine can't drive. Even ChatGPT, broad as it seems, is a language tool with clear limits. <b>AGI (Artificial General Intelligence)</b> means AI that can learn any intellectual task a human can. It doesn't exist yet; experts strongly disagree on when, or whether, it will.</p>
+      <details class="check"><summary>Test: Is a calculator AI? Is Google Maps traffic prediction AI?</summary><p>A calculator follows fixed rules written by people and never learns, so it isn't AI in the modern sense. Maps traffic prediction learned patterns from millions of past journeys, so it is machine learning, a kind of AI.</p></details>
+      <label class="got"><input type="checkbox" data-l="1"> I've got lesson 1</label>
+    </div>
+    <div class="card stick">
+      <h3>A very short history</h3>
+      <ol class="timeline">
+        <li><span class="y">1950</span><span>Alan Turing asks "Can machines think?" and proposes a test.</span></li>
+        <li><span class="y">1956</span><span>The term "artificial intelligence" is coined at a summer workshop at Dartmouth College.</span></li>
+        <li><span class="y">1966</span><span>ELIZA, the first chatbot, imitates a therapist with simple rules.</span></li>
+        <li><span class="y">1970s–80s</span><span>"AI winters": big promises fail, funding dries up, twice.</span></li>
+        <li><span class="y">1997</span><span>IBM's Deep Blue beats world chess champion Garry Kasparov.</span></li>
+        <li><span class="y">2012</span><span>A deep neural network (AlexNet) crushes an image-recognition contest. The deep learning boom begins, powered by GPUs.</span></li>
+        <li><span class="y">2016</span><span>DeepMind's AlphaGo beats Go champion Lee Sedol.</span></li>
+        <li><span class="y">2017</span><span>Google researchers publish the "Transformer", the design behind every modern LLM.</span></li>
+        <li><span class="y">2020</span><span>AlphaFold predicts protein shapes, a 50-year-old biology problem.</span></li>
+        <li><span class="y">2022</span><span>ChatGPT launches and becomes one of the fastest-growing apps ever.</span></li>
+        <li><span class="y">2024</span><span>Nobel Prizes go to AI pioneers in physics (Hinton, Hopfield) and chemistry (Hassabis, Jumper, Baker).</span></li>
+        <li><span class="y">2025–26</span><span>AI agents and "vibe coding": AI that takes actions and builds software from plain language.</span></li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<!-- L2 -->
+<article class="lesson" id="l2">
+  <div class="lh"><div class="lnum">2</div><div><h2>Data: the food AI eats</h2><p>No data, no learning. Bad data, bad learning.</p></div></div>
+  <div class="two">
+    <div>
+      <p>If machine learning is cooking, <b>data</b> is the ingredients. A model can only be as good as the examples it learned from.</p>
+      <h3>Kinds of data</h3>
+      <ul class="t">
+        <li><b>Structured</b>: neat rows and columns, like a bank statement or an Excel sheet of sales.</li>
+        <li><b>Unstructured</b>: everything messy: photos, voice notes, emails, videos, WhatsApp chats. Most of the world's data is like this, and deep learning is what finally made it usable.</li>
+      </ul>
+      <h3>Words you'll hear</h3>
+      <ul class="t">
+        <li><b>Dataset</b>: the collection of examples, e.g. 50,000 photos of mangoes.</li>
+        <li><b>Features</b>: the details the model looks at, e.g. colour, size, softness.</li>
+        <li><b>Label</b>: the right answer attached to an example, e.g. "ripe" or "not ripe". Humans often add labels by hand; that's a real job.</li>
+        <li><b>Training data / test data</b>: you learn from one part and check yourself on another part you've never seen (lesson 4).</li>
+      </ul>
+      <h3>Garbage in, garbage out</h3>
+      <p>Train a face-unlock system mostly on light-skinned faces and it works worse on darker skin. Train a hiring tool on 10 years of past hiring where mostly men were picked and it learns to prefer men. This is <b>bias</b>: the AI isn't evil, it faithfully copies patterns in its data, including unfair ones.</p>
+      <details class="check"><summary>Test: You want AI to spot spoiled tomatoes at a market. What data do you need?</summary><p>Lots of photos of tomatoes, each labelled "fresh" or "spoiled", from different lighting, angles, varieties and phones, so it doesn't just learn one stall's lighting. Keep some photos aside for testing.</p></details>
+      <label class="got"><input type="checkbox" data-l="2"> I've got lesson 2</label>
+    </div>
+    <div class="card stick">
+      <h3>One example, three parts</h3>
+      <div class="tbl"><table><thead><tr><th>Colour</th><th>Softness</th><th>Size (g)</th><th>Label</th></tr></thead><tbody>
+        <tr><td>Yellow</td><td>Soft</td><td>310</td><td>Ripe</td></tr>
+        <tr><td>Green</td><td>Hard</td><td>280</td><td>Not ripe</td></tr>
+        <tr><td>Yellow-green</td><td>Medium</td><td>295</td><td>Ripe</td></tr>
+        <tr><td>Green</td><td>Medium</td><td>300</td><td>Not ripe</td></tr>
+      </tbody></table></div>
+      <p class="small">Each row is one <b>example</b>. Colour, softness and size are <b>features</b>. The last column is the <b>label</b>. Give a model 10,000 rows like this and it learns to judge a new mango it has never seen. You'll train exactly this in lesson 4's experiment.</p>
+    </div>
+  </div>
+</article>
+
+<!-- L3 -->
+<article class="lesson" id="l3">
+  <div class="lh"><div class="lnum">3</div><div><h2>Machine learning: three ways to learn</h2><p>With a teacher, without a teacher, and by trial and error.</p></div></div>
+  <div class="two">
+    <div>
+      <h3>1. Supervised learning: learning with answers</h3>
+      <p>Like a student with a guidebook full of solved problems. Every example comes with the right answer (label). Two flavours:</p>
+      <ul class="t">
+        <li><b>Classification</b>: pick a category. Spam or not spam? Fraud or genuine? Which digit is this?</li>
+        <li><b>Regression</b>: predict a number. What will this flat rent for? How many units will sell in December?</li>
+      </ul>
+      <h3>2. Unsupervised learning: finding patterns alone</h3>
+      <p>No answers given. The machine groups things that look similar. A supermarket finds that its customers fall into 5 natural groups ("weekend bulk buyers", "late-night snackers") without anyone defining them. This is called <b>clustering</b>.</p>
+      <h3>3. Reinforcement learning: trial, error and rewards</h3>
+      <p>Like training a puppy with biscuits. The machine tries actions, gets rewards or penalties, and slowly learns what works. AlphaGo learned Go by playing millions of games against itself. ChatGPT and Claude were also polished this way, with humans rating answers (called <b>RLHF</b>, reinforcement learning from human feedback).</p>
+      <details class="check"><summary>Test: Which type is each? (a) predicting house prices from past sales (b) grouping songs by mood with no labels (c) a robot learning to walk</summary><p>(a) supervised, regression; (b) unsupervised, clustering; (c) reinforcement learning.</p></details>
+      <label class="got"><input type="checkbox" data-l="3"> I've got lesson 3</label>
+    </div>
+    <div class="card stick">
+      <h3>Spot them in your day</h3>
+      <div class="tbl"><table><thead><tr><th>You see</th><th>Type</th></tr></thead><tbody>
+        <tr><td>Gmail moving mail to spam</td><td>Supervised (classification)</td></tr>
+        <tr><td>Bank SMS "Was this you?"</td><td>Supervised + anomaly detection</td></tr>
+        <tr><td>Swiggy or Zomato delivery time</td><td>Supervised (regression)</td></tr>
+        <tr><td>"Customers also bought"</td><td>Unsupervised (finding similar)</td></tr>
+        <tr><td>Google Photos grouping faces</td><td>Unsupervised (clustering)</td></tr>
+        <tr><td>Self-driving car practice in simulators</td><td>Reinforcement</td></tr>
+        <tr><td>Chatbot answers rated by humans</td><td>Reinforcement (RLHF)</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+</article>
+
+<!-- L4 -->
+<article class="lesson" id="l4">
+  <div class="lh"><div class="lnum">4</div><div><h2>Training and testing: how a machine actually learns</h2><p>Guess, measure the mistake, adjust a little, repeat. Watch it happen.</p></div></div>
+  <div class="two">
+    <div>
+      <p>Every learning machine runs the same loop, thousands or billions of times:</p>
+      <ol>
+        <li><b>Guess</b> using its current settings (weights).</li>
+        <li><b>Check</b> the guess against the right answer. The size of the error is called the <b>loss</b>.</li>
+        <li><b>Adjust</b> the weights a tiny bit in the direction that reduces the error.</li>
+        <li><b>Repeat</b> for every example, many rounds (called <b>epochs</b>).</li>
+      </ol>
+      <p>Try it in the experiment. Each dot is a mango: across is colour (green to yellow), up is softness. Pink dots are ripe. The line is the model's current "ripe vs not ripe" boundary. It starts out bad. Press <b>Train</b> and watch it learn.</p>
+      <h3>Memorising vs understanding</h3>
+      <p>A student who memorises last year's answers scores 100% on last year's paper and fails the new one. A model can do the same: perfect on its training data, useless on new data. That's <b>overfitting</b>. The cure: hide some data during training (the <b>test set</b>) and judge the model only on that.</p>
+      <div class="callout"><b>Real-world numbers:</b> a model that's 99% accurate sounds great, but if only 1 in 100 transactions is fraud, a model that always says "not fraud" is also 99% accurate and catches nothing. Always ask: accurate at what, tested on what?</div>
+      <details class="check"><summary>Test: Your model scores 98% on training data and 61% on test data. What happened?</summary><p>Overfitting. It memorised the training examples instead of learning the general pattern. Fixes: more varied data, a simpler model, or stopping training earlier.</p></details>
+      <label class="got"><input type="checkbox" data-l="4"> I've got lesson 4</label>
+    </div>
+    <div class="card stick">
+      <h3>Experiment: teach a machine to spot ripe mangoes</h3>
+      <div class="fig" id="mfig"><svg id="msvg" role="img" aria-label="Scatter of mangoes by colour and softness with the model's boundary line"></svg></div>
+      <div class="legend"><span><i class="lg-ripe"></i>Ripe (yellow mangoes)</span><span><i class="lg-raw"></i>Not ripe</span><span><i class="lg-wrong"></i>Model is wrong here</span><span><i class="lg-line"></i>Model's boundary</span></div>
+      <div class="ctrl"><span class="readout" id="macc" aria-live="polite">0%</span><span class="small muted" id="mep">round 0</span></div>
+      <div class="ctrl"><button class="btn btn-primary" id="mstep" type="button">Train 1 round</button><button class="btn btn-secondary" id="m10" type="button">Train 10 rounds</button><button class="btn btn-secondary" id="mreset" type="button">Start over</button></div>
+      <p class="small muted">This is a real, if tiny, learning algorithm (a perceptron, the ancestor of neural networks) running in your browser on 60 sample mangoes.</p>
+    </div>
+  </div>
+</article>
+
+<!-- L5 -->
+<article class="lesson" id="l5">
+  <div class="lh"><div class="lnum">5</div><div><h2>Neural networks and deep learning</h2><p>A neuron is just a weighted vote. Stack millions of them and you get something remarkable.</p></div></div>
+  <div class="two">
+    <div>
+      <h3>One artificial neuron</h3>
+      <p>A neuron takes some inputs, multiplies each by a <b>weight</b> (how much it matters), adds them up with a starting nudge called the <b>bias</b>, and turns the total into an output. That's all. Try the experiment: should I go for an evening walk?</p>
+      <p>Change the inputs to see the decision change. Then change the <b>weights</b>: that's exactly what training does, automatically, across billions of weights.</p>
+      <h3>From one neuron to deep learning</h3>
+      <p>A <b>neural network</b> connects neurons in layers: each layer's outputs become the next layer's inputs. <b>Deep learning</b> just means many layers. The magic is that each layer learns to spot more complex things on its own, without anyone telling it what to look for:</p>
+      <div class="layers"><div><b>Layer 1</b>edges and colours</div><div><b>Layer 2</b>curves, corners, textures</div><div><b>Layer 3</b>eyes, wheels, petals</div><div><b>Final layers</b>"this is a cat"</div></div>
+      <p><b>How does it learn?</b> Through <b>backpropagation</b>: after a wrong answer, the error is passed backwards through the layers, and every weight gets a tiny share of the blame and a tiny adjustment. Repeat over millions of examples.</p>
+      <p><b>Why now?</b> The ideas are from the 1980s. They took off after 2012 because of three things together: huge data (the internet), cheap powerful GPUs, and better training tricks.</p>
+      <details class="check"><summary>Test: What makes deep learning "deep"?</summary><p>The number of layers in the neural network. More layers let it learn more complex patterns, building from simple features to complex ones.</p></details>
+      <label class="got"><input type="checkbox" data-l="5"> I've got lesson 5</label>
+    </div>
+    <div class="card stick">
+      <h3>Experiment: a single neuron decides</h3>
+      <p class="small muted" style="margin-top:0">Inputs</p>
+      <label class="tog"><input type="checkbox" id="nRain"> It's raining</label>
+      <div class="sl"><label for="nTime">Free time (min)</label><input type="range" id="nTime" min="0" max="90" step="5" value="40"><output id="oTime">40</output></div>
+      <div class="sl"><label for="nEnergy">Energy (1–10)</label><input type="range" id="nEnergy" min="1" max="10" step="1" value="6"><output id="oEnergy">6</output></div>
+      <p class="small muted" style="margin-bottom:0">Weights (what training would adjust)</p>
+      <div class="sl"><label for="wRain">Rain weight</label><input type="range" id="wRain" min="-5" max="2" step="0.5" value="-3"><output id="owRain">-3</output></div>
+      <div class="sl"><label for="wTime">Time weight</label><input type="range" id="wTime" min="0" max="0.15" step="0.01" value="0.05"><output id="owTime">0.05</output></div>
+      <div class="sl"><label for="wEnergy">Energy weight</label><input type="range" id="wEnergy" min="0" max="1" step="0.05" value="0.3"><output id="owEnergy">0.3</output></div>
+      <p class="sum" id="nSum"></p>
+      <div class="meter"><i id="nBar"></i></div>
+      <div class="ctrl" style="margin-top:4px"><span class="readout" id="nOut">–</span><span id="nDec" class="verdict" aria-live="polite"></span></div>
+    </div>
+  </div>
+</article>
+
+<!-- L6 -->
+<article class="lesson" id="l6">
+  <div class="lh"><div class="lnum">6</div><div><h2>The branches of AI</h2><p>Same ideas, different senses: language, sight, sound, recommendations, movement.</p></div></div>
+  <div class="tbl"><table><thead><tr><th>Branch</th><th>What it does</th><th>You've met it in</th></tr></thead><tbody>
+    <tr><td><b>Natural Language Processing (NLP)</b></td><td>Understands and produces human language</td><td>Google Translate, ChatGPT, autocorrect, spam filters, Alexa understanding you</td></tr>
+    <tr><td><b>Computer Vision</b></td><td>Understands images and video</td><td>Face unlock, Google Lens, number-plate cameras, crop-disease apps, X-ray screening</td></tr>
+    <tr><td><b>Speech</b></td><td>Turns speech to text and text to speech</td><td>Voice typing, YouTube captions, "Hey Google", AI voiceovers</td></tr>
+    <tr><td><b>Recommendation systems</b></td><td>Predicts what you'll like next</td><td>YouTube, Netflix, Instagram reels, Amazon, Spotify</td></tr>
+    <tr><td><b>Robotics</b></td><td>Perceives the world and moves in it</td><td>Warehouse robots, robot vacuums, self-driving cars, factory arms</td></tr>
+    <tr><td><b>Forecasting &amp; anomaly detection</b></td><td>Predicts numbers, spots the unusual</td><td>Weather apps, demand planning, fraud alerts, machine breakdown warnings</td></tr>
+    <tr><td><b>Generative AI</b></td><td>Creates new content</td><td>ChatGPT, Claude, Gemini, Midjourney, Veo, ElevenLabs</td></tr>
+  </tbody></table></div>
+  <div class="two">
+    <div><div class="callout"><b>Notice:</b> these used to be separate fields with separate models. Today's big "multimodal" models (like GPT, Claude and Gemini) handle text, images and audio in one model. That's why your chatbot can now read a photo of your bill.</div></div>
+    <div><details class="check"><summary>Test: Google Lens reads a Tamil signboard and translates it. Which branches are working?</summary><p>Computer vision (finding and reading the text in the image) plus NLP (translating it). Often speech too, if it reads the result aloud.</p></details>
+    <label class="got"><input type="checkbox" data-l="6"> I've got lesson 6</label></div>
+  </div>
+</article>
+
+<!-- L7 -->
+<article class="lesson" id="l7">
+  <div class="lh"><div class="lnum">7</div><div><h2>From deep learning to generative AI and LLMs</h2><p>How we got from "is this a cat?" to "write my leave letter".</p></div></div>
+  <div class="two">
+    <div>
+      <p>Older AI was mostly <b>discriminative</b>: it sorted and judged things (spam or not, cat or dog). <b>Generative AI</b> creates new things that look like its training data: new sentences, new pictures, new voices.</p>
+      <h3>The Transformer and "attention"</h3>
+      <p>In 2017, a design called the <b>Transformer</b> changed everything. Its key idea is <b>attention</b>: when reading a word, the model looks at every other word and decides which ones matter for its meaning. In "The bank of the river was muddy", attention links "bank" to "river", so it knows this isn't a bank with an ATM.</p>
+      <h3>How an LLM is made: three stages</h3>
+      <ol>
+        <li><b>Pre-training</b>: read a huge slice of the internet, books and code, and practise one game over and over: predict the next word. This takes thousands of GPUs for months and produces a model that knows language and a lot about the world.</li>
+        <li><b>Fine-tuning</b>: train further on examples of good conversations, so it behaves like a helpful assistant rather than an autocomplete.</li>
+        <li><b>Human feedback (RLHF)</b>: people rate answers; the model is nudged towards helpful, honest, safe ones.</li>
+      </ol>
+      <p>Image and video generators mostly use a different trick called <b>diffusion</b>: start from random noise and remove it step by step until an image matching your words appears.</p>
+      <p>The full inside story of how ChatGPT and Claude answer you, with tokens, weights and parameters, is <a href="course.html#week-2">Week 2 of the course</a>.</p>
+      <details class="check"><summary>Test: What is the one game an LLM practises during pre-training?</summary><p>Predicting the next word (more precisely, the next token) in a piece of text. Everything else it can do grows out of getting very good at that.</p></details>
+      <label class="got"><input type="checkbox" data-l="7"> I've got lesson 7</label>
+    </div>
+    <div class="card stick">
+      <h3>Discriminative vs generative</h3>
+      <div class="tbl"><table><thead><tr><th>Question</th><th>Discriminative AI</th><th>Generative AI</th></tr></thead><tbody>
+        <tr><td>Email</td><td>Is this spam?</td><td>Write a reply</td></tr>
+        <tr><td>Photo</td><td>Is this a dog?</td><td>Draw a dog in a saree shop</td></tr>
+        <tr><td>Voice</td><td>Whose voice is this?</td><td>Read this in a warm voice</td></tr>
+        <tr><td>Loan</td><td>Is this risky?</td><td>Explain the decision in plain Tamil</td></tr>
+      </tbody></table></div>
+      <p class="small">Most real products use both: a bank app might use discriminative AI to flag fraud and generative AI to explain it to you.</p>
+    </div>
+  </div>
+</article>
+
+<!-- L8 -->
+<article class="lesson" id="l8">
+  <div class="lh"><div class="lnum">8</div><div><h2>Limits, risks and ethics</h2><p>Knowing what AI can't do is what makes you good at using it.</p></div></div>
+  <div class="two">
+    <div>
+      <ul class="t">
+        <li><b>It doesn't "know", it predicts.</b> It can sound sure and be wrong (hallucination). Verify facts that matter.</li>
+        <li><b>Bias</b>: it repeats unfairness in its data. Matters most in hiring, loans, policing, healthcare.</li>
+        <li><b>Privacy</b>: what you type may be stored. Never share secrets, IDs or other people's private details.</li>
+        <li><b>Deepfakes and scams</b>: fake voices and videos are now cheap. See the <a href="safety.html">family safety guide</a>.</li>
+        <li><b>Copyright</b>: who owns AI-generated work, and whether training on artists' work is fair, is being fought out in courts right now.</li>
+        <li><b>Jobs</b>: AI changes tasks more than it removes whole jobs, so far. People who use AI well tend to replace people who don't. Economists genuinely disagree on the long-term effect.</li>
+        <li><b>Energy</b>: training and running big models uses a lot of electricity and water for data centres.</li>
+        <li><b>Black box</b>: deep learning models often can't explain why they decided something, which is a problem when a decision affects a person's life.</li>
+      </ul>
+      <details class="check"><summary>Test: Name two situations where you should never rely on AI alone.</summary><p>Any of: medical decisions, legal matters, big money moves, anything about another person's reputation, safety-critical instructions. Use AI to understand and prepare, then confirm with a qualified human or official source.</p></details>
+      <label class="got"><input type="checkbox" data-l="8"> I've got lesson 8</label>
+    </div>
+    <div class="card stick">
+      <h3>The good-user checklist</h3>
+      <ul class="t">
+        <li>Would I be OK if this chat were read by a stranger?</li>
+        <li>Did I check the one fact everything else depends on?</li>
+        <li>Is a real person affected by this output? Did a human review it?</li>
+        <li>Am I passing off AI work as fully my own where that matters?</li>
+        <li>Did I label AI images, voices or video when sharing?</li>
+      </ul>
+      <p class="small">Keep this list. It matters more than any tool.</p>
+    </div>
+  </div>
+</article>
+
+<!-- EXAM -->
+<section class="lesson" id="exam">
+  <div class="lh"><div class="lnum">10</div><div><h2>Final quiz: 10 questions</h2><p>Score 7 or more and you've got the foundations. Tap an answer to see why straight away.</p></div></div>
+  <div class="card">
+    <div class="score"><span class="readout" id="score" aria-live="polite">0 / 10</span><span id="verdict" class="verdict" aria-live="polite"></span><button class="btn btn-secondary" id="retake" type="button">Retake</button></div>
+    <div id="qs"></div>
+  </div>
+  <div class="btn-row" style="margin-top:28px"><a class="btn btn-primary" href="course.html#week-2">Next: how ChatGPT answers (Week 2)</a><a class="btn btn-secondary" href="./#start">Find my path</a></div>
+</section>
+
+
+</div>
