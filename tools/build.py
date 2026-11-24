@@ -9,9 +9,9 @@ Change SITE below when the custom domain goes live.
 """
 import json, re, pathlib
 
-SITE = "https://aiforreallife.in/"
+SITE = "https://babubl.github.io/ai-for-real-life/"
 UPDATED = "November 2026"
-V = "20261124f"
+V = "20261124e"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 MARK = ('<svg viewBox="0 0 32 32" width="{s}" height="{s}" aria-hidden="true" focusable="false">'

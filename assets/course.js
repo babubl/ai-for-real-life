@@ -82,7 +82,7 @@
     done.forEach(function(d,i){var x=x0+step*i;cx.beginPath();cx.arc(x,y,20,0,Math.PI*2);cx.fillStyle=d===5?'#8C97FF':'#16181D';cx.fill();cx.lineWidth=6;cx.strokeStyle=d===5?'#8C97FF':(d>0?'#F2A93B':'#3A404B');cx.stroke();
       cx.fillStyle='#B9BCC4';cx.font='600 26px '+S;cx.textAlign='center';cx.fillText(String(i+1),x,y+64);cx.textAlign='left'});
     [[n+' / 60','missions done'],[full+' / 12','weeks complete'],[agents+' / 9','agents built']].forEach(function(s,i){var x=80+i*320;cx.fillStyle='#F2EFE9';cx.font='500 72px '+D;cx.fillText(s[0],x,760);cx.fillStyle='#B9BCC4';cx.font='400 30px '+S;cx.fillText(s[1],x,808)});
-    cx.fillStyle='#B9BCC4';cx.font='400 30px '+S;cx.fillText('Free course · aiforreallife.in',80,980);
+    cx.fillStyle='#B9BCC4';cx.font='400 30px '+S;cx.fillText('Free course · babubl.github.io/ai-for-real-life',80,980);
     cv.setAttribute('aria-label','Progress card: '+n+' of 60 missions, '+full+' of 12 weeks complete, '+agents+' of 9 agents built.');
   }
   nm.addEventListener('input',function(){store.set('aiName',nm.value);card()});

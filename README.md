@@ -1,6 +1,6 @@
 # AI for Real Life
 
-A free, practical "where do I start with AI?" site for everyone in India. Live at https://aiforreallife.in/
+A free, practical "where do I start with AI?" site for everyone in India. Live at https://babubl.github.io/ai-for-real-life/
 
 ## Pages
 | Page | What it is |
@@ -28,7 +28,6 @@ Plain HTML, CSS and JavaScript. No framework.
 4. Update `lastmod` dates in `sitemap.xml`.
 
 ## Custom domain
-The site runs on **aiforreallife.in** (see the `CNAME` file). To change it:
 1. Add a file `CNAME` containing just the domain.
 2. DNS at your registrar: four `A` records for the root (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) and a `CNAME` for `www` pointing to `babubl.github.io`.
 3. Settings → Pages: enter the domain, then tick "Enforce HTTPS".

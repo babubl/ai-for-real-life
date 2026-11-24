@@ -1,6 +1,6 @@
 /* AI for Real Life: shared behaviour (header, menu, copy buttons, storage helpers) */
 (function(){
-  var SITE='https://aiforreallife.in/';
+  var SITE='https://babubl.github.io/ai-for-real-life/';
   var store={
     get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},
     set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}},
