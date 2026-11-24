@@ -22,8 +22,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=Mukta:wght@400;600;700&family=IBM+Plex+Mono&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261124e">
-<link rel="stylesheet" href="assets/basics.css?v=20261124e">
+<link rel="stylesheet" href="assets/site.css?v=20261124g">
+<link rel="stylesheet" href="assets/basics.css?v=20261124g">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "How AI works: the foundations", "description": "Twelve lessons on AI, search, data, probability, machine learning, evaluation, neural networks, generative AI, AI projects and responsible AI, with experiments and a quiz.", "inLanguage": "en", "isAccessibleForFree": true, "provider": {"@type": "Organization", "name": "AI for Real Life", "url": "https://babubl.github.io/ai-for-real-life/"}, "offers": {"@type": "Offer", "price": 0, "priceCurrency": "INR", "category": "Free"}, "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT6H"}}</script>
 </head>
 <body>
@@ -31,12 +31,12 @@
 <header class="site-head">
   <div class="container head-row">
     <a class="brand" href="./" aria-label="AI for Real Life, home"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="var(--brand)"/><g fill="#fff"><circle cx="9" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><circle cx="23" cy="9" r="2"/><circle cx="9" cy="16" r="2"/><circle cx="23" cy="16" r="2"/><circle cx="9" cy="23" r="2"/><circle cx="16" cy="23" r="2"/></g><path d="M9 23 16 16 23 9" stroke="#F2A93B" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="16" cy="16" r="3" fill="#F2A93B"/></svg><span class="wm">AI <i>for</i> Real Life</span></a>
-    <nav class="main-nav" aria-label="Main"><a href="./#start">Start here</a><a href="basics.html" aria-current="page">How AI works</a><a href="course.html">12-week course</a><a href="guides.html">Guides</a><a href="safety.html">Safety</a><a href="about.html">About &amp; FAQ</a></nav>
+    <nav class="main-nav" aria-label="Main"><a href="./#start">Start here</a><a href="basics.html" aria-current="page">How AI works</a><a href="course.html">Course</a><a href="build.html">Build a website</a><a href="guides.html">Guides</a><a href="safety.html">Safety</a><a href="about.html">About</a></nav>
     <a class="btn btn-primary head-cta" href="#l1">Start lesson 1</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</button>
   </div>
 </header>
-<nav class="menu-sheet" id="menu" aria-label="Menu" hidden><a class="row" href="./#start">Start here</a><a class="row" href="basics.html" aria-current="page">How AI works</a><a class="row" href="course.html">12-week course</a><a class="row" href="guides.html">Guides</a><a class="row" href="safety.html">Safety</a><a class="row" href="about.html">About &amp; FAQ</a><a class="btn btn-primary" href="#l1">Start lesson 1</a></nav>
+<nav class="menu-sheet" id="menu" aria-label="Menu" hidden><a class="row" href="./#start">Start here</a><a class="row" href="basics.html" aria-current="page">How AI works</a><a class="row" href="course.html">Course</a><a class="row" href="build.html">Build a website</a><a class="row" href="guides.html">Guides</a><a class="row" href="safety.html">Safety</a><a class="row" href="about.html">About</a><a class="btn btn-primary" href="#l1">Start lesson 1</a></nav>
 <div class="subbar"><div class="container"><label for="lessonJump">Jump to</label><select id="lessonJump"><option value="l1" data-l="1" data-t="Lesson 1 · What is AI">Lesson 1 · What is AI</option><option value="l2" data-l="2" data-t="Lesson 2 · Search and planning">Lesson 2 · Search and planning</option><option value="l3" data-l="3" data-t="Lesson 3 · Data">Lesson 3 · Data</option><option value="l4" data-l="4" data-t="Lesson 4 · Probability">Lesson 4 · Probability</option><option value="l5" data-l="5" data-t="Lesson 5 · Machine learning">Lesson 5 · Machine learning</option><option value="l6" data-l="6" data-t="Lesson 6 · Training and testing">Lesson 6 · Training and testing</option><option value="l7" data-l="7" data-t="Lesson 7 · Measuring a model">Lesson 7 · Measuring a model</option><option value="l8" data-l="8" data-t="Lesson 8 · Neural networks">Lesson 8 · Neural networks</option><option value="l9" data-l="9" data-t="Lesson 9 · Branches of AI">Lesson 9 · Branches of AI</option><option value="l10" data-l="10" data-t="Lesson 10 · Generative AI and LLMs">Lesson 10 · Generative AI and LLMs</option><option value="l11" data-l="11" data-t="Lesson 11 · How AI projects are built">Lesson 11 · How AI projects are built</option><option value="l12" data-l="12" data-t="Lesson 12 · Responsible AI">Lesson 12 · Responsible AI</option><option value="exam">Final quiz</option></select><span class="prog" id="lessonProg" aria-live="polite">0 of 12 lessons done</span></div><div class="progline" aria-hidden="true"><i id="lessonLine"></i></div></div>
 <main id="main">
 <section class="page-hero">
@@ -501,14 +501,14 @@
         <a class="brand" href="./" aria-label="AI for Real Life, home"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#2A36B1"/><g fill="#fff"><circle cx="9" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><circle cx="23" cy="9" r="2"/><circle cx="9" cy="16" r="2"/><circle cx="23" cy="16" r="2"/><circle cx="9" cy="23" r="2"/><circle cx="16" cy="23" r="2"/></g><path d="M9 23 16 16 23 9" stroke="#F2A93B" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="16" cy="16" r="3" fill="#F2A93B"/></svg><span class="wm">AI <i>for</i> Real Life</span></a>
         <p>A free, practical way for anyone in India to learn AI by using it. Made in Chennai by Babu Balasubramanian. No ads, no sign-up, no tracking.</p>
       </div>
-      <div><h4>Learn</h4><ul><li><a href="./#start">Find my path</a></li><li><a href="basics.html">How AI works</a></li><li><a href="course.html">12-week course</a></li><li><a href="syllabus.html">Syllabus</a></li><li><a href="glossary.html">Glossary</a></li></ul></div>
-      <div><h4>Guides</h4><ul><li><a href="safety.html">Family AI safety</a></li><li><a href="guides.html#shop">AI for your shop</a></li><li><a href="guides.html#indian-languages">AI in Indian languages</a></li><li><a href="guides.html#jobs">AI and your job</a></li></ul></div>
+      <div><h4>Learn</h4><ul><li><a href="./#start">Find my path</a></li><li><a href="basics.html">How AI works</a></li><li><a href="course.html">12-week course</a></li><li><a href="build.html">Build a website</a></li><li><a href="syllabus.html">Syllabus</a></li><li><a href="glossary.html">Glossary</a></li></ul></div>
+      <div><h4>Guides</h4><ul><li><a href="safety.html">Family AI safety</a></li><li><a href="guides.html#shop">AI for your shop</a></li><li><a href="guides.html#indian-languages">AI in Indian languages</a></li><li><a href="guides.html#jobs">AI and your job</a></li><li><a href="guides.html#next-steps">Create AI: technical path</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="about.html">About this site</a></li><li><a href="about.html#faq">FAQ</a></li><li><a href="about.html#privacy">Privacy</a></li><li><a href="https://github.com/babubl/ai-for-real-life/issues">Contact &amp; feedback</a></li></ul></div>
     </div>
     <div class="foot-bottom"><span>© 2026 Babu Balasubramanian · Last reviewed November 2026</span><span>English · தமிழ் coming soon</span><span>AI tools change fast. Check each tool's own site for current prices and features.</span></div>
   </div>
 </footer>
-<script src="assets/site.js?v=20261124e"></script>
-<script src="assets/basics.js?v=20261124e"></script>
+<script src="assets/site.js?v=20261124g"></script>
+<script src="assets/basics.js?v=20261124g"></script>
 </body>
 </html>

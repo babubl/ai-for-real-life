@@ -141,3 +141,16 @@
   .win-steps>li{padding-left:48px}
   .win-steps>li::before{font-size:32px}
 }
+.levels3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.levels3 li{margin:0;padding:28px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);display:flex;flex-direction:column}
+.levels3 li:nth-child(2){border-color:var(--brand);box-shadow:var(--shadow)}
+.levels3 .n{font-size:56px;line-height:1;color:var(--brand)}
+.levels3 .who{font:700 12px var(--font-text);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:12px 0 4px}
+.levels3 h3{font:500 30px/1.15 var(--font-display);margin-bottom:8px}
+.levels3 p{margin:0 0 12px}
+.levels3 .where{font-size:14px;color:var(--ink-3);margin-top:auto}
+.levels-note{max-width:70ch;margin-top:28px;color:var(--ink-2)}
+.capstone{display:block;margin-top:24px;padding:32px;text-decoration:none;color:var(--ink);border-color:var(--brand);background:var(--brand-tint)}
+.capstone:hover{color:var(--ink)}
+.capstone h3{font:500 30px/1.15 var(--font-display);margin:0 0 8px}
+@media (max-width:900px){.levels3{grid-template-columns:minmax(0,1fr)}}

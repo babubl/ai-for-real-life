@@ -1,0 +1,15 @@
+.routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:16px 0}
+.routes .card{padding:20px}
+.routes h3{margin:10px 0 6px;font-size:19px}
+.routes p{margin:0;font-size:15.5px;color:var(--ink-2)}
+.checklist-card{margin:0 0 56px;padding:22px}
+.checklist-card h3{font-size:18px;margin-bottom:8px}
+.checklist-card ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+.checklist-card li{margin:0;border-top:1px solid var(--line)}
+.checklist-card label{display:flex;gap:10px;align-items:center;min-height:46px;cursor:pointer;font-size:15.5px}
+.checklist-card input{width:20px;height:20px;accent-color:var(--brand);flex:none}
+.checklist-card li:has(input:checked) label{color:var(--ink-3);text-decoration:line-through}
+.launch{list-style:none;padding:0}
+.launch li{position:relative;padding:8px 0 8px 32px;border-top:1px solid var(--line);margin:0}
+.launch li::before{content:"";position:absolute;left:2px;top:12px;width:16px;height:16px;border:2px solid var(--control);border-radius:4px}
+@media (max-width:600px){.routes,.checklist-card ul{grid-template-columns:minmax(0,1fr)}}

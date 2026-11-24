@@ -1,0 +1,161 @@
+<!--META {"title":"Build Your Website with AI: The Capstone | AI for Real Life","og":"Build and publish your own website with AI","desc":"The capstone of AI for Real Life: vibe code your own website with AI and publish it free on the internet. Step-by-step, with ready prompts, a no-laptop route, troubleshooting and a launch checklist. No coding needed.","path":"build.html","nav":"build","css":["assets/pages.css","assets/build.css"],"js":["assets/pages.js","assets/build.js"],"cta":["#step-1","Start building"],
+"jsonld":{"@context":"https://schema.org","@type":"HowTo","name":"Build and publish your own website with AI","totalTime":"PT4H","step":[{"@type":"HowToStep","name":"Choose your project"},{"@type":"HowToStep","name":"Write a one-page brief"},{"@type":"HowToStep","name":"Generate the first version"},{"@type":"HowToStep","name":"Preview it"},{"@type":"HowToStep","name":"Improve it in rounds"},{"@type":"HowToStep","name":"Check before launch"},{"@type":"HowToStep","name":"Publish free on GitHub Pages"},{"@type":"HowToStep","name":"Add your own domain"},{"@type":"HowToStep","name":"Get found and keep it updated"}]}} -->
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Level 2 · Build with AI · Capstone</span>
+    <h1>Build your own website with AI, and put it on the internet.</h1>
+    <p class="lede">This is where the journey ends: you describe a website in plain words, AI writes it, you improve it, and you publish it free so anyone can open it. No coding needed. This very site was built the same way.</p>
+    <div class="meta"><div><b>9 steps</b>start to live site</div><div><b>3–5 hrs</b>for a first site</div><div><b>₹0</b>to publish</div><div><b>Phone or laptop</b>both routes covered</div></div>
+  </div>
+</section>
+
+<div class="container doc">
+  <nav class="toc" aria-label="Steps"><h2>Steps</h2><ol>
+    <li><a href="#step-1">1. Choose your project</a></li><li><a href="#step-2">2. Write a brief</a></li><li><a href="#step-3">3. Generate it</a></li><li><a href="#step-4">4. Preview it</a></li><li><a href="#step-5">5. Improve it</a></li><li><a href="#step-6">6. Check before launch</a></li><li><a href="#step-7">7. Publish it free</a></li><li><a href="#step-8">8. Your own domain</a></li><li><a href="#step-9">9. Get found, keep it fresh</a></li><li><a href="#problems">Common problems</a></li><li><a href="#next">Level up</a></li>
+  </ol></nav>
+  <div class="prose">
+
+    <div class="callout info"><b>Before you start:</b> you'll need a free AI assistant (Claude, ChatGPT or Gemini) and a free <a href="https://github.com/signup">GitHub account</a> for publishing. If you've done <a href="course.html#week-12">Week 12</a>, this page takes it further, from a quick test to a site you're proud of.</div>
+
+    <div class="checklist-card card" aria-label="Your progress through the build steps">
+      <h3>Your build checklist</h3>
+      <ul id="buildChecks">
+        <li><label><input type="checkbox" id="b1">Chose a project</label></li>
+        <li><label><input type="checkbox" id="b2">Wrote the brief</label></li>
+        <li><label><input type="checkbox" id="b3">Generated version 1</label></li>
+        <li><label><input type="checkbox" id="b4">Previewed on phone and laptop</label></li>
+        <li><label><input type="checkbox" id="b5">Improved it in 3 or more rounds</label></li>
+        <li><label><input type="checkbox" id="b6">Passed the launch checklist</label></li>
+        <li><label><input type="checkbox" id="b7">Published on GitHub Pages</label></li>
+        <li><label><input type="checkbox" id="b8">Shared the link with 5 people</label></li>
+      </ul>
+      <p class="small muted" id="buildProg" aria-live="polite">0 of 8 done</p>
+    </div>
+
+    <section id="step-1"><h2>1. Choose your project</h2>
+      <p>Pick something small, real and useful to you. A finished small site beats an unfinished big one. Three good first projects:</p>
+      <div class="tbl"><table class="stack"><thead><tr><th>Project</th><th>Good for</th><th>What it has</th></tr></thead><tbody>
+        <tr><td><b>Personal homepage</b></td><td>Students, professionals, creators</td><td>About you, skills or work, projects, contact links</td></tr>
+        <tr><td><b>Small business page</b></td><td>Shops, tutors, home bakers, freelancers</td><td>What you sell, prices or menu, timings, location map link, WhatsApp button</td></tr>
+        <tr><td><b>A useful mini tool</b></td><td>Everyone</td><td>A trip expense splitter, EMI calculator, study timer, recipe box or chore chart</td></tr>
+      </tbody></table></div>
+      <p class="small muted">Tools that only work inside the page (calculators, timers, checklists) are perfect for a first build: no accounts, no servers, no cost.</p>
+    </section>
+
+    <section id="step-2"><h2>2. Write a one-page brief</h2>
+      <p>The biggest difference between a messy result and a great one is the brief. Let AI interview you and write it:</p>
+      <div class="prompt"><span class="lbl">The brief builder</span><pre>I want to build a simple website with AI's help. I'm not a programmer. Interview me one question at a time (maximum 8 questions) about: who it's for, the one thing a visitor should do, the sections I need, the content I already have, the look and feel I like (colours, examples of sites I admire), and whether it needs to work in Tamil or another language. Then write a one-page website brief I can give to an AI website builder.</pre><button class="copy" type="button">Copy</button></div>
+      <p>Save the brief in a note. You'll reuse it every time you start a new chat.</p>
+    </section>
+
+    <section id="step-3"><h2>3. Generate the first version</h2>
+      <p>Choose a route. Both are free to start.</p>
+      <div class="routes">
+        <div class="card"><span class="tag free">Recommended</span><h3>Route A: one file with your assistant</h3><p>Ask Claude, ChatGPT or Gemini for a single HTML file. You own it completely, it publishes free forever on GitHub Pages, and it works with this whole guide.</p></div>
+        <div class="card"><span class="tag mixed">Easiest</span><h3>Route B: an AI app builder</h3><p>Lovable, Bolt or Replit build and host the site for you, with one-click publishing. Great for apps with logins or databases. Free plans have limits.</p></div>
+      </div>
+      <div class="prompt"><span class="lbl">Route A: the build prompt</span><pre>Build this website as ONE self-contained HTML file (HTML, CSS and JavaScript together, no external files except Google Fonts).
+
+[paste your brief here]
+
+Requirements:
+- Works well on mobile first, then desktop
+- Clean, professional design with a clear colour palette and good fonts
+- Accessible: readable contrast, alt text for images, buttons big enough to tap
+- Include a page title and a meta description for Google
+- No placeholder text: write real content from my brief, and mark anything I must replace with [REPLACE]
+- No secret keys, passwords or tracking code
+
+Give me the complete file in one go, then a short list of what I should check.</pre><button class="copy" type="button">Copy</button></div>
+      <p>Using Route B? Paste the same brief into Lovable, Bolt or Replit, and skip to step 5. Their Publish button replaces step 7.</p>
+    </section>
+
+    <section id="step-4"><h2>4. Preview it</h2>
+      <ul>
+        <li><b>On a laptop:</b> copy the code into a plain text editor (Notepad on Windows, TextEdit in plain-text mode on Mac), save it as <code>index.html</code> and double-click it. It opens in your browser.</li>
+        <li><b>On a phone:</b> many assistants show a live preview of the page (look for a preview or "artifact"/"canvas" view). You can also skip ahead to step 7: GitHub lets you create the file directly in the mobile browser, and your live link becomes the preview.</li>
+        <li>Check it on <b>both</b> a phone and a big screen. Most problems show up on one but not the other.</li>
+      </ul>
+    </section>
+
+    <section id="step-5"><h2>5. Improve it in rounds</h2>
+      <p>Vibe coding is a loop: look, describe what's wrong, get a new version. Change <b>one or two things per round</b>, and always ask for the complete updated file so nothing gets lost.</p>
+      <div class="prompt"><span class="lbl">Fix something</span><pre>On my phone, [describe exactly what you see, or attach a screenshot]. It should [what you expected]. Fix only this, keep everything else the same, and give me the complete updated file.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">Make it look professional</span><pre>Act as a senior web designer. Review this page and list the 7 changes that would make it look most professional: spacing, typography, colour, alignment, consistency, mobile layout. Then apply them and give me the complete file.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="prompt"><span class="lbl">Add a feature</span><pre>Add [feature, e.g. a "Chat on WhatsApp" button linking to wa.me/91XXXXXXXXXX with a prefilled message / a dark mode / a simple FAQ section]. Keep the current design. Give me the complete file.</pre><button class="copy" type="button">Copy</button></div>
+      <div class="callout"><b>Save every version.</b> Name them <code>index-v1.html</code>, <code>index-v2.html</code> and so on. If a change breaks things, go back one version instead of fighting the AI.</div>
+    </section>
+
+    <section id="step-6"><h2>6. Check before launch</h2>
+      <p>Ask the AI to review its own work, then go through the checklist yourself.</p>
+      <div class="prompt"><span class="lbl">Launch review</span><pre>Review this website before I publish it. Check: broken links, text that is too small or low-contrast, layout problems on small phones, missing alt text, spelling, missing page title or description, anything that could be a privacy or security risk, and any [REPLACE] placeholders I forgot. List problems by importance, then give me the fixed complete file.</pre><button class="copy" type="button">Copy</button></div>
+      <ul class="launch">
+        <li>Every [REPLACE] is replaced with real content</li>
+        <li>Phone numbers, email and links are correct (tap each one)</li>
+        <li>It looks right on a small phone and on a laptop</li>
+        <li>No personal details you wouldn't put on a public notice board</li>
+        <li>No passwords, API keys or private data anywhere in the code</li>
+        <li>Prices, timings and claims are accurate and current</li>
+        <li>Images are yours, or free to use, and every AI-made image of a person is clearly not a real customer</li>
+      </ul>
+    </section>
+
+    <section id="step-7"><h2>7. Publish it free on GitHub Pages</h2>
+      <p>GitHub Pages hosts simple websites free, with HTTPS, as long as you like. This works in a phone browser too.</p>
+      <ol class="steps-n">
+        <li><b>Sign up</b> at <a href="https://github.com/signup">github.com/signup</a> and verify your email. Your username becomes part of your address: <code>username.github.io</code>.</li>
+        <li><b>Create a repository:</b> tap <b>+</b> → <b>New repository</b>. Name it (for example <code>my-site</code>), choose <b>Public</b>, and tick <b>Add a README</b>. Create it.</li>
+        <li><b>Add your page:</b> tap <b>Add file</b> → <b>Create new file</b>, name it exactly <code>index.html</code>, paste your code, then <b>Commit changes</b>. (On a laptop you can use <b>Upload files</b> instead.)</li>
+        <li><b>Switch on Pages:</b> open <b>Settings</b> → <b>Pages</b>. Under "Build and deployment", choose <b>Deploy from a branch</b>, branch <b>main</b>, folder <b>/ (root)</b>, and <b>Save</b>.</li>
+        <li><b>Wait 1–2 minutes</b> and refresh. A box shows "Your site is live at <code>https://username.github.io/my-site/</code>". Open it on your phone. You're on the internet.</li>
+      </ol>
+      <p><b>To update later:</b> open <code>index.html</code> in your repository, tap the pencil icon, paste the new version, and commit. The live site updates in a minute or two.</p>
+      <p class="small muted">Prefer drag-and-drop? <a href="https://app.netlify.com/drop">Netlify Drop</a> publishes a folder in seconds; sign in and claim the site so it stays online.</p>
+    </section>
+
+    <section id="step-8"><h2>8. Add your own domain (optional)</h2>
+      <p>A name like <code>yourname.in</code> looks more professional. A <code>.in</code> domain usually costs a few hundred rupees in the first year; check the renewal price too.</p>
+      <ol class="steps-n">
+        <li>Buy the domain from any registrar (GoDaddy, Hostinger, Namecheap, Cloudflare). Skip the add-ons. Complete any KYC or email verification they ask for; the domain won't work until then.</li>
+        <li>In the registrar's <b>DNS</b> settings, delete any "Parked" A record and domain forwarding, then add four <b>A</b> records for <code>@</code>: <code>185.199.108.153</code>, <code>185.199.109.153</code>, <code>185.199.110.153</code>, <code>185.199.111.153</code>, and a <b>CNAME</b> for <code>www</code> pointing to <code>username.github.io</code>.</li>
+        <li>In GitHub: <b>Settings</b> → <b>Pages</b> → <b>Custom domain</b>, type your domain and save. When the DNS check turns green (minutes to a day), tick <b>Enforce HTTPS</b>.</li>
+      </ol>
+      <p class="small muted">Add the custom domain in GitHub only after the domain is active and the DNS records are in, or your github.io link will redirect to an address that doesn't work yet.</p>
+    </section>
+
+    <section id="step-9"><h2>9. Get found, and keep it fresh</h2>
+      <ul>
+        <li><b>Share it:</b> WhatsApp status, Instagram bio, LinkedIn, your email signature, a QR code on your shop counter.</li>
+        <li><b>Google:</b> add your site to <a href="https://search.google.com/search-console">Google Search Console</a> so Google finds it. Businesses should also claim a free <a href="https://www.google.com/business/">Google Business Profile</a>.</li>
+        <li><b>Keep it current:</b> a page with last year's prices hurts trust. Put a monthly reminder in your calendar to check it.</li>
+        <li><b>Ask for feedback:</b> watch one person use it without helping them. Fix what confuses them.</li>
+      </ul>
+    </section>
+
+    <section id="problems"><h2>Common problems and fixes</h2>
+      <div class="tbl"><table class="stack"><thead><tr><th>Problem</th><th>What to do</th></tr></thead><tbody>
+        <tr><td>The AI's answer stops halfway through the code</td><td>Say "continue exactly where you stopped". If it keeps happening, ask it to make the page shorter, or split it into steps.</td></tr>
+        <tr><td>A fix breaks something else</td><td>Go back to your last good version. Ask for one change at a time and the complete file each time.</td></tr>
+        <tr><td>Looks fine on laptop, broken on phone</td><td>Send a phone screenshot and say "fix the mobile layout without changing the desktop design".</td></tr>
+        <tr><td>GitHub shows a 404 page</td><td>Check the file is named exactly <code>index.html</code> (lowercase), Pages is set to the <b>main</b> branch and <b>/ (root)</b>, and wait two minutes.</td></tr>
+        <tr><td>Changes don't show on the live site</td><td>Wait two minutes, then refresh hard (or open in a private window). Browsers cache old versions.</td></tr>
+        <tr><td>A contact form doesn't send anything</td><td>A plain web page can't send email by itself. Use a WhatsApp or email link, or a form service such as Google Forms.</td></tr>
+        <tr><td>The AI keeps "improving" things you liked</td><td>Say clearly "do not change anything else", and paste only the part to change.</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section id="next"><h2>Level up</h2>
+      <p>Once your first site is live, here's how to grow from vibe coding to real building skills:</p>
+      <ol class="steps-n">
+        <li><b>Read your own code.</b> Ask AI: "Explain this file section by section, like I'm new to HTML." You'll learn faster from your own site than from any tutorial.</li>
+        <li><b>Learn the basics properly:</b> HTML, CSS and JavaScript on <a href="https://developer.mozilla.org/en-US/docs/Learn">MDN Learn</a>, the free standard reference.</li>
+        <li><b>Multi-page sites and Git:</b> add more pages, and learn how GitHub keeps every version of your work.</li>
+        <li><b>Apps with data:</b> when you need logins or a database, try Lovable, Replit or Supabase, and learn why secret keys must never go in front-end code.</li>
+        <li><b>AI coding agents:</b> tools such as Claude Code and Cursor work inside your project folder and can handle bigger builds. They reward people who understand the basics.</li>
+      </ol>
+      <p>Want to go beyond building with AI to <b>creating AI</b> itself? See <a href="guides.html#next-steps">Level 3: Create AI</a>.</p>
+      <div class="share-row"><p><b>Built something?</b> Share your link with your learning buddy, and tick the last box on your checklist.</p></div>
+    </section>
+  </div>
+</div>

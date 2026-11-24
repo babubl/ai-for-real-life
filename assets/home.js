@@ -20,7 +20,7 @@
     student:{name:'Students',who:'School and college',weeks:[5,7,8,11,12],
       first:'Paste a chapter or your notes and ask: "Make a 10-question quiz from this, one question at a time, and explain any I get wrong."',
       build:['A study tutor that gives hints instead of answers','A class presentation in under an hour','A portfolio website, live on the internet'],
-      tip:'Use AI to understand, not to copy. Then see the next steps for technical learners.',guide:['guides.html#next-steps','Next steps for technical learners']},
+      tip:'Use AI to understand, not to copy. Then see the next steps for technical learners.',guide:['guides.html#next-steps','Level 3: Create AI']},
     pro:{name:'Working professionals',who:'Any job, any industry',weeks:[7,8,9,12],
       first:'Paste rough meeting notes and ask: "Turn this into decisions, action items with owners, and a 5-line summary email."',
       build:['An inbox helper that sorts mail and drafts replies','A morning briefing on your phone','A plan to win back hours from your weekly routine'],
@@ -59,6 +59,7 @@
     var rest=[2].concat(tr.weeks,extra).filter(function(v,i,a){return a.indexOf(v)===i}).sort(function(a,b){return a-b});
     var items=[{h:'#first-win',t:'15-minute first win',s:'Today'},{h:'course.html#week-1',t:'Week 1 · '+W[1]},{h:'course.html#week-3',t:'Week 3 · '+W[3]},{h:'course.html#week-4',t:'Week 4 · '+W[4]},{h:'basics.html',t:'How AI works · 12 lessons',o:'recommended'}];
     rest.forEach(function(n){items.push({h:'course.html#week-'+n,t:'Week '+n+' · '+W[n]})});
+    items.push({h:'build.html',t:'Capstone · Build and publish your website',o:'everyone'});
     var tm=Q3.filter(function(q){return q[0]===t})[0];var total=Math.round((items.length-1+1)*tm[2]);
     return {tr:tr,items:items,tm:tm,total:total,weeks:[1,3,4].concat(rest)};
   };
@@ -92,7 +93,7 @@
     panel.setAttribute('aria-labelledby','tab-'+k);
     var wk=[1,3,4].concat(t.weeks);
     panel.innerHTML='<div><h3>'+esc(t.name)+'</h3><p class="who">'+esc(t.who)+'</p><p class="first"><b>First win:</b> '+esc(t.first)+'</p><h4>You\'ll build</h4><ul>'+t.build.map(function(b){return '<li>'+esc(b)+'</li>'}).join('')+'</ul><p class="small muted">'+esc(t.tip)+'</p><a class="link-arrow" href="'+t.guide[0]+'">'+esc(t.guide[1])+'</a></div>'+
-      '<div><h4>Focus weeks</h4><ul class="weeks">'+wk.map(function(n){return '<li><a href="course.html#week-'+n+'"><span>'+esc(W[n])+'</span><small>Week '+n+'</small></a></li>'}).join('')+'<li><a href="basics.html"><span>How AI works</span><small>12 lessons</small></a></li></ul></div>';
+      '<div><h4>Focus weeks</h4><ul class="weeks">'+wk.map(function(n){return '<li><a href="course.html#week-'+n+'"><span>'+esc(W[n])+'</span><small>Week '+n+'</small></a></li>'}).join('')+'<li><a href="basics.html"><span>How AI works</span><small>12 lessons</small></a></li><li><a href="build.html"><span>Capstone: build your website</span><small>Level 2</small></a></li></ul></div>';
   };
   tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(b)pick(b.dataset.k)});
   tabs.addEventListener('keydown',function(e){var i=keys.indexOf(document.activeElement.dataset.k);if(i<0)return;if(e.key==='ArrowRight'){e.preventDefault();pick(keys[(i+1)%keys.length],true)}if(e.key==='ArrowLeft'){e.preventDefault();pick(keys[(i+keys.length-1)%keys.length],true)}});

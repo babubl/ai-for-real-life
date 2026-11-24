@@ -11,7 +11,7 @@ import json, re, pathlib
 
 SITE = "https://babubl.github.io/ai-for-real-life/"
 UPDATED = "November 2026"
-V = "20261124e"
+V = "20261124g"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 MARK = ('<svg viewBox="0 0 32 32" width="{s}" height="{s}" aria-hidden="true" focusable="false">'
@@ -22,8 +22,8 @@ MARK = ('<svg viewBox="0 0 32 32" width="{s}" height="{s}" aria-hidden="true" fo
         '<circle cx="16" cy="16" r="3" fill="#F2A93B"/></svg>')
 
 NAV = [("start", "./#start", "Start here"), ("basics", "basics.html", "How AI works"),
-       ("course", "course.html", "12-week course"), ("guides", "guides.html", "Guides"),
-       ("safety", "safety.html", "Safety"), ("about", "about.html", "About &amp; FAQ")]
+       ("course", "course.html", "Course"), ("build", "build.html", "Build a website"),
+       ("guides", "guides.html", "Guides"), ("safety", "safety.html", "Safety"), ("about", "about.html", "About")]
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400"
          "&family=Mukta:wght@400;600;700&family=IBM+Plex+Mono&display=swap")
@@ -90,8 +90,8 @@ def footer(js):
         <a class="brand" href="./" aria-label="AI for Real Life, home">{MARK.format(s=28, bg='#2A36B1')}<span class="wm">AI <i>for</i> Real Life</span></a>
         <p>A free, practical way for anyone in India to learn AI by using it. Made in Chennai by Babu Balasubramanian. No ads, no sign-up, no tracking.</p>
       </div>
-      <div><h4>Learn</h4><ul><li><a href="./#start">Find my path</a></li><li><a href="basics.html">How AI works</a></li><li><a href="course.html">12-week course</a></li><li><a href="syllabus.html">Syllabus</a></li><li><a href="glossary.html">Glossary</a></li></ul></div>
-      <div><h4>Guides</h4><ul><li><a href="safety.html">Family AI safety</a></li><li><a href="guides.html#shop">AI for your shop</a></li><li><a href="guides.html#indian-languages">AI in Indian languages</a></li><li><a href="guides.html#jobs">AI and your job</a></li></ul></div>
+      <div><h4>Learn</h4><ul><li><a href="./#start">Find my path</a></li><li><a href="basics.html">How AI works</a></li><li><a href="course.html">12-week course</a></li><li><a href="build.html">Build a website</a></li><li><a href="syllabus.html">Syllabus</a></li><li><a href="glossary.html">Glossary</a></li></ul></div>
+      <div><h4>Guides</h4><ul><li><a href="safety.html">Family AI safety</a></li><li><a href="guides.html#shop">AI for your shop</a></li><li><a href="guides.html#indian-languages">AI in Indian languages</a></li><li><a href="guides.html#jobs">AI and your job</a></li><li><a href="guides.html#next-steps">Create AI: technical path</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="about.html">About this site</a></li><li><a href="about.html#faq">FAQ</a></li><li><a href="about.html#privacy">Privacy</a></li><li><a href="https://github.com/babubl/ai-for-real-life/issues">Contact &amp; feedback</a></li></ul></div>
     </div>
     <div class="foot-bottom"><span>© 2026 Babu Balasubramanian · Last reviewed {UPDATED}</span><span>English · தமிழ் coming soon</span><span>AI tools change fast. Check each tool's own site for current prices and features.</span></div>
