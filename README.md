@@ -1,6 +1,6 @@
 # AI for Real Life
 
-A free, practical "where do I start with AI?" site for everyone in India. Live at https://babubl.github.io/ai-for-real-life/
+A free, practical "where do I start with AI?" site for everyone in India. Live at https://aiforreallife.in/
 
 ## Pages
 | Page | What it is |
