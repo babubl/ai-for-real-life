@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://babubl.github.io/ai-for-real-life/sitemap.xml

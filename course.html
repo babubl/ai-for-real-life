@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI for Real Life: 12-Week Course</title>
+<meta name="description" content="A free 12-week hands-on AI course for non-technical people: how LLMs work, prompting, image, video and voice tools, AI at work, building 9 agents, and vibe coding your own website.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday learning, playful but clear; a course you actually finish
+   IDEA a metro line: 12 weekly stations from "What is AI?" to "Go live", you ride it and stations light up
+   PICTURE the route map in the dark hero band, each station filling as missions are ticked
+   COLOUR ice ground, deep ink bands, one hot pink for progress and what matters
+   TYPE Space Grotesk 500/700 display + Inter text
+   LAYOUT laptop: title + XP top, full-width route beneath; phone: title, route in 2 columns, then schedule */
+:root{color-scheme:light dark;--bg:light-dark(#dff1f7,#06222e);--ink:light-dark(#06222e,#dff1f7);--panel:light-dark(#ffffff,#0b3244);--line:light-dark(#b9dbe6,#1d4a5c);--mute:light-dark(#3d5a66,#a8c7d2);--pink:#ff2e7e;--pinkSoft:light-dark(#ffe1ec,#4a1530);--deep:#06222e;--ice:#dff1f7}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:120px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,5.4vw,56px);font-weight:700}
+h2{font-size:clamp(28px,3.6vw,40px);font-weight:700}
+h3{font-size:22px;font-weight:700}
+h4{font-size:18px;font-weight:700;margin-top:22px}
+p{margin:.6em 0}
+a{color:inherit;text-decoration-color:var(--pink);text-underline-offset:3px}
+.band{padding-block:clamp(28px,4vw,64px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.dark{background:var(--deep);color:var(--ice)}
+.dark .mute{color:#a8c7d2}
+.mute{color:var(--mute)}
+pre,.scroll{overflow-x:auto}
+code{overflow-wrap:anywhere}
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:var(--deep);color:var(--ice);border-bottom:1px solid #1d4a5c}
+.bar .wrap{display:flex;align-items:center;gap:14px;padding:10px max(5vw,16px);flex-wrap:wrap}
+.bar b{font-family:"Space Grotesk";font-size:17px}
+.meter{flex:1 1 160px;height:10px;background:#123848;border-radius:6px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--pink);transition:width .5s}
+.rank{white-space:nowrap;font-size:14px}
+.nav{display:flex;gap:6px;overflow-x:auto;padding:0 max(5vw,16px) 10px;max-width:1240px;margin:0 auto;scrollbar-width:thin}
+.nav a{flex:none;font-size:14px;text-decoration:none;padding:6px 12px;border:1px solid #1d4a5c;border-radius:20px}
+.nav a:hover,.nav a:focus-visible{background:#123848;outline:none}
+/* hero */
+.hero h1{max-width:20ch}
+.hero .lede{font-size:18px;max-width:62ch;color:#cfe6ee}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin:18px 0 28px}
+.facts div{font-size:14px;color:#a8c7d2}
+.facts strong{display:block;font:700 26px "Space Grotesk";color:var(--ice)}
+.route{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));row-gap:26px}
+.route li{position:relative;padding-top:34px}
+.route li::before{content:"";position:absolute;top:12px;left:0;right:0;height:6px;background:#1d4a5c}
+.route li.on::before{background:var(--pink)}
+.route li:nth-child(6n+1)::before{left:12px}
+.route a{display:block;text-decoration:none;padding-right:10px}
+.dot{position:absolute;top:2px;left:0;width:26px;height:26px;border-radius:50%;background:var(--deep);border:5px solid #3d6b7c;display:grid;place-items:center}
+.route li.on .dot{border-color:var(--pink)}
+.route li.done .dot{background:var(--pink);border-color:var(--pink)}
+.route .wn{font-size:13px;color:#a8c7d2;display:block}
+.route .wt{font:700 17px/1.2 "Space Grotesk";display:block;margin-top:2px}
+.route .wp{font-size:13px;color:#a8c7d2;white-space:nowrap}
+.route li.mine .wn::after{content:" · your path";color:var(--pink);font-weight:600}
+.mine-tag{display:none;font-size:13px;font-weight:600;color:#fff;background:var(--pink);border-radius:12px;padding:2px 10px;margin-left:8px;vertical-align:middle}
+.wk.mine .mine-tag{display:inline-block}
+.cardwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;align-items:start}
+#fin{width:100%;height:auto;border-radius:14px;display:block;background:#06222e}
+.cardwrap input{font:16px Inter;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);min-height:44px;width:100%;max-width:22em}
+@media(max-width:900px){.cardwrap{grid-template-columns:minmax(0,1fr)}}
+.route a:hover .wt,.route a:focus-visible .wt{color:var(--pink)}
+.start{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:30px;font-size:15px}
+.start input{font:16px Inter;padding:8px 10px;border-radius:8px;border:1px solid #3d6b7c;background:#0b3244;color:var(--ice);min-height:44px}
+/* schedule */
+.sched{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px;align-items:start}
+.slots{list-style:none;margin:0;padding:0}
+.slots li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.slots .t{font:700 22px/1.1 "Space Grotesk"}
+.slots .t small{display:block;font:400 14px Inter;color:var(--mute);white-space:nowrap}
+.slots b{display:block}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.rules{margin:0;padding-left:1.2em}
+.rules li{margin:.45em 0}
+/* weeks */
+.wk{border-top:1px solid var(--line);padding-block:clamp(36px,5vw,64px)}
+.wkhead{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:end;margin-bottom:22px}
+.big{font:700 clamp(54px,8vw,92px)/.85 "Space Grotesk";color:var(--pink)}
+.wkhead .dates{font-size:14px;color:var(--mute);white-space:nowrap}
+.wkhead p{margin:.3em 0 0;color:var(--mute);max-width:60ch}
+.two{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start}
+.miss{position:sticky;top:120px}
+.miss h3{font-size:18px;margin-bottom:6px}
+.miss ul{list-style:none;margin:0;padding:0}
+.miss li{border-top:1px solid var(--line)}
+.miss label{display:grid;grid-template-columns:26px 3.2em minmax(0,1fr);gap:8px;align-items:start;padding:10px 0;cursor:pointer;font-size:15px;line-height:1.45}
+.miss input{width:22px;height:22px;margin:0;accent-color:var(--pink);cursor:pointer}
+.miss .d{font-weight:700;font-size:13px;color:var(--pink);padding-top:2px}
+.miss li:has(input:checked) span:last-child{color:var(--mute);text-decoration:line-through}
+.miss .xp{font-size:13px;color:var(--mute);margin-top:8px}
+.prompt{position:relative;background:var(--deep);color:var(--ice);border-radius:12px;padding:16px 16px 14px;margin:12px 0}
+.prompt pre{margin:0;white-space:pre-wrap;font:14.5px/1.55 ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere}
+.prompt .lbl{display:block;font-size:13px;color:#a8c7d2;margin-bottom:6px;padding-right:80px}
+.copy{position:absolute;top:10px;right:10px;font:600 13px Inter;background:#123848;color:var(--ice);border:1px solid #3d6b7c;border-radius:8px;padding:0 12px;min-height:36px;cursor:pointer}
+.copy:hover,.copy:focus-visible{border-color:var(--pink);outline:none}
+.fun{background:var(--pinkSoft);border-radius:14px;padding:16px 18px;margin:18px 0}
+.fun strong{color:var(--pink)}
+details.check{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:16px;background:var(--panel)}
+details.check summary{cursor:pointer;font-weight:600;min-height:28px}
+ul.tight{padding-left:1.2em;margin:.4em 0}
+ul.tight li{margin:.3em 0}
+.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(15em,1fr));gap:12px;margin:14px 0}
+.gloss div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px}
+.gloss b{display:block;font-family:"Space Grotesk";font-size:17px;margin-bottom:2px}
+.flow{list-style:none;padding:0;margin:14px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5em,1fr));gap:10px;counter-reset:f}
+.flow li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 46px;position:relative;font-size:15px;counter-increment:f}
+.flow li::before{content:counter(f);position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--pink);color:#fff;font:700 13px/24px Inter;text-align:center}
+/* token game */
+.game{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
+.sent{font:500 21px/1.35 "Space Grotesk";margin:0 0 12px}
+.sent em{font-style:normal;color:var(--pink);border-bottom:3px solid var(--pink)}
+.rows{display:grid;gap:6px}
+.row{display:grid;grid-template-columns:6.5em minmax(0,1fr) 3.4em;gap:10px;align-items:center;font-size:15px}
+.row .tr{height:16px;background:color-mix(in srgb,var(--line) 60%,transparent);border-radius:8px;overflow:hidden}
+.row .tr i{display:block;height:100%;background:var(--ink);border-radius:8px;transition:width .35s}
+.row.pick .tr i{background:var(--pink)}
+.row .v{text-align:right;font-variant-numeric:tabular-nums}
+.ctrl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px}
+.ctrl input[type=range]{flex:1 1 180px;accent-color:var(--pink);min-height:44px}
+.btn{font:600 15px Inter;background:var(--pink);color:#fff;border:0;border-radius:10px;padding:0 18px;min-height:44px;cursor:pointer}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+/* tables */
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:700;font-size:14px}
+.tbl{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:14px 0}
+.agent{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}
+.agent h3 span{color:var(--pink)}
+.agent .meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--mute);margin:6px 0 4px}
+.agent ol{padding-left:1.3em;margin:.4em 0}
+.agent ol li{margin:.35em 0}
+.levels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin:16px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.levels div{padding:14px;font-size:14px;background:var(--panel);border-right:1px solid var(--line)}
+.levels div:last-child{border-right:0}
+.levels b{display:block;font:700 30px "Space Grotesk";color:var(--pink)}
+.levels strong{display:block;font-size:15px;margin-bottom:4px}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(17em,1fr));gap:12px}
+.res a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.res a b{display:block;font-family:"Space Grotesk";font-size:17px}
+.res a span{font-size:14px;color:var(--mute)}
+.res a:hover,.res a:focus-visible{border-color:var(--pink);outline:none}
+footer{font-size:14px}
+@media(max-width:900px){.route{grid-template-columns:repeat(3,minmax(0,1fr))}.route li:nth-child(6n+1)::before{left:0}.route li:nth-child(3n+1)::before{left:12px}.sched,.two{grid-template-columns:minmax(0,1fr)}.miss{position:static}.levels{grid-template-columns:repeat(auto-fit,minmax(11em,1fr))}.levels div{border-bottom:1px solid var(--line)}}
+@media(max-width:600px){.route{grid-template-columns:repeat(2,minmax(0,1fr))}.route li:nth-child(3n+1)::before{left:0}.route li:nth-child(odd)::before{left:12px}.wkhead{grid-template-columns:auto minmax(0,1fr)}.wkhead .dates{grid-column:1/-1}.slots li{grid-template-columns:6em minmax(0,1fr)}.slots .t{font-size:19px}table{font-size:13px}th,td{padding:8px 6px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:10px;border:0;padding:3px 10px}.stack td::before{content:attr(data-l);font-weight:700}.row{grid-template-columns:5.5em minmax(0,1fr) 3em}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.meter i,.row .tr i{transition:none}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap"><a href="index.html" style="text-decoration:none"><b>AI for Real Life</b></a><div class="meter" aria-hidden="true"><i id="meterFill"></i></div><span class="rank"><span id="xp">0</span> / 600 XP · <span id="rankName">Curious Human</span></span></div>
+  <nav class="nav" aria-label="Sections"><a href="index.html#start">Find my path</a><a href="#schedule">Schedule</a><a href="#week-1">W1</a><a href="#week-2">W2</a><a href="#week-3">W3</a><a href="#week-4">W4</a><a href="#week-5">W5</a><a href="#week-6">W6</a><a href="#week-7">W7</a><a href="#week-8">W8</a><a href="#week-9">W9</a><a href="#week-10">W10</a><a href="#week-11">W11</a><a href="#week-12">W12</a><a href="#toolbox">Toolbox</a><a href="#glossary">Glossary</a><a href="#free">Free extras</a></nav>
+</div>
+
+<header class="band dark hero">
+  <div class="wrap">
+    <h1>Learn AI by using it, one station a week</h1>
+    <p class="lede">A 12-week course for non-technical people. You'll understand how ChatGPT and Claude actually think, make images, videos and slides, build nine helper agents for your own life, and put your own website on the internet. No coding background needed.</p>
+    <div class="facts">
+      <div><strong>12 weeks</strong>one station each</div>
+      <div><strong>4½ hrs</strong>a week, fixed slots</div>
+      <div><strong>60 missions</strong>10 XP each</div>
+      <div><strong>9 agents</strong>built by you</div>
+      <div><strong>1 website</strong>live on the internet</div>
+    </div>
+    <ol class="route" id="route">
+      <li><a href="#week-1"><span class="dot"></span><span class="wn">Week 1</span><span class="wt">What is AI?</span><span class="wp" data-p="1"></span></a></li>
+      <li><a href="#week-2"><span class="dot"></span><span class="wn">Week 2</span><span class="wt">Inside the LLM</span><span class="wp" data-p="2"></span></a></li>
+      <li><a href="#week-3"><span class="dot"></span><span class="wn">Week 3</span><span class="wt">Talk to it well</span><span class="wp" data-p="3"></span></a></li>
+      <li><a href="#week-4"><span class="dot"></span><span class="wn">Week 4</span><span class="wt">AI in daily life</span><span class="wp" data-p="4"></span></a></li>
+      <li><a href="#week-5"><span class="dot"></span><span class="wn">Week 5</span><span class="wt">Images &amp; slides</span><span class="wp" data-p="5"></span></a></li>
+      <li><a href="#week-6"><span class="dot"></span><span class="wn">Week 6</span><span class="wt">Video &amp; voice</span><span class="wp" data-p="6"></span></a></li>
+      <li><a href="#week-7"><span class="dot"></span><span class="wn">Week 7</span><span class="wt">AI at work</span><span class="wp" data-p="7"></span></a></li>
+      <li><a href="#week-8"><span class="dot"></span><span class="wn">Week 8</span><span class="wt">Meet the agents</span><span class="wp" data-p="8"></span></a></li>
+      <li><a href="#week-9"><span class="dot"></span><span class="wn">Week 9</span><span class="wt">Agent lab 1–3</span><span class="wp" data-p="9"></span></a></li>
+      <li><a href="#week-10"><span class="dot"></span><span class="wn">Week 10</span><span class="wt">Agent lab 4–6</span><span class="wp" data-p="10"></span></a></li>
+      <li><a href="#week-11"><span class="dot"></span><span class="wn">Week 11</span><span class="wt">Agent lab 7–9</span><span class="wp" data-p="11"></span></a></li>
+      <li><a href="#week-12"><span class="dot"></span><span class="wn">Week 12</span><span class="wt">Vibe code &amp; go live</span><span class="wp" data-p="12"></span></a></li>
+    </ol>
+    <div class="start"><label for="startDate">Course starts on (a Monday):</label><input type="date" id="startDate" value="2026-11-30"><span class="mute" id="endLine"></span></div>
+  </div>
+</header>
+
+<section class="band" id="schedule">
+  <div class="wrap sched">
+    <div>
+      <h2>The same five slots, every week</h2>
+      <p>Fixed times beat motivation. Block these in your calendar once and stop deciding. Every week below follows this rhythm, and each mission is tagged with its day.</p>
+      <div class="card">
+        <h3>House rules</h3>
+        <ul class="rules">
+          <li><b>Do, don't just read.</b> Every concept comes with something to try within 10 minutes.</li>
+          <li><b>Use free tiers first.</b> Pay for one tool only when you hit its limit twice.</li>
+          <li><b>Keep an "AI diary".</b> One note on your phone: what you tried, what surprised you.</li>
+          <li><b>Never paste secrets.</b> No passwords, card numbers, Aadhaar or PAN numbers, client data.</li>
+          <li><b>Check what matters.</b> AI is confident even when wrong. Verify money, health and legal answers.</li>
+          <li><b>Missed a slot?</b> Do it at the next one. Never "make up" two weeks at once.</li>
+        </ul>
+      </div>
+    </div>
+    <ol class="slots">
+      <li><div class="t">Mon<small>8:30–9:15 pm</small></div><div><b>Learn</b>Read the week's idea on this page. Watch one suggested video if you like.</div></li>
+      <li><div class="t">Wed<small>8:30–9:15 pm</small></div><div><b>Play</b>Do the "Try this" prompts. Mess around. Break things.</div></li>
+      <li><div class="t">Fri<small>8:30–9:00 pm</small></div><div><b>Checkpoint</b>Answer the checkpoint question without peeking, then write two lines in your AI diary.</div></li>
+      <li><div class="t">Sat<small>7:00–9:00 am</small></div><div><b>Lab</b>The big build of the week: a real thing you'll keep using.</div></li>
+      <li><div class="t">Sun<small>8:00–8:20 pm</small></div><div><b>Show &amp; tell</b>Show one thing you made to someone at home, or post it. Teaching it locks it in.</div></li>
+    </ol>
+  </div>
+</section>
+
+<main class="band" style="padding-top:0">
+<div class="wrap">
+
+<!-- WEEK 1 -->
+<article class="wk" id="week-1" data-w="1">
+  <div class="wkhead"><div class="big">1</div><div><h2>What is AI, really?<span class="mine-tag">Your path</span></h2><p>Strip away the hype. AI is software that learned patterns from examples instead of being given rules.</p></div><div class="dates" data-d="1"></div></div>
+  <div class="two">
+    <div>
+      <h4>The idea, simply</h4>
+      <p><b>Normal software</b> follows rules a programmer wrote: "if the bill is over ₹5,000, ask for an OTP." <b>AI</b> is different. Nobody writes the rules. You show it thousands of examples and it works out the pattern itself.</p>
+      <p>Think of how a child learns what a dog is. Nobody gives them a definition ("four legs, fur, barks"). They see 200 dogs, get corrected a few times ("no, that's a cat"), and their brain figures it out. Machine learning works the same way: examples in, mistakes corrected, pattern learned.</p>
+      <ul class="tight">
+        <li><b>Artificial Intelligence</b> is the big umbrella: any machine doing things we'd call "smart".</li>
+        <li><b>Machine Learning</b> is the main way we get there today: learning from data.</li>
+        <li><b>Deep Learning</b> uses "neural networks", layers of simple maths loosely inspired by brain cells.</li>
+        <li><b>Generative AI</b> creates new things (text, images, music) rather than just sorting or predicting.</li>
+      </ul>
+      <p>You already use AI daily: Google Maps predicting traffic, your bank flagging an odd transaction, YouTube choosing your next video, your phone unlocking with your face.</p>
+      <h4>Try this (Wednesday)</h4>
+      <div class="prompt"><span class="lbl">Paste into ChatGPT, Claude or Gemini</span><pre>Explain how machine learning works using only a Chennai filter coffee shop as the example. Keep it under 150 words, then ask me 3 quiz questions one at a time and wait for my answer before the next.</pre><button class="copy">Copy</button></div>
+      <div class="prompt"><span class="lbl">Spot the AI around you</span><pre>List 15 places an ordinary person in India meets AI in a normal day, from waking up to sleeping. For each, say in one line what pattern the AI learned.</pre><button class="copy">Copy</button></div>
+      <div class="fun"><strong>Fun bit: Teachable Machine.</strong> Open Google's free Teachable Machine (teachablemachine.withgoogle.com) on a laptop. Train it in 5 minutes to tell your "thumbs up" from "thumbs down" using your webcam. You just did machine learning: examples in, pattern out.</div>
+      <h4>Saturday lab: set up your AI corner</h4>
+      <p>Create free accounts on ChatGPT, Claude and Gemini. Install the apps on your phone. Ask all three the same question ("Plan a 2-day Pondicherry trip for a family with a 6-year-old") and compare. You'll notice each has a personality. Pick a favourite for now; you'll use all three.</p>
+      <details class="check"><summary>Checkpoint: Is a calculator "AI"? Why or why not?</summary><p>No. A calculator follows fixed rules a human wrote. It never learned anything from examples and can't handle something it wasn't programmed for. AI learns patterns from data.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m1-1"><span class="d">Mon</span><span>Read the idea and explain AI vs ML to yourself out loud</span></label></li>
+      <li><label><input type="checkbox" id="m1-2"><span class="d">Wed</span><span>Run both prompts and take the coffee-shop quiz</span></label></li>
+      <li><label><input type="checkbox" id="m1-3"><span class="d">Wed</span><span>Train Teachable Machine on thumbs up/down</span></label></li>
+      <li><label><input type="checkbox" id="m1-4"><span class="d">Sat</span><span>Set up ChatGPT, Claude and Gemini; compare one answer</span></label></li>
+      <li><label><input type="checkbox" id="m1-5"><span class="d">Sun</span><span>Explain "AI learns from examples" to someone at home</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 2 -->
+<article class="wk" id="week-2" data-w="2">
+  <div class="wkhead"><div class="big">2</div><div><h2>Inside the LLM: how ChatGPT and Claude answer you<span class="mine-tag">Your path</span></h2><p>The one week that makes everything else click. All the jargon, decoded.</p></div><div class="dates" data-d="2"></div></div>
+  <div class="two">
+    <div>
+      <h4>The big secret: it's a super-powered autocomplete</h4>
+      <p>An <b>LLM (Large Language Model)</b> does one thing: given some text, it guesses the most likely next piece of text. Then it adds that piece and guesses again. Again. Again. Hundreds of times per answer. That's it. Everything else, essays, code, poems, comes from doing that one trick extremely well.</p>
+      <p>Play with it below. The model is choosing the next word. The <b>temperature</b> slider controls how adventurous it is: low means "always pick the safe favourite", high means "take more chances".</p>
+      <div class="game" id="game">
+        <p class="sent">My mother's sambar tastes <em id="blank">___</em></p>
+        <div class="rows" id="rows"></div>
+        <div class="ctrl"><label for="temp">Temperature <b id="tval">1.0</b></label><input type="range" id="temp" min="0.2" max="2" step="0.1" value="1"><button class="btn" id="pick">Let the model pick</button><button class="btn ghost" id="reset">Reset</button></div>
+        <p class="mute" style="font-size:14px;margin-bottom:0">Illustrative numbers. A real model scores every one of its ~100,000+ possible tokens at every step.</p>
+      </div>
+      <h4>What happens when you hit "send"</h4>
+      <ol class="flow">
+        <li><b>Your words are chopped into tokens</b>, small chunks of text.</li>
+        <li><b>Each token becomes a list of numbers</b> the model can do maths on.</li>
+        <li><b>The numbers flow through ~100 layers</b>, each one using billions of learned weights.</li>
+        <li><b>Out comes a score for every possible next token.</b></li>
+        <li><b>One token is picked</b> (temperature decides how), added to the text, and the loop repeats.</li>
+        <li><b>Tokens are joined back into words</b> and stream onto your screen.</li>
+      </ol>
+      <p>Before your message, the app quietly adds a <b>system prompt</b> (hidden instructions like "You are a helpful assistant") and your earlier chat. Modern assistants can also call <b>tools</b>: search the web, run code, read your files. The model decides "I need to search", the app does the search, and the results become more text for the model to read.</p>
+      <h4>The jargon, decoded</h4>
+      <div class="gloss">
+        <div><b>Token</b>A chunk of text, about ¾ of an English word. "Unbelievable" might be 3 tokens. Tamil or Hindi usually take more tokens per word. You pay and are limited by tokens.</div>
+        <div><b>Model</b>The finished "brain" file: the trained system you talk to. GPT, Claude, Gemini and Llama are model families.</div>
+        <div><b>Parameter</b>One adjustable number inside the model. Big models have hundreds of billions. More parameters ≈ more capacity to store patterns.</div>
+        <div><b>Weight</b>The value of a parameter after training. Think of millions of volume knobs; training is turning each knob until answers come out right. "Open weights" means the company lets you download the knobs.</div>
+        <div><b>Training</b>Showing the model trillions of words and nudging its weights every time it guesses the next word wrong. Takes months and costs crores of rupees.</div>
+        <div><b>Inference</b>Using the trained model to answer. That's what happens each time you chat.</div>
+        <div><b>GPU</b>A chip originally built for video-game graphics. It does thousands of small sums at once, exactly what AI needs. Nvidia makes most of them; data centres hold tens of thousands.</div>
+        <div><b>Context window</b>How much text the model can "see" at once: your chat, files, instructions. Beyond it, it forgets.</div>
+        <div><b>Hallucination</b>When it confidently makes something up. Remember: it predicts plausible text, not checked facts.</div>
+      </div>
+      <div class="fun"><strong>Fun bit: Hallucination hunt.</strong> Ask any chatbot "What did the 1987 Chennai Coffee Treaty say?" (it doesn't exist). See if it invents details or admits it doesn't know. Then ask it to search the web and compare. Write the result in your AI diary.</div>
+      <div class="prompt"><span class="lbl">Make it teach you</span><pre>I'm not technical. Explain tokens, parameters, weights and GPUs using a giant kitchen as the analogy. Then draw me a simple text diagram of what happens between me pressing send and you replying.</pre><button class="copy">Copy</button></div>
+      <h4>Saturday lab: see tokens for real</h4>
+      <p>Search "OpenAI tokenizer" and open the official tool. Paste an English sentence, then the same sentence in Tamil. Count tokens. You'll see why some languages cost more. Then watch 3Blue1Brown's short "Large Language Models explained briefly" on YouTube (about 8 minutes, beautiful animations).</p>
+      <details class="check"><summary>Checkpoint: Why can ChatGPT write a perfect essay but get a simple fact wrong?</summary><p>Because it predicts what text usually looks like, not what's verified true. Fluent writing is a pattern it has seen billions of times; a specific fact may be rare in its training data, so it fills the gap with something plausible.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m2-1"><span class="d">Mon</span><span>Play the next-word game at low and high temperature</span></label></li>
+      <li><label><input type="checkbox" id="m2-2"><span class="d">Wed</span><span>Run the kitchen-analogy prompt</span></label></li>
+      <li><label><input type="checkbox" id="m2-3"><span class="d">Wed</span><span>Complete the hallucination hunt</span></label></li>
+      <li><label><input type="checkbox" id="m2-4"><span class="d">Sat</span><span>Compare token counts: English vs Tamil</span></label></li>
+      <li><label><input type="checkbox" id="m2-5"><span class="d">Sun</span><span>Explain "fancy autocomplete" to someone in 60 seconds</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 3 -->
+<article class="wk" id="week-3" data-w="3">
+  <div class="wkhead"><div class="big">3</div><div><h2>Talk to it well: prompting without the hype<span class="mine-tag">Your path</span></h2><p>There are no magic words. Just give it what a smart new colleague would need.</p></div><div class="dates" data-d="3"></div></div>
+  <div class="two">
+    <div>
+      <h4>The idea, simply</h4>
+      <p>Imagine you hired a brilliant intern who knows everything but nothing about <i>you</i>. "Write an email" gets you something generic. Tell them who it's for, why, what tone, and show an example, and you get gold. That's prompting.</p>
+      <p>Use the <b>RCTF recipe</b>:</p>
+      <ul class="tight">
+        <li><b>Role</b>: who should it act as? ("You're a patient school teacher")</li>
+        <li><b>Context</b>: what's the situation, who's the audience, what do they already know?</li>
+        <li><b>Task</b>: exactly what you want done.</li>
+        <li><b>Format</b>: length, bullet points or table, language, tone.</li>
+      </ul>
+      <p>Then the three habits that matter more than any recipe: <b>give examples</b> of what good looks like; <b>ask it to ask you questions</b> first; <b>iterate</b> ("shorter", "warmer", "add numbers") instead of starting over.</p>
+      <div class="prompt"><span class="lbl">Before: weak prompt</span><pre>Write a leave email.</pre><button class="copy">Copy</button></div>
+      <div class="prompt"><span class="lbl">After: the glow-up</span><pre>You're helping me write to my manager. Context: my son has his school annual day on Friday and I want to take a half-day. We have a client demo Thursday which I'll finish first. Task: write a short, polite leave request. Format: under 80 words, friendly but professional, no over-apologising.</pre><button class="copy">Copy</button></div>
+      <div class="prompt"><span class="lbl">The "interview me" trick</span><pre>I want to plan my parents' 40th anniversary dinner. Before giving any suggestions, ask me up to 6 questions, one at a time, to understand what I need. Then give me a plan.</pre><button class="copy">Copy</button></div>
+      <div class="prompt"><span class="lbl">Make it critique itself</span><pre>Review your previous answer like a tough editor. What's weak, missing or possibly wrong? Then give me an improved version.</pre><button class="copy">Copy</button></div>
+      <div class="fun"><strong>Fun bit: Prompt glow-up battle.</strong> Pick something you need this week. Write the laziest prompt possible, save the answer. Then write the RCTF version. Ask a family member to judge both blind. The difference is usually shocking.</div>
+      <h4>Saturday lab: build your prompt library</h4>
+      <p>Make a note called "My Prompts". Save your 10 best prompts from this week with a one-line label. This becomes your personal toolkit. Bonus: ask AI to turn your rough voice note (use the mic button) into a clean prompt.</p>
+      <details class="check"><summary>Checkpoint: Name the single most powerful thing you can add to a prompt.</summary><p>An example of what good output looks like. Showing beats describing. Close second: context about who it's for and why.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m3-1"><span class="d">Mon</span><span>Learn RCTF and the three habits</span></label></li>
+      <li><label><input type="checkbox" id="m3-2"><span class="d">Wed</span><span>Run the before/after and interview-me prompts</span></label></li>
+      <li><label><input type="checkbox" id="m3-3"><span class="d">Wed</span><span>Do the prompt glow-up battle with a blind judge</span></label></li>
+      <li><label><input type="checkbox" id="m3-4"><span class="d">Sat</span><span>Save 10 prompts in your "My Prompts" note</span></label></li>
+      <li><label><input type="checkbox" id="m3-5"><span class="d">Sun</span><span>Teach one person the "ask me questions first" trick</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 4 -->
+<article class="wk" id="week-4" data-w="4">
+  <div class="wkhead"><div class="big">4</div><div><h2>Make daily life easier with ChatGPT and Claude<span class="mine-tag">Your path</span></h2><p>From chores to big decisions: 20 real uses, plus the features most people never find.</p></div><div class="dates" data-d="4"></div></div>
+  <div class="two">
+    <div>
+      <h4>Features worth knowing</h4>
+      <ul class="tight">
+        <li><b>Voice mode</b>: talk while driving or cooking. Great for practising a tough conversation or a new language.</li>
+        <li><b>Photos</b>: snap a medicine label, a confusing bill, a plant leaf, a fridge full of leftovers, and ask.</li>
+        <li><b>Files</b>: upload a PDF (insurance policy, rental agreement, school circular) and ask questions about it.</li>
+        <li><b>Projects</b> (ChatGPT and Claude) or <b>Gems</b> (Gemini): a saved workspace with your own instructions and files, so you don't repeat yourself.</li>
+        <li><b>Memory</b>: the assistant can remember your preferences across chats. Review or switch it off in settings.</li>
+        <li><b>Web search and deep research</b>: up-to-date answers with sources you can click.</li>
+      </ul>
+      <h4>20 uses, by part of life</h4>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Area</th><th>Try asking it to…</th></tr></thead><tbody>
+        <tr><td>Home</td><td>Plan a week of meals from what's in the fridge (send a photo) · make a cleaning rota for the family · troubleshoot why the washing machine shows error E21</td></tr>
+        <tr><td>Money</td><td>Explain a term in your policy document · build a monthly budget table · compare two loan offers step by step (then verify the maths)</td></tr>
+        <tr><td>Health</td><td>Turn a doctor's advice into a simple daily checklist · plan a 20-minute home workout · prepare questions before an appointment (it's not a doctor)</td></tr>
+        <tr><td>Family</td><td>Invent a bedtime story with your child as the hero · plan a birthday party on a budget · explain fractions with pizza</td></tr>
+        <tr><td>Work</td><td>Summarise a long email thread · rehearse a salary conversation in voice mode · turn messy meeting notes into actions</td></tr>
+        <tr><td>Learning</td><td>Quiz you on a topic · translate and explain a Tamil or Hindi phrase · make a 30-day plan for any skill</td></tr>
+        <tr><td>Paperwork</td><td>Draft a complaint to a telecom company · explain a government form field by field · write a polite reminder to a landlord</td></tr>
+      </tbody></table></div>
+      <div class="prompt"><span class="lbl">The fridge photo</span><pre>(attach a photo of your fridge) Suggest 3 dinners I can make tonight with mostly what's here, for 2 adults and 1 child who hates spicy food. Under 30 minutes each. Give a shopping list for anything missing.</pre><button class="copy">Copy</button></div>
+      <div class="prompt"><span class="lbl">The decision helper</span><pre>I'm deciding between [option A] and [option B]. Ask me what I care about most, then build a simple scoring table, and finally tell me which way the scores lean and what I might be missing.</pre><button class="copy">Copy</button></div>
+      <h4>Stay safe</h4>
+      <p>Don't share ID numbers, passwords or bank details. For medical, legal or money decisions, use AI to understand and prepare questions, then confirm with a professional. Turn on "don't train on my data" in settings if you prefer.</p>
+      <div class="fun"><strong>Fun bit: The 7-day "ask AI first" challenge.</strong> For one week, before you Google anything or ask someone, ask AI. Tally in your diary: helpful, meh, or wrong. Most people end the week with 3–4 new daily habits.</div>
+      <h4>Saturday lab: your personal assistant Project</h4>
+      <p>Create a Project (ChatGPT or Claude) called "Home HQ". In its instructions write: who lives at home, food preferences, city, budget style, how you like answers (short, bullet points). Add a couple of useful files (school calendar, appliance manuals). Now every chat inside it already knows your world.</p>
+      <details class="check"><summary>Checkpoint: What's the difference between a normal chat and a Project?</summary><p>A Project keeps standing instructions and files that apply to every chat inside it, so the assistant already has your context. A normal chat starts from zero (apart from any memory feature you've switched on).</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m4-1"><span class="d">Mon</span><span>Try voice mode and photo upload once each</span></label></li>
+      <li><label><input type="checkbox" id="m4-2"><span class="d">Wed</span><span>Try 5 uses from the table across 3 areas</span></label></li>
+      <li><label><input type="checkbox" id="m4-3"><span class="d">Wed</span><span>Upload one real PDF and ask 3 questions about it</span></label></li>
+      <li><label><input type="checkbox" id="m4-4"><span class="d">Sat</span><span>Build your "Home HQ" Project with instructions</span></label></li>
+      <li><label><input type="checkbox" id="m4-5"><span class="d">Sun</span><span>Start the 7-day "ask AI first" challenge</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 5 -->
+<article class="wk" id="week-5" data-w="5">
+  <div class="wkhead"><div class="big">5</div><div><h2>Create: images and presentations<span class="mine-tag">Your path</span></h2><p>Turn words into pictures and a rough idea into a finished deck in minutes.</p></div><div class="dates" data-d="5"></div></div>
+  <div class="two">
+    <div>
+      <h4>How image AI works (in one paragraph)</h4>
+      <p>Image models learned from millions of pictures with captions. Most start with pure visual "noise", like TV static, and step by step remove noise until an image matching your words appears, like a sculptor revealing a statue from marble. That's why it's called <b>diffusion</b>.</p>
+      <h4>The image prompt formula</h4>
+      <p><b>Subject + action + setting + style + lighting + camera/framing.</b><br>Weak: "a cat". Strong: "a ginger cat reading a newspaper at a Mylapore tea stall, watercolour illustration, warm morning light, wide shot".</p>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Tool</th><th>Best for</th></tr></thead><tbody>
+        <tr><td>ChatGPT images</td><td>Easiest start; edit by chatting ("make the sky pink"); good with text in images</td></tr>
+        <tr><td>Google Gemini (Nano Banana)</td><td>Editing your own photos while keeping faces consistent; quick fixes</td></tr>
+        <tr><td>Midjourney</td><td>The most artistic, stylish results</td></tr>
+        <tr><td>Ideogram</td><td>Posters, logos and anything with readable words</td></tr>
+        <tr><td>Adobe Firefly</td><td>Commercially safer images, works inside Photoshop</td></tr>
+        <tr><td>Canva AI</td><td>Social posts, invitations, everything in one place</td></tr>
+      </tbody></table></div>
+      <h4>Presentations</h4>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Tool</th><th>Best for</th></tr></thead><tbody>
+        <tr><td>Gamma</td><td>A full, good-looking deck from one prompt, a doc or a PDF</td></tr>
+        <tr><td>Canva</td><td>Design-heavy decks, huge template library, generous free tier</td></tr>
+        <tr><td>Copilot in PowerPoint</td><td>If your office runs on Microsoft 365</td></tr>
+        <tr><td>Beautiful.ai</td><td>Slides that auto-arrange neatly as you edit</td></tr>
+        <tr><td>Claude or ChatGPT</td><td>Write the storyline and speaker notes first, then build slides</td></tr>
+      </tbody></table></div>
+      <p><b>Golden rule for decks:</b> AI is great at layout, bad at your argument. Write the story first (one sentence per slide), then let the tool design.</p>
+      <div class="prompt"><span class="lbl">Storyline first</span><pre>I need a 10-slide presentation for [audience] about [topic]. My goal: [what they should think or do afterwards]. Give me one headline sentence per slide that tells a story, plus 3 bullets and one visual idea each. No fluff.</pre><button class="copy">Copy</button></div>
+      <div class="fun"><strong>Fun bit: Family comic strip.</strong> Create a 4-panel comic of a funny family moment (the time the pressure cooker exploded, the lost car keys). Keep the same characters across panels. Print it and stick it on the fridge.</div>
+      <h4>Saturday lab: make a real deck</h4>
+      <p>Pick a real need: a talk at work, a school project, a pitch for a side idea. Run the storyline prompt, paste the result into Gamma or Canva, add 2 AI images, and present it to one person on Sunday.</p>
+      <details class="check"><summary>Checkpoint: Which tool would you pick for a wedding invitation with names spelled correctly?</summary><p>Ideogram, Canva or ChatGPT images handle text well. Always zoom in and check every letter before printing.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m5-1"><span class="d">Mon</span><span>Learn the image formula; make 3 images, weak vs strong prompts</span></label></li>
+      <li><label><input type="checkbox" id="m5-2"><span class="d">Wed</span><span>Try 3 image tools with the same prompt and compare</span></label></li>
+      <li><label><input type="checkbox" id="m5-3"><span class="d">Wed</span><span>Make the family comic strip</span></label></li>
+      <li><label><input type="checkbox" id="m5-4"><span class="d">Sat</span><span>Build a full deck with the storyline-first method</span></label></li>
+      <li><label><input type="checkbox" id="m5-5"><span class="d">Sun</span><span>Present the deck to one person</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 6 -->
+<article class="wk" id="week-6" data-w="6">
+  <div class="wkhead"><div class="big">6</div><div><h2>Create: video and voiceovers<span class="mine-tag">Your path</span></h2><p>Make a 30-second film with narration, music and zero camera crew.</p></div><div class="dates" data-d="6"></div></div>
+  <div class="two">
+    <div>
+      <h4>Three kinds of video AI</h4>
+      <ul class="tight">
+        <li><b>Generators</b> make footage from a text or image prompt. Leaders: Google Veo 3.1, OpenAI Sora 2, Kling, Runway, Seedance, Pika. Many now create sound and dialogue too.</li>
+        <li><b>Avatar tools</b> make a presenter talk on screen from your script: HeyGen, Synthesia. Ideal for training or explainer videos.</li>
+        <li><b>Editors with AI</b> cut, caption and resize your own clips: CapCut, Descript, VEED, Canva, Filmora.</li>
+      </ul>
+      <p><b>Pro trick:</b> make a still image first (Week 5), then animate it ("image-to-video"). You control the look far better than text-only.</p>
+      <h4>Voice AI</h4>
+      <ul class="tight">
+        <li><b>ElevenLabs</b>: the most natural voices, many languages, sound effects, and voice cloning.</li>
+        <li><b>Murf, WellSaid</b>: clean narration for training and business videos.</li>
+        <li><b>Built-in voices</b> in ChatGPT, Gemini and your phone for quick read-alouds.</li>
+      </ul>
+      <p>Always listen to Indian names, places and Tamil words before publishing; spell them phonetically if needed ("Thiru-vaan-mi-yur").</p>
+      <p><b>Ethics, non-negotiable:</b> only clone your own voice or one you have clear permission for. Never make a real person appear to say something they didn't. Label AI content when you share it.</p>
+      <div class="prompt"><span class="lbl">Video shot prompt</span><pre>Slow cinematic drone shot rising over Marina Beach at sunrise, fishing boats on the sand, soft golden light, gentle waves, 8 seconds, no text on screen.</pre><button class="copy">Copy</button></div>
+      <div class="prompt"><span class="lbl">Script your film</span><pre>Write a 30-second voiceover script (about 75 words) for a short film about [topic]. Then break it into 4 shots, and for each give: a video prompt, what the narrator says, and a music mood.</pre><button class="copy">Copy</button></div>
+      <div class="fun"><strong>Fun bit: The 30-second blockbuster.</strong> Make a movie trailer for your family's next trip, or for "The Mystery of the Missing TV Remote". Script with AI, 4 shots, ElevenLabs narration, assemble in CapCut or Canva, add captions.</div>
+      <h4>Saturday lab: produce it</h4>
+      <p>Run the script prompt, generate 4 clips (use free credits across two tools if needed), record the voiceover, assemble, export vertical (9:16) for phones. Share on Sunday.</p>
+      <details class="check"><summary>Checkpoint: Why make an image first, then animate it?</summary><p>You lock in the look, characters and composition you want, and the video model only has to add motion. Pure text-to-video is more of a lottery.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m6-1"><span class="d">Mon</span><span>Learn the 3 kinds of video tools and the ethics rules</span></label></li>
+      <li><label><input type="checkbox" id="m6-2"><span class="d">Wed</span><span>Generate 2 clips: one text-to-video, one image-to-video</span></label></li>
+      <li><label><input type="checkbox" id="m6-3"><span class="d">Wed</span><span>Make a voiceover in your favourite AI voice</span></label></li>
+      <li><label><input type="checkbox" id="m6-4"><span class="d">Sat</span><span>Produce the 30-second blockbuster</span></label></li>
+      <li><label><input type="checkbox" id="m6-5"><span class="d">Sun</span><span>Premiere it for the family</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 7 -->
+<article class="wk" id="week-7" data-w="7">
+  <div class="wkhead"><div class="big">7</div><div><h2>AI at work: finance, trading, manufacturing, design, literature<span class="mine-tag">Your path</span></h2><p>How real industries use it today, and an exercise for each so you feel it yourself.</p></div><div class="dates" data-d="7"></div></div>
+  <div class="two">
+    <div>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Field</th><th>How it's used</th><th>Your exercise</th></tr></thead><tbody>
+        <tr><td>Finance</td><td>Reading invoices and statements automatically, fraud alerts, summarising annual reports, credit checks, customer chatbots, spreadsheet formulas</td><td>Upload a company's annual report PDF and ask: "Summarise revenue, profit, debt and 3 risks in a table, citing page numbers."</td></tr>
+        <tr><td>Trading</td><td>News and sentiment scanning, testing strategies on past data, writing code for charts, keeping a trading journal</td><td>Ask AI to explain a strategy (e.g. moving-average crossover) and its risks, then critique it as a sceptic. Note: AI cannot predict prices reliably; treat "AI stock tips" as a red flag.</td></tr>
+        <tr><td>Manufacturing</td><td>Cameras spotting defects on assembly lines, predicting machine breakdowns from sensor data, demand forecasting, safety manuals turned into Q&amp;A</td><td>Ask: "I run a small garment unit. Give 5 ways to use AI for quality, inventory and maintenance, cheapest first."</td></tr>
+        <tr><td>Design</td><td>Moodboards in seconds, 50 logo directions, product renders, AI features in Figma, Canva and Photoshop</td><td>Generate 10 logo concepts for an imaginary filter-coffee brand, pick one, refine it 3 times.</td></tr>
+        <tr><td>Literature</td><td>Brainstorming plots, editing, translation, research, audiobooks. Writers keep the voice; AI is the sparring partner</td><td>Write a 300-word story opening yourself, then ask AI to act as a tough editor. Rewrite it. Your words, sharper.</td></tr>
+      </tbody></table></div>
+      <h4>The universal productivity playbook</h4>
+      <ul class="tight">
+        <li><b>Draft</b>: never start from a blank page again.</li>
+        <li><b>Digest</b>: long documents, threads and reports shrunk to what matters.</li>
+        <li><b>Decide</b>: options laid out, pros and cons, a devil's advocate.</li>
+        <li><b>Do</b>: spreadsheet formulas, data cleaning, repetitive emails.</li>
+        <li><b>Double-check</b>: you remain the one accountable. Verify numbers and names.</li>
+      </ul>
+      <div class="prompt"><span class="lbl">Find your hours back</span><pre>Here's what a typical work week looks like for me: [describe tasks]. Identify the 5 tasks where AI could save me the most time, how much roughly, and the exact first prompt I should use for each.</pre><button class="copy">Copy</button></div>
+      <div class="prompt"><span class="lbl">Excel helper</span><pre>I have a Google Sheet with columns Date, Description, Amount. Write a formula that totals the Amount for the current month only, and explain it like I've never used formulas.</pre><button class="copy">Copy</button></div>
+      <div class="fun"><strong>Fun bit: AI job swap.</strong> Spend 10 minutes being an "AI-powered" version of someone else's job (a CA, a factory manager, a novelist). Ask AI to give you their 3 hardest weekly tasks and help you do one. You'll see where AI shines and where humans still rule.</div>
+      <h4>Saturday lab: automate one real task</h4>
+      <p>Pick the top task from "Find your hours back". Do it with AI from start to finish. Time yourself versus the old way and record the minutes saved.</p>
+      <details class="check"><summary>Checkpoint: Why is "AI predicted this stock will go up" a red flag?</summary><p>Markets react to new, unknowable information. LLMs predict plausible text, not future prices. AI helps analyse and organise, not foresee. Anyone selling certainty is selling something.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m7-1"><span class="d">Mon</span><span>Read all 5 industry rows and the playbook</span></label></li>
+      <li><label><input type="checkbox" id="m7-2"><span class="d">Wed</span><span>Do 3 of the 5 industry exercises</span></label></li>
+      <li><label><input type="checkbox" id="m7-3"><span class="d">Wed</span><span>Run "Find your hours back" on your own week</span></label></li>
+      <li><label><input type="checkbox" id="m7-4"><span class="d">Sat</span><span>Automate one task and record minutes saved</span></label></li>
+      <li><label><input type="checkbox" id="m7-5"><span class="d">Sun</span><span>Share one work tip with a colleague</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 8 -->
+<article class="wk" id="week-8" data-w="8">
+  <div class="wkhead"><div class="big">8</div><div><h2>Meet the agents<span class="mine-tag">Your path</span></h2><p>A chatbot talks. An agent does things. Here's how they work and where to build them.</p></div><div class="dates" data-d="8"></div></div>
+  <div class="two">
+    <div>
+      <h4>The idea, simply</h4>
+      <p>Ask a chatbot "book me a table" and it tells you how. Ask an <b>agent</b> and it opens the website, picks a slot and books it. An agent is an LLM given <b>a goal, tools and permission to act in a loop</b>: think, act, look at the result, think again, until done.</p>
+      <p>Every agent has five parts:</p>
+      <ul class="tight">
+        <li><b>Brain</b>: the LLM (Claude, GPT, Gemini) that reasons.</li>
+        <li><b>Instructions</b>: its job description and rules.</li>
+        <li><b>Tools</b>: what it can touch: Gmail, Calendar, Sheets, web search, WhatsApp/Telegram.</li>
+        <li><b>Memory</b>: notes, files or a spreadsheet it can read and update.</li>
+        <li><b>Trigger</b>: what wakes it up: a time (7 am daily), an event (new email), or you.</li>
+      </ul>
+      <h4>Five levels, from easy to expert</h4>
+      <div class="levels">
+        <div><b>1</b><strong>Chat</strong>You ask, it answers. No actions.</div>
+        <div><b>2</b><strong>Custom assistant</strong>Custom GPTs, Claude Projects, Gemini Gems. Instructions + files.</div>
+        <div><b>3</b><strong>Automation + AI</strong>Zapier, Make, n8n: a trigger, steps, and an AI step in the middle.</div>
+        <div><b>4</b><strong>Autonomous agent</strong>ChatGPT agent mode, Claude with browser use: it clicks and types for you.</div>
+        <div><b>5</b><strong>Code</strong>OpenAI Agents SDK, Claude Agent SDK, LangGraph, CrewAI.</div>
+      </div>
+      <h4>Which platform?</h4>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Platform</th><th>Good for</th><th>Skill needed</th></tr></thead><tbody>
+        <tr><td>Custom GPTs / Claude Projects / Gems</td><td>Personal assistants that know your stuff</td><td>None</td></tr>
+        <tr><td>Zapier (with Zapier Agents)</td><td>Connecting 7,000+ apps, easiest automations</td><td>Low</td></tr>
+        <tr><td>Make</td><td>Visual, cheaper for many steps</td><td>Low–medium</td></tr>
+        <tr><td>n8n</td><td>Powerful, flexible, can self-host free</td><td>Medium</td></tr>
+        <tr><td>Lindy, Relay.app</td><td>Plain-English agents for email, meetings, admin</td><td>Low</td></tr>
+        <tr><td>OpenAI Agent Builder</td><td>Visual agent workflows on OpenAI models</td><td>Medium</td></tr>
+        <tr><td>Agent SDKs, LangGraph, CrewAI</td><td>Full control, multi-agent teams</td><td>Coding</td></tr>
+      </tbody></table></div>
+      <p><b>Course pick:</b> we'll use Claude/ChatGPT Projects and Custom GPTs for assistants, and <b>Zapier</b> for automations because it's the gentlest start. Once comfortable, the same recipes work in Make or n8n.</p>
+      <h4>"How do I program one?" Here's every agent, in plain words</h4>
+      <div class="prompt"><span class="lbl">The agent loop (pseudo-code, read it like English)</span><pre>goal = "Find my unpaid bills and remind me"
+history = [instructions, goal]
+
+repeat:
+    decision = brain.think(history)          # LLM decides next step
+    if decision is "use a tool":
+        result = run(decision.tool, decision.inputs)   # e.g. read Gmail
+        history.add(result)                  # it sees what happened
+    if decision is "finished":
+        send(decision.answer)
+        stop</pre><button class="copy">Copy</button></div>
+      <p>That's genuinely the core of every agent. No-code platforms build this loop for you; you just fill in the instructions, tools and trigger.</p>
+      <div class="fun"><strong>Fun bit: Watch an agent work.</strong> In ChatGPT (agent mode) or Claude (with its browser extension), give it a harmless task: "Find three highly rated South Indian restaurants in Bengaluru open after 10 pm and make a comparison table." Watch it browse, click and decide. Stop it any time.</div>
+      <h4>Saturday lab: get your workshop ready</h4>
+      <p>Create a free Zapier account and connect Gmail, Google Calendar and Google Sheets. Install Telegram and create a bot via @BotFather (search "Telegram BotFather tutorial", 5 minutes) so agents can message you. Make a Google Sheet called "Agent HQ" for their notes.</p>
+      <details class="check"><summary>Checkpoint: What turns a chatbot into an agent?</summary><p>Tools plus a loop. It can take actions in other apps, look at the results and decide the next step on its own, usually started by a trigger.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m8-1"><span class="d">Mon</span><span>Learn the 5 parts and 5 levels of agents</span></label></li>
+      <li><label><input type="checkbox" id="m8-2"><span class="d">Wed</span><span>Read the agent loop and explain it in your own words</span></label></li>
+      <li><label><input type="checkbox" id="m8-3"><span class="d">Wed</span><span>Watch an agent complete a browsing task</span></label></li>
+      <li><label><input type="checkbox" id="m8-4"><span class="d">Sat</span><span>Set up Zapier, Telegram bot and "Agent HQ" sheet</span></label></li>
+      <li><label><input type="checkbox" id="m8-5"><span class="d">Sun</span><span>List 9 annoying chores you'd love an agent to do</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 9 -->
+<article class="wk" id="week-9" data-w="9">
+  <div class="wkhead"><div class="big">9</div><div><h2>Agent lab 1: mornings, inbox and money<span class="mine-tag">Your path</span></h2><p>Three agents that run while you sleep. Each one: what it does, where to build it, steps, and the exact instructions.</p></div><div class="dates" data-d="9"></div></div>
+  <div class="two">
+    <div>
+      <div class="agent"><h3><span>Agent 1</span> Morning Briefing</h3>
+        <div class="meta"><span>Platform: Zapier (or ChatGPT scheduled tasks)</span><span>Time: 45 min</span></div>
+        <p>Every day at 6:30 am, a Telegram message: today's meetings, weather, one reminder, and a motivating line.</p>
+        <ol><li>Zapier → Create Zap → Trigger: <b>Schedule by Zapier</b>, every day 6:30 am.</li><li>Action: <b>Google Calendar → Find events</b> for today.</li><li>Action: <b>Weather by Zapier</b> for your city (or a weather app's step).</li><li>Action: <b>AI by Zapier</b> (or ChatGPT/Claude step) with the instructions below, inserting the calendar and weather data.</li><li>Action: <b>Telegram → Send message</b> to yourself.</li><li>Test, then switch it on.</li></ol>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>You are my friendly morning briefer. Using today's calendar events and weather below, write a Telegram message under 120 words: 1) a one-line greeting, 2) meetings with times as bullets, 3) weather in one line with what to carry, 4) the single most important thing to prepare. Warm, brief, no fluff.</pre><button class="copy">Copy</button></div>
+        <p class="mute">Upgrade: add "top 3 headlines on topics I care about" using an RSS step.</p></div>
+      <div class="agent"><h3><span>Agent 2</span> Inbox Triage</h3>
+        <div class="meta"><span>Platform: Zapier + Gmail</span><span>Time: 60 min</span></div>
+        <p>Every new email gets sorted into Urgent, Bills, Newsletters or Personal. Urgent ones get a draft reply waiting for you.</p>
+        <ol><li>In Gmail, create labels: AI-Urgent, AI-Bills, AI-News, AI-Personal.</li><li>Trigger: <b>Gmail → New email</b>.</li><li>AI step: classify with the instructions below. Output a single word.</li><li>Add <b>Paths</b>: for each category, add the matching Gmail label.</li><li>On the Urgent path, add another AI step "draft a reply" and <b>Gmail → Create draft</b>. It drafts; you send.</li></ol>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>Classify this email into exactly one word: URGENT (needs my reply within 24h, from a real person), BILLS (payments, invoices, renewals, statements), NEWS (newsletters, promotions, updates), PERSONAL (friends and family, not urgent). Reply with the word only.</pre><button class="copy">Copy</button></div>
+        <p class="mute">Safety: keep it on "draft", never auto-send.</p></div>
+      <div class="agent"><h3><span>Agent 3</span> Money Diary</h3>
+        <div class="meta"><span>Platform: Zapier + Gmail + Google Sheets</span><span>Time: 60 min</span></div>
+        <p>Your bank's transaction alert emails become neat rows in a spreadsheet, auto-categorised. A Sunday summary tells you where the money went.</p>
+        <ol><li>Make a sheet "Money Diary" with columns: Date, Merchant, Amount, Category, Note.</li><li>Trigger: <b>Gmail → New email matching search</b> (e.g. from your bank's alerts address, subject contains "debited").</li><li>AI step: extract fields with the instructions below.</li><li>Action: <b>Google Sheets → Create row</b>.</li><li>Second Zap: Schedule every Sunday 8 pm → read rows for last 7 days → AI summary → Telegram.</li></ol>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>From this bank alert, return JSON only: {"date": "YYYY-MM-DD", "merchant": "", "amount": number, "category": one of Groceries, Fuel, Food out, Shopping, Bills, Health, Education, Travel, Other}. Never include account or card numbers.</pre><button class="copy">Copy</button></div></div>
+      <details class="check"><summary>Checkpoint: Why should the inbox agent draft and not send?</summary><p>Agents make mistakes. "Human in the loop" means AI does the boring part and you approve anything that leaves your name. Give agents the least permission they need.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m9-1"><span class="d">Mon</span><span>Read all three agent recipes</span></label></li>
+      <li><label><input type="checkbox" id="m9-2"><span class="d">Wed</span><span>Build Agent 1: Morning Briefing</span></label></li>
+      <li><label><input type="checkbox" id="m9-3"><span class="d">Sat</span><span>Build Agent 2: Inbox Triage</span></label></li>
+      <li><label><input type="checkbox" id="m9-4"><span class="d">Sat</span><span>Build Agent 3: Money Diary</span></label></li>
+      <li><label><input type="checkbox" id="m9-5"><span class="d">Sun</span><span>Review a week of their output and tweak instructions</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 10 -->
+<article class="wk" id="week-10" data-w="10">
+  <div class="wkhead"><div class="big">10</div><div><h2>Agent lab 2: bills, meals and news<span class="mine-tag">Your path</span></h2><p>Three agents for the household admin nobody enjoys.</p></div><div class="dates" data-d="10"></div></div>
+  <div class="two">
+    <div>
+      <div class="agent"><h3><span>Agent 4</span> Renewals Guardian</h3>
+        <div class="meta"><span>Platform: Zapier + Google Sheets + Telegram</span><span>Time: 45 min</span></div>
+        <p>Never miss an insurance renewal, vehicle service, subscription, passport expiry or school fee again.</p>
+        <ol><li>Sheet "Renewals": Item, Due date, Amount, Where to pay, Notes. Fill in everything you can think of.</li><li>Trigger: <b>Schedule</b>, daily 9 am.</li><li>Action: <b>Google Sheets → Lookup rows</b> (or use a Filter step) for items due in the next 15 days.</li><li>AI step: write the reminder with instructions below.</li><li>Telegram → Send message. Only fires when something's due.</li></ol>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>For each item below, write one reminder line: what's due, in how many days, amount, and the very next action I should take. Most urgent first. If something is due in 3 days or less, start that line with "URGENT".</pre><button class="copy">Copy</button></div></div>
+      <div class="agent"><h3><span>Agent 5</span> Meal &amp; Grocery Planner</h3>
+        <div class="meta"><span>Platform: Custom GPT or Claude Project (optional weekly Zap)</span><span>Time: 30 min</span></div>
+        <p>A family chef that knows your tastes, plans the week's meals and hands you a grocery list sorted by shop section.</p>
+        <ol><li>Create a Custom GPT (ChatGPT → Explore GPTs → Create) or a Claude Project named "Kitchen Captain".</li><li>Paste the instructions below and fill in your family details.</li><li>Each Sunday, open it and say "Plan next week. We have guests Saturday."</li><li>Optional: a Zap that sends the list to your Telegram or to the family WhatsApp group via copy-paste.</li></ol>
+        <div class="prompt"><span class="lbl">Assistant instructions</span><pre>You are Kitchen Captain, our family meal planner. Family: [members, ages]. Food: [vegetarian/non-veg, cuisine likes, dislikes, spice level]. Weekday cooking time max 30 min. Plan breakfast, lunch box and dinner Mon–Sun, reuse ingredients to cut waste, one treat day. Then give a grocery list grouped: Vegetables, Fruits, Dairy, Grains & dals, Masalas, Other, with quantities. Ask what's already at home before finalising.</pre><button class="copy">Copy</button></div></div>
+      <div class="agent"><h3><span>Agent 6</span> Weekly Research Digest</h3>
+        <div class="meta"><span>Platform: ChatGPT scheduled tasks, or Zapier + RSS</span><span>Time: 30 min</span></div>
+        <p>Every Sunday morning: the 5 things worth knowing this week on topics you choose (AI, markets, your industry, your city), with links.</p>
+        <ol><li>Easiest: in ChatGPT, ask it to run a scheduled task weekly with the prompt below (look for "Tasks" or "Schedule").</li><li>Builder route: Zapier → <b>RSS by Zapier</b> on 3–5 news feeds → collect the week → AI step summary → email or Telegram.</li></ol>
+        <div class="prompt"><span class="lbl">Task prompt</span><pre>Every Sunday at 8 am: search the web for the most important developments this week in [topic 1], [topic 2], [topic 3]. Give 5 bullets, each: what happened in one sentence, why it matters to an ordinary person in India, and the source link. Skip rumours and anything without a credible source.</pre><button class="copy">Copy</button></div></div>
+      <details class="check"><summary>Checkpoint: Agent 5 has no trigger or Zapier. Is it still an agent?</summary><p>It's a level-2 custom assistant: instructions plus memory of your preferences, run when you ask. Add a schedule and a tool that sends the list, and it becomes a level-3 agent. Not every helper needs to be fully autonomous.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m10-1"><span class="d">Mon</span><span>Fill your Renewals sheet with at least 10 items</span></label></li>
+      <li><label><input type="checkbox" id="m10-2"><span class="d">Wed</span><span>Build Agent 4: Renewals Guardian</span></label></li>
+      <li><label><input type="checkbox" id="m10-3"><span class="d">Sat</span><span>Build Agent 5: Kitchen Captain, plan a real week</span></label></li>
+      <li><label><input type="checkbox" id="m10-4"><span class="d">Sat</span><span>Build Agent 6: Weekly Research Digest</span></label></li>
+      <li><label><input type="checkbox" id="m10-5"><span class="d">Sun</span><span>Cook one meal from Kitchen Captain's plan</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 11 -->
+<article class="wk" id="week-11" data-w="11">
+  <div class="wkhead"><div class="big">11</div><div><h2>Agent lab 3: tutor, second brain and creator<span class="mine-tag">Your path</span></h2><p>Three agents that make you and your family smarter and more creative.</p></div><div class="dates" data-d="11"></div></div>
+  <div class="two">
+    <div>
+      <div class="agent"><h3><span>Agent 7</span> Family Tutor</h3>
+        <div class="meta"><span>Platform: Claude Project or Custom GPT</span><span>Time: 30 min</span></div>
+        <p>A patient tutor that never just hands over answers. It asks guiding questions, gives hints and quizzes, like the best teacher you had.</p>
+        <ol><li>Create the Project/GPT "Study Buddy" and paste the instructions.</li><li>Upload the syllabus or textbook chapter PDFs for the term.</li><li>Sit with your child for the first session. Agree the rule: Buddy helps think, doesn't do homework.</li></ol>
+        <div class="prompt"><span class="lbl">Assistant instructions</span><pre>You are Study Buddy, a warm tutor for a student in class [X], [board]. Never give the final answer straight away. First ask what they already know, then give one hint at a time, and celebrate progress. Use Indian everyday examples. After each topic, give a 3-question quiz. Keep replies short, under 80 words, and use simple words.</pre><button class="copy">Copy</button></div>
+        <p class="mute">Same recipe works for you: a tutor for any exam or skill you're learning.</p></div>
+      <div class="agent"><h3><span>Agent 8</span> Second Brain</h3>
+        <div class="meta"><span>Platform: Google NotebookLM (free) or Claude Project</span><span>Time: 40 min</span></div>
+        <p>Ask questions across all your important documents: "Does my health policy cover cataract surgery?", "What's the warranty on the fridge?", "When does the lease lock-in end?"</p>
+        <ol><li>Collect PDFs: insurance policies, appliance manuals and warranties, lease, school handbook, important letters. Remove ID and account numbers first.</li><li>In NotebookLM, create a notebook "Home Documents" and upload them.</li><li>Ask questions. It answers with citations pointing to the exact passage, so you can verify.</li><li>Bonus: click "Audio overview" to get a podcast-style summary of your health policy.</li></ol>
+        <div class="prompt"><span class="lbl">Good first questions</span><pre>Make a table of every document here: what it is, key dates, renewal or expiry, and the one clause I'm most likely to need. Then list anything that expires in the next 6 months.</pre><button class="copy">Copy</button></div></div>
+      <div class="agent"><h3><span>Agent 9</span> Content Creator</h3>
+        <div class="meta"><span>Platform: Zapier + Google Sheets + Buffer (or manual post)</span><span>Time: 60 min</span></div>
+        <p>You drop a one-line idea in a sheet. The agent drafts a post in your voice, you approve, it schedules.</p>
+        <ol><li>Sheet "Ideas": Idea, Platform, Status, Draft.</li><li>Trigger: <b>Google Sheets → New row</b>.</li><li>AI step: draft with the instructions below plus 3 of your past posts as examples of your voice.</li><li>Update the row's Draft column and set Status to "Review".</li><li>Second Zap: when you change Status to "Approved", send to <b>Buffer</b> to schedule.</li></ol>
+        <div class="prompt"><span class="lbl">AI step instructions</span><pre>Write a [LinkedIn/Instagram/X] post from this idea in my voice. My voice, shown in these examples: [paste 3 past posts]. Hook in the first line, short lines, one clear takeaway, no hashtag spam (max 3), under 150 words. Don't invent facts or numbers.</pre><button class="copy">Copy</button></div></div>
+      <details class="check"><summary>Checkpoint: Why does the Second Brain cite sources?</summary><p>So you can check the exact passage before acting. Grounding answers in your own documents (often called RAG) cuts hallucinations a lot, but you still verify anything important.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m11-1"><span class="d">Mon</span><span>Collect and clean your important PDFs</span></label></li>
+      <li><label><input type="checkbox" id="m11-2"><span class="d">Wed</span><span>Build Agent 7: Study Buddy, run one session</span></label></li>
+      <li><label><input type="checkbox" id="m11-3"><span class="d">Sat</span><span>Build Agent 8: Second Brain in NotebookLM</span></label></li>
+      <li><label><input type="checkbox" id="m11-4"><span class="d">Sat</span><span>Build Agent 9: Content Creator, approve one post</span></label></li>
+      <li><label><input type="checkbox" id="m11-5"><span class="d">Sun</span><span>Celebrate: all 9 agents running. Note which you use most.</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- WEEK 12 -->
+<article class="wk" id="week-12" data-w="12">
+  <div class="wkhead"><div class="big">12</div><div><h2>Vibe coding: build a website and put it on the internet<span class="mine-tag">Your path</span></h2><p>Describe an app in plain words, get working software, and share a link the whole world can open.</p></div><div class="dates" data-d="12"></div></div>
+  <div class="two">
+    <div>
+      <h4>What is vibe coding?</h4>
+      <p>The term was coined in early 2025 by AI researcher Andrej Karpathy: you describe what you want, the AI writes all the code, you look at the result and say "make the button bigger" or "add a dark mode". You steer by vibes, not by syntax. It's like being a film director: you don't operate the camera, you tell the crew what you want and judge each take.</p>
+      <h4>The tools</h4>
+      <div class="tbl scroll"><table class="stack"><thead><tr><th>Tool</th><th>Best for</th><th>Publishing</th></tr></thead><tbody>
+        <tr><td>Lovable</td><td>Non-technical builders, polished apps with login and database</td><td>One-click publish</td></tr>
+        <tr><td>Bolt.new</td><td>Fast prototypes in the browser</td><td>One-click publish</td></tr>
+        <tr><td>Replit</td><td>All-in-one: build, run, host, many app types</td><td>One-click deploy</td></tr>
+        <tr><td>v0 by Vercel</td><td>Beautiful web interfaces</td><td>Vercel, built in</td></tr>
+        <tr><td>Claude, ChatGPT, Gemini</td><td>Simple single-page sites and tools, free</td><td>You host the file (below)</td></tr>
+        <tr><td>Claude Code, Cursor</td><td>Bigger projects once you're curious about code</td><td>GitHub + any host</td></tr>
+      </tbody></table></div>
+      <h4>How does everyone see it? The 4 pieces of being "on the internet"</h4>
+      <ol class="flow">
+        <li><b>Files</b>: your site is just files (HTML etc.) the AI wrote.</li>
+        <li><b>Hosting</b>: a computer that's always on, serving those files. Free options are plenty.</li>
+        <li><b>Address</b>: a free one (yourname.netlify.app) or your own domain (yourname.in) bought yearly from a registrar.</li>
+        <li><b>Being found</b>: share the link, and add the site to Google Search Console so Google indexes it.</li>
+      </ol>
+      <p><b>Three ways to go live, easiest first:</b></p>
+      <ul class="tight">
+        <li><b>Built-in publish</b>: in Lovable, Bolt or Replit, press Publish. Done. You get a public link.</li>
+        <li><b>Netlify Drop</b>: if AI gave you an HTML file, go to app.netlify.com/drop and drag the folder in. Live in 30 seconds.</li>
+        <li><b>GitHub Pages</b>: free and permanent. Create a GitHub account, a new repository, upload index.html, Settings → Pages → deploy from main. Your site is at username.github.io/repo.</li>
+      </ul>
+      <p><b>Own domain:</b> buy from any registrar (GoDaddy, Namecheap, Cloudflare, Hostinger), then follow your host's "custom domain" guide: you paste two DNS records. Free HTTPS is automatic on Netlify, Vercel and GitHub Pages.</p>
+      <p><b>Safety:</b> never paste API keys or passwords into a public site's code. If your app stores user data, use the tool's built-in database with login switched on, and ask the AI "review this app for security problems a beginner would miss".</p>
+      <div class="prompt"><span class="lbl">Your first vibe-coded site</span><pre>Build me a single-file website (HTML, CSS, JavaScript in one file) called "Family Trip Splitter". Users add people and expenses (who paid, how much, for whom), and it shows who owes whom with the fewest transfers. Mobile-friendly, cheerful colours, saves data in the browser. Explain how to publish it free on Netlify Drop.</pre><button class="copy">Copy</button></div>
+      <div class="prompt"><span class="lbl">The fix-it loop</span><pre>When I click "Add expense" nothing happens. Here's what I see: [describe or paste screenshot]. Find the bug, fix it, and give me the complete updated file.</pre><button class="copy">Copy</button></div>
+      <div class="fun"><strong>Fun bit: Demo day.</strong> Build your personal homepage or a tiny tool your family will actually use (chore tracker, cricket score keeper, recipe box). Put it live, buy a domain if you love it, and send the link to five people. You're now a person who ships software.</div>
+      <h4>Saturday lab: capstone</h4>
+      <p>Build, publish, and submit to Google Search Console. Then write your "AI journey" one-pager: the 3 agents you use most, hours saved per week, and what you'll learn next.</p>
+      <details class="check"><summary>Checkpoint: You built a site in Claude and it works on your laptop. Why can't your friend open it?</summary><p>It's only a file on your computer. It needs hosting (Netlify, GitHub Pages, Vercel) to live on an always-on server with a public address.</p></details>
+    </div>
+    <aside class="miss card"><h3>Missions</h3><ul>
+      <li><label><input type="checkbox" id="m12-1"><span class="d">Mon</span><span>Learn vibe coding and the 4 pieces of going live</span></label></li>
+      <li><label><input type="checkbox" id="m12-2"><span class="d">Wed</span><span>Build the Trip Splitter from the prompt</span></label></li>
+      <li><label><input type="checkbox" id="m12-3"><span class="d">Wed</span><span>Publish it on Netlify Drop or GitHub Pages</span></label></li>
+      <li><label><input type="checkbox" id="m12-4"><span class="d">Sat</span><span>Capstone: build and publish your own idea</span></label></li>
+      <li><label><input type="checkbox" id="m12-5"><span class="d">Sun</span><span>Demo day: send your link to five people</span></label></li>
+    </ul><p class="xp">50 XP available this week</p></aside>
+  </div>
+</article>
+
+<!-- TOOLBOX -->
+<section class="wk" id="toolbox">
+  <h2>The toolbox, on one page</h2>
+  <p class="mute">The field moves monthly; this is the line-up as of November 2026. Most tools have a free tier: try free first.</p>
+  <div class="tbl scroll"><table class="stack"><thead><tr><th>Job</th><th>Start here</th><th>Also great</th></tr></thead><tbody>
+    <tr><td>Chat assistant</td><td>ChatGPT, Claude, Gemini</td><td>Perplexity (search-first), Microsoft Copilot</td></tr>
+    <tr><td>Images</td><td>ChatGPT images, Gemini</td><td>Midjourney, Ideogram, Adobe Firefly, Canva</td></tr>
+    <tr><td>Presentations</td><td>Gamma</td><td>Canva, Copilot in PowerPoint, Beautiful.ai</td></tr>
+    <tr><td>Video generation</td><td>Google Veo 3.1, Sora 2</td><td>Kling, Runway, Seedance, Pika</td></tr>
+    <tr><td>Talking avatars</td><td>HeyGen</td><td>Synthesia</td></tr>
+    <tr><td>Video editing</td><td>CapCut, Canva</td><td>Descript, VEED, Filmora</td></tr>
+    <tr><td>Voiceovers</td><td>ElevenLabs</td><td>Murf, WellSaid Labs</td></tr>
+    <tr><td>Your documents</td><td>NotebookLM</td><td>Claude Projects, ChatGPT Projects</td></tr>
+    <tr><td>Automations &amp; agents</td><td>Zapier</td><td>Make, n8n, Lindy, Relay.app, OpenAI Agent Builder</td></tr>
+    <tr><td>Agents in code</td><td>OpenAI Agents SDK, Claude Agent SDK</td><td>LangGraph, CrewAI</td></tr>
+    <tr><td>Vibe coding</td><td>Lovable</td><td>Bolt.new, Replit, v0, Claude Code, Cursor</td></tr>
+    <tr><td>Hosting</td><td>Netlify, GitHub Pages</td><td>Vercel, Cloudflare Pages</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- GLOSSARY -->
+<section class="wk" id="glossary">
+  <h2>Glossary: say it like a pro</h2>
+  <div class="gloss">
+    <div><b>AI</b>Machines doing tasks we'd call intelligent.</div>
+    <div><b>Machine learning</b>Learning patterns from examples instead of rules.</div>
+    <div><b>Neural network</b>Layers of simple maths units that pass numbers along; loosely brain-inspired.</div>
+    <div><b>LLM</b>Large Language Model: a neural network trained on huge amounts of text to predict the next token.</div>
+    <div><b>Token</b>A chunk of text, roughly ¾ of an English word.</div>
+    <div><b>Parameter / weight</b>The adjustable numbers inside a model; weights are their trained values.</div>
+    <div><b>GPU</b>A chip that does thousands of calculations in parallel; the engine of AI.</div>
+    <div><b>Training vs inference</b>Learning (expensive, once) vs answering (each chat).</div>
+    <div><b>Prompt</b>What you type to the model. System prompt: hidden instructions set by the app.</div>
+    <div><b>Context window</b>How much the model can read at once.</div>
+    <div><b>Hallucination</b>Confident, made-up output.</div>
+    <div><b>Temperature</b>How random the model's word choices are.</div>
+    <div><b>Fine-tuning</b>Extra training of a model on specialised examples.</div>
+    <div><b>RAG</b>Retrieval-augmented generation: fetching your documents first, then answering from them.</div>
+    <div><b>Multimodal</b>Handles text, images, audio and video, not just text.</div>
+    <div><b>Diffusion</b>How most image and video models create: removing noise step by step.</div>
+    <div><b>Agent</b>An LLM with tools and a loop that takes actions toward a goal.</div>
+    <div><b>API</b>A doorway that lets one program use another (e.g. your app calling Claude).</div>
+    <div><b>MCP</b>Model Context Protocol: a standard plug that connects AI assistants to apps and data.</div>
+    <div><b>Vibe coding</b>Building software by describing it in plain language.</div>
+    <div><b>Hosting / domain</b>Where your site lives / its address.</div>
+  </div>
+</section>
+
+<!-- FREE EXTRAS -->
+<section class="wk" id="free">
+  <h2>Free, trustworthy extras (instead of paid influencer courses)</h2>
+  <p>All free, from universities, AI companies or respected educators. Optional, for curious Mondays.</p>
+  <div class="res">
+    <a href="https://www.elementsofai.com/"><b>Elements of AI</b><span>University of Helsinki · the gentlest non-technical intro to AI concepts</span></a>
+    <a href="https://www.3blue1brown.com/topics/neural-networks"><b>3Blue1Brown: Neural networks</b><span>Beautiful visual videos on how neural networks and LLMs work</span></a>
+    <a href="https://www.youtube.com/results?search_query=andrej+karpathy+intro+to+large+language+models"><b>Andrej Karpathy: Intro to LLMs</b><span>One-hour talk from a top researcher, made for a general audience</span></a>
+    <a href="https://anthropic.skilljar.com/"><b>Anthropic Academy</b><span>Free courses on using Claude and AI fluency</span></a>
+    <a href="https://academy.openai.com/"><b>OpenAI Academy</b><span>Free workshops and guides on using ChatGPT well</span></a>
+    <a href="https://www.deeplearning.ai/"><b>DeepLearning.AI short courses</b><span>"AI for Everyone", "Generative AI for Everyone" and agent courses; free to audit</span></a>
+  </div>
+</section>
+
+<section class="wk" id="finish">
+  <h2>Your finish-line card</h2>
+  <div class="cardwrap">
+    <div>
+      <p>Your card fills in as you tick missions. When all twelve stations light up, download it and share it: WhatsApp, Instagram, LinkedIn, the family group.</p>
+      <p><label for="finName"><b>Name on the card</b></label><br><input id="finName" type="text" placeholder="Your name" maxlength="28"></p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn" id="finDl" type="button">Download card</button><a class="btn ghost" id="finWa" href="#">Share on WhatsApp</a></div>
+      <p class="mute" style="font-size:14px">Not finished yet? The card shows how far you've come. Sharing progress keeps you going too.</p>
+    </div>
+    <canvas id="fin" width="1080" height="1080" aria-label="Your course progress card"></canvas>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer class="band dark">
+  <div class="wrap"><p><b>You made it to the last station.</b> Twelve weeks ago AI was a buzzword. Now you understand how it thinks, create with it, run nine agents and own a website. Keep the five weekly slots: pick a new tool or agent each month and keep riding.</p><p class="mute">Your ticked missions are saved in this browser only. <button class="btn ghost" id="clearAll" style="color:var(--ice);border-color:#3d6b7c">Reset progress</button></p></div>
+</footer>
+
+<script>
+{
+  const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  const boxes=[...document.querySelectorAll('.miss input[type=checkbox]')];
+  const ranks=[[0,'Curious Human'],[100,'Prompt Apprentice'],[250,'Tool Juggler'],[400,'Agent Wrangler'],[550,'AI Builder']];
+  let saved={};try{saved=JSON.parse(store.get('aiCourse')||'{}')}catch(e){saved={}}
+  boxes.forEach(b=>{b.checked=!!saved[b.id]});
+  const routeItems=[...document.querySelectorAll('#route li')];
+  const update=()=>{
+    const st={};let n=0;
+    boxes.forEach(b=>{if(b.checked){st[b.id]=1;n++}});
+    store.set('aiCourse',JSON.stringify(st));
+    const xp=n*10;
+    document.getElementById('xp').textContent=xp;
+    document.getElementById('meterFill').style.width=(xp/6)+'%';
+    let r=ranks[0][1];ranks.forEach(([t,name])=>{if(xp>=t)r=name});
+    document.getElementById('rankName').textContent=r;
+    routeItems.forEach((li,i)=>{
+      const w=i+1;const c=boxes.filter(b=>b.id.startsWith('m'+w+'-')&&b.checked).length;
+      li.classList.toggle('on',c>0);li.classList.toggle('done',c===5);
+      const p=li.querySelector('.wp');if(p)p.textContent=c===5?'Complete':c+' of 5 done';
+    });
+  };
+  boxes.forEach(b=>b.addEventListener('change',update));
+  document.getElementById('clearAll').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);update()});
+  update();
+
+  const sd=document.getElementById('startDate');
+  const fmt=d=>d.toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+  const dates=()=>{
+    const v=sd.value;if(!v)return;const s=new Date(v+'T00:00:00');if(isNaN(s))return;
+    store.set('aiCourseStart',v);
+    document.querySelectorAll('[data-d]').forEach(el=>{
+      const w=+el.dataset.d;const a=new Date(s);a.setDate(a.getDate()+(w-1)*7);const e=new Date(a);e.setDate(e.getDate()+6);
+      el.textContent=fmt(a)+' – '+fmt(e);
+    });
+    const end=new Date(s);end.setDate(end.getDate()+83);
+    document.getElementById('endLine').textContent='Finishes '+end.toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+  };
+  const ss=store.get('aiCourseStart');if(ss)sd.value=ss;
+  sd.addEventListener('change',dates);dates();
+
+  document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{
+    const t=btn.parentElement.querySelector('pre').textContent;
+    try{await navigator.clipboard.writeText(t);btn.textContent='Copied'}catch(e){btn.textContent='Select & copy'}
+    setTimeout(()=>{btn.textContent='Copy'},1600);
+  }));
+
+  const words=[['amazing',2.5],['delicious',2.2],['like home',1.7],['spicy',1.4],['better',1.1],['salty',0.4],['purple',-2.5]];
+  const rows=document.getElementById('rows');const temp=document.getElementById('temp');const tval=document.getElementById('tval');const blank=document.getElementById('blank');
+  let picked=-1;
+  const probs=()=>{const T=+temp.value;const ex=words.map(w=>Math.exp(w[1]/T));const sum=ex.reduce((a,b)=>a+b,0);return ex.map(x=>x/sum)};
+  const draw=()=>{
+    tval.textContent=(+temp.value).toFixed(1);
+    const p=probs();
+    rows.innerHTML=words.map((w,i)=>'<div class="row'+(i===picked?' pick':'')+'"><span>'+w[0]+'</span><span class="tr"><i style="width:'+(p[i]*100).toFixed(1)+'%"></i></span><span class="v">'+(p[i]*100).toFixed(p[i]<0.01?1:0)+'%</span></div>').join('');
+  };
+  temp.addEventListener('input',()=>{picked=-1;blank.textContent='___';draw()});
+  document.getElementById('pick').addEventListener('click',()=>{
+    const p=probs();let r=Math.random(),i=0;while(i<p.length-1&&r>p[i]){r-=p[i];i++}
+    picked=i;blank.textContent=words[i][0];draw();
+  });
+  document.getElementById('reset').addEventListener('click',()=>{picked=-1;blank.textContent='___';temp.value=1;draw()});
+  draw();
+
+  let path=[];try{path=JSON.parse(store.get('aiPath')||'[]')}catch(e){path=[]}
+  if(Array.isArray(path)&&path.length){path.forEach(n=>{const li=routeItems[n-1];if(li)li.classList.add('mine');const a=document.getElementById('week-'+n);if(a)a.classList.add('mine')})}
+
+  const cv=document.getElementById('fin'),cx=cv.getContext('2d'),nm=document.getElementById('finName');
+  nm.value=store.get('aiName')||'';
+  const card=()=>{
+    const done=routeItems.map((li,i)=>boxes.filter(b=>b.id.startsWith('m'+(i+1)+'-')&&b.checked).length);
+    const xp=done.reduce((a,b)=>a+b,0)*10;let rk=ranks[0][1];ranks.forEach(([t,n])=>{if(xp>=t)rk=n});
+    const full=done.filter(d=>d===5).length;
+    cx.fillStyle='#06222e';cx.fillRect(0,0,1080,1080);
+    cx.fillStyle='#ff2e7e';cx.fillRect(0,0,1080,16);
+    cx.fillStyle='#a8c7d2';cx.font='600 36px Inter, sans-serif';cx.fillText('AI for Real Life',80,120);
+    cx.fillStyle='#dff1f7';cx.font='700 84px "Space Grotesk", sans-serif';
+    cx.fillText(full===12?'I finished it.':'I\'m on my way.',80,230);
+    cx.font='700 60px "Space Grotesk", sans-serif';cx.fillStyle='#ff2e7e';cx.fillText((nm.value||'').slice(0,28),80,320);
+    const x0=110,x1=970,y=520,step=(x1-x0)/11;
+    cx.lineWidth=14;cx.strokeStyle='#1d4a5c';cx.beginPath();cx.moveTo(x0,y);cx.lineTo(x1,y);cx.stroke();
+    let last=-1;done.forEach((d,i)=>{if(d>0)last=i});
+    if(last>=0){cx.strokeStyle='#ff2e7e';cx.beginPath();cx.moveTo(x0,y);cx.lineTo(x0+step*last,y);cx.stroke()}
+    done.forEach((d,i)=>{const x=x0+step*i;cx.beginPath();cx.arc(x,y,24,0,7);cx.fillStyle=d===5?'#ff2e7e':'#06222e';cx.fill();cx.lineWidth=10;cx.strokeStyle=d>0?'#ff2e7e':'#3d6b7c';cx.stroke();cx.fillStyle='#a8c7d2';cx.font='600 26px Inter, sans-serif';cx.textAlign='center';cx.fillText(String(i+1),x,y+70);cx.textAlign='left'});
+    const agents=[9,10,11].reduce((a,w)=>a+boxes.filter(b=>/^m(9|10|11)-[234]$/.test(b.id)&&b.id.startsWith('m'+w+'-')&&b.checked).length,0);
+    const stats=[[xp+' XP',rk],[full+' / 12','stations complete'],[agents+' / 9','agents built']];
+    stats.forEach((s2,i)=>{const x=80+i*320;cx.fillStyle='#dff1f7';cx.font='700 64px "Space Grotesk", sans-serif';cx.fillText(s2[0],x,750);cx.fillStyle='#a8c7d2';cx.font='400 30px Inter, sans-serif';cx.fillText(s2[1],x,800)});
+    cx.fillStyle='#a8c7d2';cx.font='400 30px Inter, sans-serif';cx.fillText('How AI works · prompting · images, video, voice',80,920);cx.fillText('agents · vibe coding · my own website',80,962);
+  };
+  nm.addEventListener('input',()=>{store.set('aiName',nm.value);card()});
+  boxes.forEach(b=>b.addEventListener('change',card));
+  document.getElementById('clearAll').addEventListener('click',card);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(card);card();
+  document.getElementById('finDl').addEventListener('click',()=>{try{const a=document.createElement('a');a.download='ai-for-real-life-card.png';a.href=cv.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove()}catch(e){}});
+  const wa=document.getElementById('finWa');
+  const setWa=()=>{wa.href='https://wa.me/?text='+encodeURIComponent('I\'m learning AI with a free 12-week hands-on course, '+document.getElementById('xp').textContent+' XP so far. Join me: '+location.href.split('#')[0].replace(/course\.html$/,''))};
+  boxes.forEach(b=>b.addEventListener('change',setWa));setWa();
+}
+</script>
+</body>
+</html>
