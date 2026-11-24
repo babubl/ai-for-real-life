@@ -114,7 +114,7 @@ footer{font-size:14px}
 </head>
 <body>
 
-<div class="top"><div class="wrap"><b>AI for Real Life</b><nav aria-label="Sections"><a href="#start">Start here</a><a href="#first-win">First win</a><a href="#tracks">Tracks</a><a href="#paid-courses">Paid courses?</a><a href="#safety">Safety</a><a href="#whats-new">What's new</a><a href="#together">Learn together</a><a class="go" href="course.html">The course</a></nav></div></div>
+<div class="top"><div class="wrap"><b>AI for Real Life</b><nav aria-label="Sections"><a href="#start">Start here</a><a href="basics.html">AI School</a><a href="#first-win">First win</a><a href="#tracks">Tracks</a><a href="#paid-courses">Paid courses?</a><a href="#safety">Safety</a><a href="#whats-new">What's new</a><a href="#together">Learn together</a><a class="go" href="course.html">The course</a></nav></div></div>
 
 <header class="band dark hero" style="padding-bottom:70px">
   <div class="wrap">
@@ -150,7 +150,7 @@ footer{font-size:14px}
       <li><b>Talk to it (5 min).</b> Tap the voice or microphone button and just speak: "I want to plan a weekend trip near my city for a family of four on a small budget. Ask me questions first." Answer out loud like a conversation.</li>
       <li><b>Make it yours (5 min).</b> Pick a real problem from this week and paste:
         <div class="prompt"><pre>Here's something I need to sort out this week: [describe it]. Ask me up to 5 questions, one at a time, then give me a simple step-by-step plan.</pre><button class="copy" type="button">Copy</button></div></li>
-      <li style="border-bottom:1px solid var(--line)"><b>Done?</b> You just used vision, voice and planning, three of the most powerful AI skills. Now take the quiz above for your full path, or jump into <a href="course.html#week-1">Week 1</a>.</li>
+      <li style="border-bottom:1px solid var(--line)"><b>Done?</b> You just used vision, voice and planning, three of the most powerful AI skills. Now take the quiz above for your full path, or start with <a href="basics.html">AI School</a>, the basics everyone needs first.</li>
     </ol>
   </div>
 </section>
@@ -158,7 +158,7 @@ footer{font-size:14px}
 <section class="band sec" id="tracks">
   <div class="wrap">
     <h2>One course, six tracks</h2>
-    <p style="max-width:70ch">Everyone does the same first four weeks (how AI works, talking to it well, daily life). After that, your track decides which weeks to focus on and what your examples and projects look like.</p>
+    <p style="max-width:70ch">Everyone starts at <a href="basics.html">AI School</a> (the basics: AI, machine learning, deep learning, data, neural networks), then the same first four weeks. After that, your track decides which weeks to focus on and what your examples and projects look like.</p>
     <div class="tracks" id="trackCards"></div>
   </div>
 </section>
@@ -173,7 +173,7 @@ footer{font-size:14px}
         <li><a href="https://anthropic.skilljar.com/">Anthropic Academy</a> and <a href="https://academy.openai.com/">OpenAI Academy</a>: straight from the makers</li>
         <li><a href="https://www.3blue1brown.com/topics/neural-networks">3Blue1Brown</a>: beautiful visual explanations</li>
         <li><a href="https://www.deeplearning.ai/">DeepLearning.AI</a>: "AI for Everyone" and short courses, free to audit</li>
-        <li>This site's <a href="course.html">12-week course</a>: hands-on, in order</li>
+        <li>This site's <a href="basics.html">AI School</a> and <a href="course.html">12-week course</a>: hands-on, in order</li>
       </ul></div>
       <div class="card"><h3>When paying is worth it</h3><ul>
         <li>You need a <b>recognised certificate</b> for a job or promotion (from Google, Microsoft, AWS, or a university)</li>
@@ -295,16 +295,16 @@ footer{font-size:14px}
   const show=()=>{
     const w=val('who'),g=val('want'),t=val('time');
     store.set('aiQuiz',JSON.stringify({w,g,t}));
-    if(!w||!g||!t){res.innerHTML='<h3>Your route appears here</h3><p class="empty">Pick one answer for each of the three questions. Your personal list of stations, your first win and your weekly pace will show up right here.</p><ol class="line"><li><span class="mute">Week 1 · What is AI?</span></li><li><span class="mute">Week 2 · Inside the LLM</span></li><li><span class="mute">…your stations</span></li></ol>';return}
+    if(!w||!g||!t){res.innerHTML='<h3>Your route appears here</h3><p class="empty">Pick one answer for each of the three questions. Your personal list of stations, your first win and your weekly pace will show up right here.</p><ol class="line"><li><span class="mute">AI School · the basics</span></li><li><span class="mute">Week 1 · What is AI?</span></li><li><span class="mute">…your stations</span></li></ol>';return}
     const tr=TRACKS[w];const extra=(Q2.find(q=>q[0]===g)||[0,0,[]])[2];
     const path=[...new Set([...tr.weeks,...extra])].sort((a,b)=>a-b);
-    const tm=Q3.find(q=>q[0]===t);const total=Math.round(path.length*tm[2]);
+    const tm=Q3.find(q=>q[0]===t);const total=Math.round((path.length+2)*tm[2]);
     store.set('aiPath',JSON.stringify(path));
-    res.innerHTML='<h3>Your route: '+esc(tr.name)+'</h3><p class="pace">'+path.length+' stations · about '+total+' weeks at your pace</p>'+
+    res.innerHTML='<h3>Your route: '+esc(tr.name)+'</h3><p class="pace">AI School + '+path.length+' stations · about '+total+' weeks at your pace</p>'+
       '<div class="win"><b>Today\'s first win:</b> '+esc(tr.first)+'</div>'+
-      '<ol class="line">'+path.map(n=>'<li><a href="course.html#week-'+n+'">Week '+n+' · '+esc(WEEKS[n])+'</a></li>').join('')+'</ol>'+
+      '<ol class="line"><li><a href="basics.html">AI School · the basics (2 weeks)</a><small>Required first: what AI, ML and deep learning really are</small></li>'+path.map(n=>'<li><a href="course.html#week-'+n+'">Week '+n+' · '+esc(WEEKS[n])+'</a></li>').join('')+'</ol>'+
       '<p style="font-size:15px"><b>Your pace:</b> '+esc(tm[3])+'</p><p style="font-size:15px"><b>Tip:</b> '+esc(tr.tip)+'</p>'+
-      '<div class="row"><a class="btn" href="course.html#week-'+path[0]+'">Start Week '+path[0]+'</a><a class="btn ghost" href="#first-win">Do the 15-minute win</a></div>';
+      '<div class="row"><a class="btn" href="basics.html">Start AI School</a><a class="btn ghost" href="#first-win">Do the 15-minute win</a></div>';
   };
   form.addEventListener('change',show);
   try{const s=JSON.parse(store.get('aiQuiz')||'{}');['who','want','time'].forEach((n,i)=>{const v=[s.w,s.g,s.t][i];if(v){const el=form.querySelector('input[name='+n+'][value="'+v+'"]');if(el)el.checked=true}})}catch(e){}

@@ -6,6 +6,7 @@ Plain HTML, no build step. Works on GitHub Pages as-is.
 
 ## Files
 - `index.html`: home page (quiz, first win, tracks, paid courses, safety, what's new, learn together)
+- `basics.html`: AI School, 8 foundation lessons (AI, ML, deep learning, data, neural networks, branches, generative AI, ethics) with two experiments and a final exam
 - `course.html`: the 12-week course with missions, XP, and a shareable finish-line card
 - `favicon.svg`, `robots.txt`, `sitemap.xml`, `.nojekyll`
 
