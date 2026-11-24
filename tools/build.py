@@ -54,6 +54,7 @@ def head(m):
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Babu Balasubramanian">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,13 +88,13 @@ def footer(js):
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="brand" href="./" aria-label="AI for Real Life, home">{MARK.format(s=28, bg='#2A36B1')}<span class="wm">AI <i>for</i> Real Life</span></a>
-        <p>A free, practical way for anyone in India to learn AI by using it. Made in Chennai. No ads, no sign-up, no tracking.</p>
+        <p>A free, practical way for anyone in India to learn AI by using it. Made in Chennai by Babu Balasubramanian. No ads, no sign-up, no tracking.</p>
       </div>
       <div><h4>Learn</h4><ul><li><a href="./#start">Find my path</a></li><li><a href="basics.html">How AI works</a></li><li><a href="course.html">12-week course</a></li><li><a href="glossary.html">Glossary</a></li></ul></div>
       <div><h4>Guides</h4><ul><li><a href="safety.html">Family AI safety</a></li><li><a href="guides.html#shop">AI for your shop</a></li><li><a href="guides.html#indian-languages">AI in Indian languages</a></li><li><a href="guides.html#jobs">AI and your job</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="about.html">About this site</a></li><li><a href="about.html#faq">FAQ</a></li><li><a href="about.html#privacy">Privacy</a></li><li><a href="https://github.com/babubl/ai-for-real-life/issues">Contact &amp; feedback</a></li></ul></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 AI for Real Life · Last reviewed {UPDATED}</span><span>English · தமிழ் coming soon</span><span>AI tools change fast. Check each tool's own site for current prices and features.</span></div>
+    <div class="foot-bottom"><span>© 2026 Babu Balasubramanian · Last reviewed {UPDATED}</span><span>English · தமிழ் coming soon</span><span>AI tools change fast. Check each tool's own site for current prices and features.</span></div>
   </div>
 </footer>
 {scripts}</body>
