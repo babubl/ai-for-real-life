@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How AI Works: AI, Machine Learning and Deep Learning Explained | AI for Real Life</title>
-<meta name="description" content="The foundations of AI in plain words: AI vs machine learning vs deep learning vs generative AI, data, training, neural networks, transformers, limits and ethics. Eight short lessons with hands-on experiments and a quiz.">
+<meta name="description" content="The foundations of AI in plain words, mapped to university and school curricula: AI, search, data, probability, machine learning, evaluation, neural networks, generative AI, AI projects and responsible AI. Twelve lessons with experiments and a quiz.">
 <link rel="canonical" href="https://babubl.github.io/ai-for-real-life/basics.html">
 <meta name="theme-color" content="#FBF8F3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0F1115" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AI for Real Life">
 <meta property="og:title" content="How AI works, in plain words">
-<meta property="og:description" content="The foundations of AI in plain words: AI vs machine learning vs deep learning vs generative AI, data, training, neural networks, transformers, limits and ethics. Eight short lessons with hands-on experiments and a quiz.">
+<meta property="og:description" content="The foundations of AI in plain words, mapped to university and school curricula: AI, search, data, probability, machine learning, evaluation, neural networks, generative AI, AI projects and responsible AI. Twelve lessons with experiments and a quiz.">
 <meta property="og:url" content="https://babubl.github.io/ai-for-real-life/basics.html">
 <meta property="og:image" content="https://babubl.github.io/ai-for-real-life/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -22,9 +22,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=Mukta:wght@400;600;700&family=IBM+Plex+Mono&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261124d">
-<link rel="stylesheet" href="assets/basics.css?v=20261124d">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "How AI works: the foundations", "description": "Eight short lessons on AI, machine learning, deep learning, generative AI, data, training, neural networks and ethics, with experiments and a quiz.", "inLanguage": "en", "isAccessibleForFree": true, "provider": {"@type": "Organization", "name": "AI for Real Life", "url": "https://babubl.github.io/ai-for-real-life/"}, "offers": {"@type": "Offer", "price": 0, "priceCurrency": "INR", "category": "Free"}, "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT4H"}}</script>
+<link rel="stylesheet" href="assets/site.css?v=20261124e">
+<link rel="stylesheet" href="assets/basics.css?v=20261124e">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "How AI works: the foundations", "description": "Twelve lessons on AI, search, data, probability, machine learning, evaluation, neural networks, generative AI, AI projects and responsible AI, with experiments and a quiz.", "inLanguage": "en", "isAccessibleForFree": true, "provider": {"@type": "Organization", "name": "AI for Real Life", "url": "https://babubl.github.io/ai-for-real-life/"}, "offers": {"@type": "Offer", "price": 0, "priceCurrency": "INR", "category": "Free"}, "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT6H"}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -37,14 +37,14 @@
   </div>
 </header>
 <nav class="menu-sheet" id="menu" aria-label="Menu" hidden><a class="row" href="./#start">Start here</a><a class="row" href="basics.html" aria-current="page">How AI works</a><a class="row" href="course.html">12-week course</a><a class="row" href="guides.html">Guides</a><a class="row" href="safety.html">Safety</a><a class="row" href="about.html">About &amp; FAQ</a><a class="btn btn-primary" href="#l1">Start lesson 1</a></nav>
-<div class="subbar"><div class="container"><label for="lessonJump">Jump to</label><select id="lessonJump"><option value="l1" data-l="1" data-t="Lesson 1 · What is AI">Lesson 1 · What is AI</option><option value="l2" data-l="2" data-t="Lesson 2 · Data">Lesson 2 · Data</option><option value="l3" data-l="3" data-t="Lesson 3 · Machine learning">Lesson 3 · Machine learning</option><option value="l4" data-l="4" data-t="Lesson 4 · Training and testing">Lesson 4 · Training and testing</option><option value="l5" data-l="5" data-t="Lesson 5 · Neural networks">Lesson 5 · Neural networks</option><option value="l6" data-l="6" data-t="Lesson 6 · Branches of AI">Lesson 6 · Branches of AI</option><option value="l7" data-l="7" data-t="Lesson 7 · Generative AI and LLMs">Lesson 7 · Generative AI and LLMs</option><option value="l8" data-l="8" data-t="Lesson 8 · Limits and ethics">Lesson 8 · Limits and ethics</option><option value="exam">Final quiz</option></select><span class="prog" id="lessonProg" aria-live="polite">0 of 8 lessons done</span></div><div class="progline" aria-hidden="true"><i id="lessonLine"></i></div></div>
+<div class="subbar"><div class="container"><label for="lessonJump">Jump to</label><select id="lessonJump"><option value="l1" data-l="1" data-t="Lesson 1 · What is AI">Lesson 1 · What is AI</option><option value="l2" data-l="2" data-t="Lesson 2 · Search and planning">Lesson 2 · Search and planning</option><option value="l3" data-l="3" data-t="Lesson 3 · Data">Lesson 3 · Data</option><option value="l4" data-l="4" data-t="Lesson 4 · Probability">Lesson 4 · Probability</option><option value="l5" data-l="5" data-t="Lesson 5 · Machine learning">Lesson 5 · Machine learning</option><option value="l6" data-l="6" data-t="Lesson 6 · Training and testing">Lesson 6 · Training and testing</option><option value="l7" data-l="7" data-t="Lesson 7 · Measuring a model">Lesson 7 · Measuring a model</option><option value="l8" data-l="8" data-t="Lesson 8 · Neural networks">Lesson 8 · Neural networks</option><option value="l9" data-l="9" data-t="Lesson 9 · Branches of AI">Lesson 9 · Branches of AI</option><option value="l10" data-l="10" data-t="Lesson 10 · Generative AI and LLMs">Lesson 10 · Generative AI and LLMs</option><option value="l11" data-l="11" data-t="Lesson 11 · How AI projects are built">Lesson 11 · How AI projects are built</option><option value="l12" data-l="12" data-t="Lesson 12 · Responsible AI">Lesson 12 · Responsible AI</option><option value="exam">Final quiz</option></select><span class="prog" id="lessonProg" aria-live="polite">0 of 12 lessons done</span></div><div class="progline" aria-hidden="true"><i id="lessonLine"></i></div></div>
 <main id="main">
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">Foundations</span>
     <h1>How AI works, in plain words.</h1>
-    <p class="lede">What AI, machine learning, deep learning and generative AI really are, how machines learn, and where it goes wrong. Eight short lessons, two experiments you can touch, a question after each lesson and a final quiz. No maths needed.</p>
-    <div class="meta"><div><b>8 lessons</b>about 30 min each</div><div><b>2 experiments</b>learn by doing</div><div><b>1 quiz</b>10 questions</div><div><b>Any order</b>before or alongside the course</div></div>
+    <p class="lede">What AI, machine learning, deep learning and generative AI really are, how machines learn, and where it goes wrong. Twelve short lessons covering what university and school AI courses teach, four experiments you can touch, a question after each lesson, a "Go deeper" shelf on every topic and a final quiz. No maths needed.</p>
+    <div class="meta"><div><b>12 lessons</b>about 30 min each</div><div><b>4 experiments</b>learn by doing</div><div><b>1 quiz</b>15 questions</div><div><b>Any order</b>before or alongside the course</div></div>
   </div>
 </section>
 <section class="section tight">
@@ -75,7 +75,7 @@
     </figure>
     <div class="plan-note">
       <h2>Fitting it into your week</h2>
-      <p class="muted measure">Take it in two weeks using your usual slots: lessons 1 to 4 in the first week (the mango experiment on Saturday), lessons 5 to 8 and the quiz in the second. Many people do it after Weeks 1, 3 and 4 of the course, once they've used AI a little. Either way works.</p>
+      <p class="muted measure">Take it over three weeks in your usual slots, four lessons a week: lessons 1 to 4 (what AI is, search, data, probability), 5 to 8 (machine learning, training, measuring, neural networks), then 9 to 12 (branches, generative AI, projects, responsibility) and the final quiz. Every lesson has a <b>Go deeper</b> shelf of university and official resources if you want more. See how this compares with other courses on the <a href="syllabus.html">syllabus page</a>.</p>
     </div>
   </div>
 </section>
@@ -95,7 +95,8 @@
       <h3>Narrow AI vs general AI</h3>
       <p><b>Narrow AI</b> is good at one job: Google Maps can't write poems, and a chess engine can't drive. Even ChatGPT, broad as it seems, is a language tool with clear limits. <b>AGI (Artificial General Intelligence)</b> means AI that can learn any intellectual task a human can. It doesn't exist yet; experts strongly disagree on when, or whether, it will.</p>
       <details class="check"><summary>Test: Is a calculator AI? Is Google Maps traffic prediction AI?</summary><p>A calculator follows fixed rules written by people and never learns, so it isn't AI in the modern sense. Maps traffic prediction learned patterns from millions of past journeys, so it is machine learning, a kind of AI.</p></details>
-      <label class="got"><input type="checkbox" data-l="1"> I've got lesson 1</label>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 3 hours</span></summary><div class="dbody"><p>Researchers describe AI with two properties: <b>autonomy</b>, performing tasks in complex environments without constant guidance, and <b>adaptivity</b>, improving by learning from experience. A thermostat has a little autonomy but no adaptivity; a spam filter that learns from your clicks has both. University courses also distinguish four ways of defining AI: thinking like humans, acting like humans (the Turing test), thinking rationally, and acting rationally. Most modern AI aims at the last: acting to get the best expected outcome.</p><ul class="res-list"><li><a href="https://course.elementsofai.com/">Elements of AI, chapter 1: What is AI?</a><span class="src">University of Helsinki · free course · 1–2 hrs</span><span>Autonomy, adaptivity, and realistic vs science-fiction AI.</span></li><li><a href="https://www.deeplearning.ai/courses/ai-for-everyone/">AI for Everyone, week 1</a><span class="src">Andrew Ng · video, free to audit · 1 hr</span><span>What AI can and can't do, explained for non-engineers.</span></li><li><a href="https://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach, chapters 1–2</a><span class="src">Russell and Norvig · the standard university textbook</span><span>The four definitions of AI and the idea of intelligent agents.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="1"> I've got this lesson</label>
     </div>
     <div class="card stick">
       <h3>A very short history</h3>
@@ -119,7 +120,41 @@
 
 <!-- L2 -->
 <article class="lesson" id="l2">
-  <div class="lh"><div class="lnum">2</div><div><h2>Data: the food AI eats</h2><p>No data, no learning. Bad data, bad learning.</p></div></div>
+  <div class="lh"><div class="lnum">2</div><div><h2>How AI solves problems: search and planning</h2><p>Before machines learned from data, they searched. They still do, every time Google Maps finds your route.</p></div></div>
+  <div class="two">
+    <div>
+      <p>Many problems can be described as <b>finding a path</b> through possible choices. To get from Chennai to Madurai, a navigation app looks at a map as a network of junctions (called <b>states</b>) joined by roads (<b>actions</b>), each with a cost such as minutes or kilometres. The goal is the cheapest path from start to destination.</p>
+      <h3>Blind search vs smart search</h3>
+      <ul class="t">
+        <li><b>Blind (uninformed) search</b> tries options in a fixed order, like checking every road out of Chennai one by one. It works, but it's painfully slow on a big map.</li>
+        <li><b>Heuristic search</b> uses a good guess to decide what to try first. The famous <b>A*</b> ("A-star") algorithm adds the distance travelled so far to a straight-line estimate of the distance left, so it heads towards Madurai instead of wandering towards Nellore.</li>
+      </ul>
+      <h3>Games: thinking about the opponent</h3>
+      <p>In chess, you can't just find a path: your opponent moves too. Game-playing programs use <b>minimax</b>: assume the opponent always plays their best move, and choose the move that leaves you best off in the worst case. The number of possible chess games is astronomically large, so programs look only a few moves ahead and use a score to judge positions. This is how Deep Blue beat Kasparov in 1997.</p>
+      <h3>Optimisation: finding the best arrangement</h3>
+      <p>Some problems aren't about a path but the best combination: a school timetable with no clashes, delivery routes for 40 vans, a factory shift roster. AI tries an arrangement, measures how good it is, makes a small change, and keeps it if it's better. Picture climbing a hill in fog: each step goes uphill, but you might stop on a small hill and miss the mountain. Smarter methods add random jumps to escape these traps.</p>
+      <div class="callout"><b>Why this still matters:</b> today's AI agents combine both worlds. An LLM proposes steps, and search-style planning decides which step to try next, checks the result and backtracks when something fails.</div>
+      <details class="check"><summary>Test: Why does A* reach the answer faster than trying every road?</summary><p>It uses a heuristic, a sensible estimate of the distance remaining, to try promising roads first and ignore ones that lead the wrong way.</p></details>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 4 hours</span></summary><div class="dbody"><p>University courses go further with <b>breadth-first</b> and <b>depth-first</b> search, why A* is guaranteed to find the best path when its estimate never overshoots, <b>alpha-beta pruning</b> to speed up game search, and <b>constraint satisfaction</b> for timetables and Sudoku. These are the first two lectures of Harvard's CS50 AI.</p><ul class="res-list"><li><a href="https://cs50.harvard.edu/ai/">CS50 AI, lecture 0: Search, and lecture 3: Optimization</a><span class="src">Harvard · free video lectures with notes · 2 hrs each</span><span>Graph search, A*, minimax, hill climbing, constraint satisfaction.</span></li><li><a href="https://course.elementsofai.com/">Elements of AI, chapter 2: AI problem solving</a><span class="src">University of Helsinki · free · 1–2 hrs</span><span>Search and games with interactive exercises.</span></li><li><a href="https://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach, chapters 3–6</a><span class="src">Russell and Norvig · textbook</span><span>The full treatment, for those who want rigour.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="2"> I've got this lesson</label>
+    </div>
+    <div class="card stick">
+      <h3>Worked example: Chennai to Madurai</h3>
+      <div class="tbl"><table><thead><tr><th>Next stop</th><th>Driven so far</th><th>Straight line left</th><th>A* score</th></tr></thead><tbody>
+        <tr><td>Villupuram</td><td class="num-r">160 km</td><td class="num-r">300 km</td><td class="num-r"><b>460</b></td></tr>
+        <tr><td>Vellore</td><td class="num-r">140 km</td><td class="num-r">370 km</td><td class="num-r">510</td></tr>
+        <tr><td>Nellore</td><td class="num-r">175 km</td><td class="num-r">590 km</td><td class="num-r">765</td></tr>
+      </tbody></table></div>
+      <p class="small">A* expands the lowest score first, Villupuram, and never wastes time on Nellore. Distances are rounded, for illustration.</p>
+      <h3 style="margin-top:20px">Where you meet search</h3>
+      <ul class="t small"><li>Google Maps and Ola or Uber routing</li><li>Chess and Ludo apps</li><li>Airline and railway crew scheduling</li><li>Warehouse robots picking routes</li><li>Swiggy grouping deliveries</li></ul>
+    </div>
+  </div>
+</article>
+
+<!-- L3 -->
+<article class="lesson" id="l3">
+  <div class="lh"><div class="lnum">3</div><div><h2>Data: the food AI eats</h2><p>No data, no learning. Bad data, bad learning.</p></div></div>
   <div class="two">
     <div>
       <p>If machine learning is cooking, <b>data</b> is the ingredients. A model can only be as good as the examples it learned from.</p>
@@ -138,7 +173,8 @@
       <h3>Garbage in, garbage out</h3>
       <p>Train a face-unlock system mostly on light-skinned faces and it works worse on darker skin. Train a hiring tool on 10 years of past hiring where mostly men were picked and it learns to prefer men. This is <b>bias</b>: the AI isn't evil, it faithfully copies patterns in its data, including unfair ones.</p>
       <details class="check"><summary>Test: You want AI to spot spoiled tomatoes at a market. What data do you need?</summary><p>Lots of photos of tomatoes, each labelled "fresh" or "spoiled", from different lighting, angles, varieties and phones, so it doesn't just learn one stall's lighting. Keep some photos aside for testing.</p></details>
-      <label class="got"><input type="checkbox" data-l="2"> I've got lesson 2</label>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 3 hours</span></summary><div class="dbody"><p>Professionals spend most of their time on data. Look up <b>data cleaning</b> (missing values, duplicates, wrong units), <b>class imbalance</b> (when one label is rare, like fraud), <b>data drift</b> (the world changes after training), and <b>data provenance</b> (where data came from and whether there was consent). Under India's Digital Personal Data Protection Act, consent and purpose matter when personal data is used.</p><ul class="res-list"><li><a href="https://developers.google.com/machine-learning/crash-course">Google Machine Learning Crash Course: Working with data</a><span class="src">Google · free, with exercises · 2 hrs</span><span>Numerical and categorical data, datasets, generalisation.</span></li><li><a href="https://www.deeplearning.ai/courses/ai-for-everyone/">AI for Everyone, week 1: What is data?</a><span class="src">Andrew Ng · video · 20 min</span><span>Why data is the starting point of every AI project.</span></li><li><a href="https://www.kaggle.com/learn">Kaggle Learn: Data cleaning</a><span class="src">Kaggle · free hands-on notebooks · 4 hrs</span><span>Practise on real messy data (needs a little Python).</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="3"> I've got this lesson</label>
     </div>
     <div class="card stick">
       <h3>One example, three parts</h3>
@@ -153,9 +189,38 @@
   </div>
 </article>
 
-<!-- L3 -->
-<article class="lesson" id="l3">
-  <div class="lh"><div class="lnum">3</div><div><h2>Machine learning: three ways to learn</h2><p>With a teacher, without a teacher, and by trial and error.</p></div></div>
+<!-- L4 -->
+<article class="lesson" id="l4">
+  <div class="lh"><div class="lnum">4</div><div><h2>Probability: how AI handles uncertainty</h2><p>AI almost never knows for sure. It deals in chances, and so should you when you read its answers.</p></div></div>
+  <div class="two">
+    <div>
+      <p>The real world is messy, so AI systems express beliefs as <b>probabilities</b>: "70% chance of rain", "98% likely spam", "this transaction looks unusual". Even ChatGPT works this way: it picks each next word from a list of likely options (you played with this in <a href="course.html#week-2">Week 2</a>).</p>
+      <h3>The trap: ignoring the base rate</h3>
+      <p>Suppose a disease affects 1 in 1,000 people, and a test catches 99% of real cases but also wrongly flags 1% of healthy people. You test positive. What's the chance you have the disease? Most people say 99%. The real answer is about <b>9%</b>. Out of 1,000 people, about 1 is sick and tests positive, but about 10 healthy people also test positive. So only 1 in 11 positives is real.</p>
+      <p>This is <b>Bayes' rule</b>: update what you believed before (the base rate) with the new evidence. Try it in the calculator. Change how rare the condition is and watch the answer move.</p>
+      <h3>Bayes at work: the spam filter</h3>
+      <p>Early spam filters, called <b>naive Bayes</b> filters, learned how often each word appears in spam versus normal mail. "Lottery", "KYC update" and "click here" push the odds towards spam; your manager's name pushes them back. Multiply the evidence from every word and you get a probability.</p>
+      <div class="callout"><b>What this means for you:</b> a fraud alert, a medical AI flag or a CV-screening score is a probability, not a verdict. When the thing being detected is rare, most alarms are false alarms, even from a very accurate system.</div>
+      <details class="check"><summary>Test: A fraud detector is 99% accurate, but only 1 in 10,000 transactions is fraud. Most of its alerts will be…?</summary><p>False alarms. Fraud is so rare that the 1% of genuine transactions it wrongly flags vastly outnumbers the real fraud it catches.</p></details>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 4 hours</span></summary><div class="dbody"><p>Next steps: <b>conditional probability</b> (the chance of A given B), the full form of <b>Bayes' rule</b>, <b>Bayesian networks</b> (maps of how causes and effects relate), and <b>Markov models</b> (predicting sequences, the ancestor of next-word prediction). These underpin weather forecasts, speech recognition and medical decision tools.</p><ul class="res-list"><li><a href="https://cs50.harvard.edu/ai/">CS50 AI, lecture 2: Uncertainty</a><span class="src">Harvard · free video and notes · 2 hrs</span><span>Probability, Bayes, Bayesian networks, Markov models.</span></li><li><a href="https://course.elementsofai.com/">Elements of AI, chapter 3: Real world AI</a><span class="src">University of Helsinki · free · 2 hrs</span><span>Odds, Bayes' rule and the naive Bayes classifier, with exercises.</span></li><li><a href="https://www.youtube.com/@3blue1brown">3Blue1Brown: Bayes' theorem</a><span class="src">YouTube · 15 min video</span><span>A visual explanation of the medical test example.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="4"> I've got this lesson</label>
+    </div>
+    <div class="card stick">
+      <h3>Experiment: the base-rate calculator</h3>
+      <div class="sl"><label for="bRate">1 in … people</label><input type="range" id="bRate" min="10" max="10000" step="10" value="1000"><output id="obRate">1,000</output></div>
+      <div class="sl"><label for="bSens">Catches real cases</label><input type="range" id="bSens" min="50" max="100" step="1" value="99"><output id="obSens">99%</output></div>
+      <div class="sl"><label for="bFp">False alarm rate</label><input type="range" id="bFp" min="0" max="10" step="0.1" value="1"><output id="obFp">1%</output></div>
+      <p class="small muted" style="margin-bottom:4px">Out of 10,000 people tested</p>
+      <div class="bayes" id="bayes" aria-live="polite"></div>
+      <div class="ctrl"><span class="readout" id="bOut">9%</span><span class="verdict" id="bVerdict"></span></div>
+      <p class="small muted">Chance that a positive result is real.</p>
+    </div>
+  </div>
+</article>
+
+<!-- L5 -->
+<article class="lesson" id="l5">
+  <div class="lh"><div class="lnum">5</div><div><h2>Machine learning: three ways to learn</h2><p>With a teacher, without a teacher, and by trial and error.</p></div></div>
   <div class="two">
     <div>
       <h3>1. Supervised learning: learning with answers</h3>
@@ -169,7 +234,8 @@
       <h3>3. Reinforcement learning: trial, error and rewards</h3>
       <p>Like training a puppy with biscuits. The machine tries actions, gets rewards or penalties, and slowly learns what works. AlphaGo learned Go by playing millions of games against itself. ChatGPT and Claude were also polished this way, with humans rating answers (called <b>RLHF</b>, reinforcement learning from human feedback).</p>
       <details class="check"><summary>Test: Which type is each? (a) predicting house prices from past sales (b) grouping songs by mood with no labels (c) a robot learning to walk</summary><p>(a) supervised, regression; (b) unsupervised, clustering; (c) reinforcement learning.</p></details>
-      <label class="got"><input type="checkbox" data-l="3"> I've got lesson 3</label>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 5 hours</span></summary><div class="dbody"><p>Look into the main model families: <b>linear and logistic regression</b>, <b>decision trees</b> and <b>random forests</b> (popular in banking because they are easier to explain), <b>k-nearest neighbours</b>, <b>support vector machines</b> and <b>k-means clustering</b>. Also <b>self-supervised learning</b>, where the data labels itself, which is how LLMs learn from raw text.</p><ul class="res-list"><li><a href="https://developers.google.com/machine-learning/crash-course">Google Machine Learning Crash Course</a><span class="src">Google · free, interactive · 15 hrs total</span><span>Regression, classification, and how training actually works.</span></li><li><a href="https://cs50.harvard.edu/ai/">CS50 AI, lecture 4: Learning</a><span class="src">Harvard · free · 2 hrs</span><span>Classification, regression, reinforcement learning, clustering.</span></li><li><a href="https://course.elementsofai.com/">Elements of AI, chapter 4: Machine learning</a><span class="src">University of Helsinki · free · 2 hrs</span><span>Nearest neighbour, regression, and the types of learning.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="5"> I've got this lesson</label>
     </div>
     <div class="card stick">
       <h3>Spot them in your day</h3>
@@ -185,10 +251,9 @@
     </div>
   </div>
 </article>
-
-<!-- L4 -->
-<article class="lesson" id="l4">
-  <div class="lh"><div class="lnum">4</div><div><h2>Training and testing: how a machine actually learns</h2><p>Guess, measure the mistake, adjust a little, repeat. Watch it happen.</p></div></div>
+<!-- L6 -->
+<article class="lesson" id="l6">
+  <div class="lh"><div class="lnum">6</div><div><h2>Training and testing: how a machine actually learns</h2><p>Guess, measure the mistake, adjust a little, repeat. Watch it happen.</p></div></div>
   <div class="two">
     <div>
       <p>Every learning machine runs the same loop, thousands or billions of times:</p>
@@ -201,9 +266,10 @@
       <p>Try it in the experiment. Each dot is a mango: across is colour (green to yellow), up is softness. Pink dots are ripe. The line is the model's current "ripe vs not ripe" boundary. It starts out bad. Press <b>Train</b> and watch it learn.</p>
       <h3>Memorising vs understanding</h3>
       <p>A student who memorises last year's answers scores 100% on last year's paper and fails the new one. A model can do the same: perfect on its training data, useless on new data. That's <b>overfitting</b>. The cure: hide some data during training (the <b>test set</b>) and judge the model only on that.</p>
-      <div class="callout"><b>Real-world numbers:</b> a model that's 99% accurate sounds great, but if only 1 in 100 transactions is fraud, a model that always says "not fraud" is also 99% accurate and catches nothing. Always ask: accurate at what, tested on what?</div>
+      <div class="callout"><b>Real-world numbers:</b> a model that's 99% accurate sounds great, but if only 1 in 100 transactions is fraud, a model that always says "not fraud" is also 99% accurate and catches nothing. Always ask: accurate at what, tested on what? <a href="#l7">Lesson 7</a> shows how professionals measure this.</div>
       <details class="check"><summary>Test: Your model scores 98% on training data and 61% on test data. What happened?</summary><p>Overfitting. It memorised the training examples instead of learning the general pattern. Fixes: more varied data, a simpler model, or stopping training earlier.</p></details>
-      <label class="got"><input type="checkbox" data-l="4"> I've got lesson 4</label>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 3 hours</span></summary><div class="dbody"><p>The engine of training is <b>gradient descent</b>: measure the error, work out which direction to nudge each weight to reduce it, take a small step, repeat. The size of the step is the <b>learning rate</b>. Learn about <b>underfitting</b> (too simple to capture the pattern), <b>regularisation</b> (penalising complexity to prevent overfitting) and <b>cross-validation</b>.</p><ul class="res-list"><li><a href="https://www.3blue1brown.com/topics/neural-networks">3Blue1Brown: Gradient descent, how neural networks learn</a><span class="src">Video · 20 min</span><span>The clearest visual explanation of learning.</span></li><li><a href="https://developers.google.com/machine-learning/crash-course">Google Machine Learning Crash Course: Linear regression and gradient descent</a><span class="src">Google · free · 2 hrs</span><span>Loss, learning rate and overfitting with interactive charts.</span></li><li><a href="https://playground.tensorflow.org/">TensorFlow Playground</a><span class="src">Interactive, in your browser · 30 min</span><span>Train a small network yourself and watch the boundary form.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="6"> I've got this lesson</label>
     </div>
     <div class="card stick">
       <h3>Experiment: teach a machine to spot ripe mangoes</h3>
@@ -216,9 +282,48 @@
   </div>
 </article>
 
-<!-- L5 -->
-<article class="lesson" id="l5">
-  <div class="lh"><div class="lnum">5</div><div><h2>Neural networks and deep learning</h2><p>A neuron is just a weighted vote. Stack millions of them and you get something remarkable.</p></div></div>
+<!-- L7 -->
+<article class="lesson" id="l7">
+  <div class="lh"><div class="lnum">7</div><div><h2>Measuring a model: why accuracy isn't enough</h2><p>How professionals judge whether an AI is any good, and the trade-off hiding behind every alert.</p></div></div>
+  <div class="two">
+    <div>
+      <p>Take a fraud detector. Every prediction lands in one of four boxes, called the <b>confusion matrix</b>:</p>
+      <ul class="t">
+        <li><b>True positive</b>: it said fraud, and it was fraud.</li>
+        <li><b>False positive</b>: it said fraud, but it was genuine (an annoyed customer).</li>
+        <li><b>False negative</b>: it said genuine, but it was fraud (money lost).</li>
+        <li><b>True negative</b>: it said genuine, and it was.</li>
+      </ul>
+      <h3>Two questions that matter more than accuracy</h3>
+      <ul class="t">
+        <li><b>Precision</b>: when it raises an alarm, how often is it right? Low precision means many false alarms.</li>
+        <li><b>Recall</b>: of all the real fraud, how much did it catch? Low recall means fraud slips through.</li>
+      </ul>
+      <p>You usually can't max out both. Most models give each case a score, and someone chooses a <b>threshold</b>: flag everything above it. Lower the threshold and you catch more fraud (higher recall) but annoy more customers (lower precision). Move the slider in the experiment to feel this trade-off.</p>
+      <p>Which matters more depends on the cost of each mistake. A cancer screening test should favour recall: missing a case is worse than a follow-up test. A spam filter should favour precision: losing a real email is worse than seeing one spam message.</p>
+      <h3>Training, validation and test data</h3>
+      <p>Professionals split data three ways: <b>training</b> data to learn from, <b>validation</b> data to tune settings such as the threshold, and <b>test</b> data, touched only once at the end, to report honest results.</p>
+      <h3>How LLMs are measured</h3>
+      <p>Chatbots are scored on <b>benchmarks</b> (standard exam-style question sets) and by human raters comparing answers side by side. Benchmarks help, but a model can score well on a test it has partly seen during training, so always try a tool on your own real tasks.</p>
+      <details class="check"><summary>Test: A disease screening AI should usually favour precision or recall?</summary><p>Recall. Missing a real case is costly; a false alarm leads to a follow-up test.</p></details>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 3 hours</span></summary><div class="dbody"><p>Professionals also use the <b>F1 score</b> (a balance of precision and recall), the <b>ROC curve</b> (how precision and recall trade off across every threshold) and <b>calibration</b> (whether a "70% sure" prediction is right 70% of the time). For fairness, they compare these numbers across groups of people, such as women and men or urban and rural applicants.</p><ul class="res-list"><li><a href="https://developers.google.com/machine-learning/crash-course">Google Machine Learning Crash Course: Classification</a><span class="src">Google · free, interactive · 1.5 hrs</span><span>Thresholds, the confusion matrix, precision, recall and ROC.</span></li><li><a href="https://cbseacademic.nic.in/web_material/Curriculum25/sec/417-AI-X.pdf">CBSE Class 10 AI curriculum: Evaluating models</a><span class="src">CBSE · official syllabus PDF</span><span>How Indian schools teach evaluation, with activities.</span></li><li><a href="https://www.deeplearning.ai/courses/ai-for-everyone/">AI for Everyone, week 2: Workflow of a machine learning project</a><span class="src">Andrew Ng · video · 30 min</span><span>Where evaluation fits in a real project.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="7"> I've got this lesson</label>
+    </div>
+    <div class="card stick">
+      <h3>Experiment: set the fraud threshold</h3>
+      <p class="small muted" style="margin-top:0">40 sample transactions, each with a fraud score from the model. 8 are real fraud.</p>
+      <div class="strip" id="strip" aria-hidden="true"></div>
+      <div class="sl"><label for="thr">Flag if score above</label><input type="range" id="thr" min="5" max="95" step="5" value="50"><output id="othr">50</output></div>
+      <div class="cm" id="cm" aria-live="polite"></div>
+      <div class="pr"><div><span class="readout" id="prec">–</span><span class="small muted">precision</span></div><div><span class="readout" id="rec">–</span><span class="small muted">recall</span></div><div><span class="readout" id="acc">–</span><span class="small muted">accuracy</span></div></div>
+      <div class="legend"><span><i class="lg-fraud"></i>Real fraud</span><span><i class="lg-ok"></i>Genuine</span><span><i class="lg-line"></i>Threshold</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- L8 -->
+<article class="lesson" id="l8">
+  <div class="lh"><div class="lnum">8</div><div><h2>Neural networks and deep learning</h2><p>A neuron is just a weighted vote. Stack millions of them and you get something remarkable.</p></div></div>
   <div class="two">
     <div>
       <h3>One artificial neuron</h3>
@@ -230,7 +335,8 @@
       <p><b>How does it learn?</b> Through <b>backpropagation</b>: after a wrong answer, the error is passed backwards through the layers, and every weight gets a tiny share of the blame and a tiny adjustment. Repeat over millions of examples.</p>
       <p><b>Why now?</b> The ideas are from the 1980s. They took off after 2012 because of three things together: huge data (the internet), cheap powerful GPUs, and better training tricks.</p>
       <details class="check"><summary>Test: What makes deep learning "deep"?</summary><p>The number of layers in the neural network. More layers let it learn more complex patterns, building from simple features to complex ones.</p></details>
-      <label class="got"><input type="checkbox" data-l="5"> I've got lesson 5</label>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 6 hours</span></summary><div class="dbody"><p>Different jobs use different network designs. <b>Convolutional neural networks (CNNs)</b> slide small filters across images and power face unlock and medical imaging. <b>Recurrent neural networks (RNNs)</b> processed sequences such as speech before Transformers replaced them. Learn what an <b>activation function</b> does and why depth helps networks build complex features from simple ones.</p><ul class="res-list"><li><a href="https://www.3blue1brown.com/topics/neural-networks">3Blue1Brown: Neural networks series</a><span class="src">Video series · about 1.5 hrs</span><span>What a neuron is, gradient descent and backpropagation, beautifully animated.</span></li><li><a href="https://cs50.harvard.edu/ai/">CS50 AI, lecture 5: Neural networks</a><span class="src">Harvard · free · 2 hrs</span><span>Feed-forward, convolutional and recurrent networks.</span></li><li><a href="https://course.elementsofai.com/">Elements of AI, chapter 5: Neural networks</a><span class="src">University of Helsinki · free · 2 hrs</span><span>Neurons, deep learning and their limits, with exercises.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="8"> I've got this lesson</label>
     </div>
     <div class="card stick">
       <h3>Experiment: a single neuron decides</h3>
@@ -248,10 +354,9 @@
     </div>
   </div>
 </article>
-
-<!-- L6 -->
-<article class="lesson" id="l6">
-  <div class="lh"><div class="lnum">6</div><div><h2>The branches of AI</h2><p>Same ideas, different senses: language, sight, sound, recommendations, movement.</p></div></div>
+<!-- L9 -->
+<article class="lesson" id="l9">
+  <div class="lh"><div class="lnum">9</div><div><h2>The branches of AI</h2><p>Same ideas, different senses: language, sight, sound, recommendations, movement.</p></div></div>
   <div class="tbl"><table><thead><tr><th>Branch</th><th>What it does</th><th>You've met it in</th></tr></thead><tbody>
     <tr><td><b>Natural Language Processing (NLP)</b></td><td>Understands and produces human language</td><td>Google Translate, ChatGPT, autocorrect, spam filters, Alexa understanding you</td></tr>
     <tr><td><b>Computer Vision</b></td><td>Understands images and video</td><td>Face unlock, Google Lens, number-plate cameras, crop-disease apps, X-ray screening</td></tr>
@@ -264,13 +369,13 @@
   <div class="two">
     <div><div class="callout"><b>Notice:</b> these used to be separate fields with separate models. Today's big "multimodal" models (like GPT, Claude and Gemini) handle text, images and audio in one model. That's why your chatbot can now read a photo of your bill.</div></div>
     <div><details class="check"><summary>Test: Google Lens reads a Tamil signboard and translates it. Which branches are working?</summary><p>Computer vision (finding and reading the text in the image) plus NLP (translating it). Often speech too, if it reads the result aloud.</p></details>
-    <label class="got"><input type="checkbox" data-l="6"> I've got lesson 6</label></div>
+    <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 4 hours</span></summary><div class="dbody"><p>Each branch has its own toolkit. In <b>computer vision</b>: image classification, object detection, segmentation and OCR (reading text). In <b>NLP</b>: tokenisation, sentiment analysis, named-entity recognition and translation. In <b>speech</b>: speech-to-text and text-to-speech. Microsoft's AI-900 certification is organised around exactly these "workloads".</p><ul class="res-list"><li><a href="https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/">Microsoft Learn: Azure AI Fundamentals (AI-900) learning paths</a><span class="src">Microsoft · free modules · 8–10 hrs</span><span>Vision, language, speech and document AI, with a certification exam option.</span></li><li><a href="https://cs50.harvard.edu/ai/">CS50 AI, lecture 6: Language</a><span class="src">Harvard · free · 2 hrs</span><span>From grammars and word counts to attention and Transformers.</span></li><li><a href="https://quickdraw.withgoogle.com/">Quick, Draw!</a><span class="src">Google · game · 10 min</span><span>Watch a vision model guess your doodles in real time.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="9"> I've got this lesson</label></div>
   </div>
 </article>
-
-<!-- L7 -->
-<article class="lesson" id="l7">
-  <div class="lh"><div class="lnum">7</div><div><h2>From deep learning to generative AI and LLMs</h2><p>How we got from "is this a cat?" to "write my leave letter".</p></div></div>
+<!-- L10 -->
+<article class="lesson" id="l10">
+  <div class="lh"><div class="lnum">10</div><div><h2>From deep learning to generative AI and LLMs</h2><p>How we got from "is this a cat?" to "write my leave letter".</p></div></div>
   <div class="two">
     <div>
       <p>Older AI was mostly <b>discriminative</b>: it sorted and judged things (spam or not, cat or dog). <b>Generative AI</b> creates new things that look like its training data: new sentences, new pictures, new voices.</p>
@@ -285,7 +390,8 @@
       <p>Image and video generators mostly use a different trick called <b>diffusion</b>: start from random noise and remove it step by step until an image matching your words appears.</p>
       <p>The full inside story of how ChatGPT and Claude answer you, with tokens, weights and parameters, is <a href="course.html#week-2">Week 2 of the course</a>.</p>
       <details class="check"><summary>Test: What is the one game an LLM practises during pre-training?</summary><p>Predicting the next word (more precisely, the next token) in a piece of text. Everything else it can do grows out of getting very good at that.</p></details>
-      <label class="got"><input type="checkbox" data-l="7"> I've got lesson 7</label>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 2–15 hours</span></summary><div class="dbody"><p>Two ideas unlock how LLMs work. <b>Embeddings</b> turn each word into a long list of numbers, so words with similar meanings sit near each other ("king" near "queen", "Chennai" near "Madras"). <b>Attention</b> lets each word look at every other word to work out its meaning in context. Stack dozens of attention layers, train on trillions of words, then fine-tune with human feedback, and you get a chat assistant.</p><ul class="res-list"><li><a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a><span class="src">Jay Alammar · illustrated article · 45 min</span><span>The famous visual walkthrough of attention.</span></li><li><a href="https://www.3blue1brown.com/topics/neural-networks">3Blue1Brown: Transformers and attention</a><span class="src">Video chapters · about 1 hr</span><span>How GPT-style models process text, step by step.</span></li><li><a href="https://karpathy.ai/zero-to-hero.html">Andrej Karpathy: Neural Networks, Zero to Hero</a><span class="src">Video course · needs Python · 15+ hrs</span><span>Build a small GPT from scratch, for the technically curious.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="10"> I've got this lesson</label>
     </div>
     <div class="card stick">
       <h3>Discriminative vs generative</h3>
@@ -300,9 +406,40 @@
   </div>
 </article>
 
-<!-- L8 -->
-<article class="lesson" id="l8">
-  <div class="lh"><div class="lnum">8</div><div><h2>Limits, risks and ethics</h2><p>Knowing what AI can't do is what makes you good at using it.</p></div></div>
+<!-- L11 -->
+<article class="lesson" id="l11">
+  <div class="lh"><div class="lnum">11</div><div><h2>How AI projects are built</h2><p>The project cycle taught in Indian schools and used by real AI teams: from a problem to a working system.</p></div></div>
+  <div class="two">
+    <div>
+      <p>Behind every AI feature is a project that follows roughly the same cycle. India's CBSE AI curriculum calls it the <b>AI project cycle</b>; industry teams use almost the same steps.</p>
+      <ol class="cycle">
+        <li><b>Problem scoping.</b> Who has the problem, what exactly is it, where does it happen, and why does solving it matter? Write a one-line goal you can measure.</li>
+        <li><b>Data acquisition.</b> What examples exist, who owns them, is there consent, and are they representative?</li>
+        <li><b>Data exploration.</b> Look at the data: charts, gaps, errors, imbalances. Most project time goes here.</li>
+        <li><b>Modelling.</b> Try simple approaches first, then more complex ones. Sometimes a rule or a spreadsheet beats AI.</li>
+        <li><b>Evaluation.</b> Measure on unseen test data with the right metric (precision, recall, cost of mistakes).</li>
+        <li><b>Deployment and monitoring.</b> Put it in front of real users, watch for drift as the world changes, and keep a human fallback.</li>
+      </ol>
+      <h3>Choosing a good AI project</h3>
+      <p>In <i>AI for Everyone</i>, Andrew Ng suggests looking for the overlap of <b>what AI can do</b> and <b>what is valuable to the business</b>. A rough rule of thumb from his course: if a person can do the task with about a second of thought (is this a cat, is this signature smudged), supervised learning can often do it too, given enough data. Tasks needing deep judgement, rare data or complex reasoning are much harder.</p>
+      <h3>Who's on an AI team</h3>
+      <ul class="t"><li><b>Domain expert</b>: knows the problem (the doctor, the loan officer, the farmer).</li><li><b>Data engineer</b>: collects and cleans the data.</li><li><b>Machine learning engineer</b>: builds and trains models.</li><li><b>Product manager</b>: decides what to build and for whom.</li><li><b>Business analyst</b>: turns the problem into clear requirements and success measures.</li></ul>
+      <details class="check"><summary>Test: Which step usually takes the most time in a real AI project?</summary><p>Getting and exploring the data: collecting it, cleaning it, labelling it and understanding its gaps. Modelling is often the shorter part.</p></details>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">3 resources · about 4 hours</span></summary><div class="dbody"><p>Andrew Ng's <b>AI Transformation Playbook</b> (taught in AI for Everyone, week 3) gives companies five steps: run pilot projects to gain momentum, build an in-house AI team, provide broad AI training, develop an AI strategy, and communicate internally and externally. The CBSE syllabus adds tools such as the <b>4Ws problem canvas</b> and links projects to the UN Sustainable Development Goals.</p><ul class="res-list"><li><a href="https://www.deeplearning.ai/courses/ai-for-everyone/">AI for Everyone, weeks 2 and 3</a><span class="src">Andrew Ng · video, free to audit · 2.5 hrs</span><span>Workflow of ML projects, choosing projects, AI teams, the AI Transformation Playbook.</span></li><li><a href="https://cbseacademic.nic.in/web_material/Curriculum25/sec/417-AI-X.pdf">CBSE AI curriculum (Class 10)</a><span class="src">CBSE · official PDF</span><span>The AI project cycle with classroom activities.</span></li><li><a href="https://grow.google/ai-essentials/">Google AI Essentials</a><span class="src">Google · course with certificate · under 10 hrs</span><span>Applying AI to everyday work tasks responsibly.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="11"> I've got this lesson</label>
+    </div>
+    <div class="card stick">
+      <h3>Try it: scope your own AI project</h3>
+      <p class="small">Pick a problem you know well, at work, at home or in your town, and paste this:</p>
+      <div class="prompt"><span class="lbl">Project scoping coach</span><pre>Act as an AI project coach. My problem idea: [describe it]. Walk me through the AI project cycle one step at a time: 1) the 4Ws (who, what, where, why) and a measurable goal, 2) what data I'd need and how to get it ethically, 3) whether AI is even needed or a simple rule would do, 4) how I'd measure success and which mistakes are worse, 5) risks and who could be harmed. Ask me questions at each step before moving on.</pre><button class="copy" type="button">Copy</button></div>
+      <p class="small muted">Example ideas: sorting mangoes by ripeness for a farmer group, predicting which customers will miss an EMI, routing complaints at a municipal office.</p>
+    </div>
+  </div>
+</article>
+
+<!-- L12 -->
+<article class="lesson" id="l12">
+  <div class="lh"><div class="lnum">12</div><div><h2>Limits, risks and ethics</h2><p>Knowing what AI can't do is what makes you good at using it.</p></div></div>
   <div class="two">
     <div>
       <ul class="t">
@@ -315,8 +452,18 @@
         <li><b>Energy</b>: training and running big models uses a lot of electricity and water for data centres.</li>
         <li><b>Black box</b>: deep learning models often can't explain why they decided something, which is a problem when a decision affects a person's life.</li>
       </ul>
+      <h3>Principles companies and governments use</h3>
+      <p>Most responsible-AI frameworks share the same core ideas. Microsoft's widely used list has six: <b>fairness</b>, <b>reliability and safety</b>, <b>privacy and security</b>, <b>inclusiveness</b>, <b>transparency</b> and <b>accountability</b>. UNESCO's framework for students adds a <b>human-centred mindset</b>: AI should support people's choices, not replace their judgement.</p>
+      <h3>The law is catching up</h3>
+      <ul class="t">
+        <li><b>India, personal data:</b> the Digital Personal Data Protection Act was passed in August 2023, and its Rules were notified in November 2025, with obligations phased in over about 18 months. Companies need clear consent and a stated purpose to use your personal data.</li>
+        <li><b>India, AI:</b> the India AI Governance Guidelines, released by MeitY in November 2025, take a principle-based approach built on "do no harm", relying on existing laws and sector regulators (such as RBI and SEBI) rather than one new AI law.</li>
+        <li><b>European Union:</b> the EU AI Act entered into force in August 2024. It sorts AI by risk: some uses, such as social scoring, are banned outright, high-risk uses such as hiring and credit face strict rules, and most of its rules apply from August 2026.</li>
+      </ul>
+      <p class="small muted">Laws change. Check the official sources in "Go deeper" for the current position. This is general information, not legal advice.</p>
       <details class="check"><summary>Test: Name two situations where you should never rely on AI alone.</summary><p>Any of: medical decisions, legal matters, big money moves, anything about another person's reputation, safety-critical instructions. Use AI to understand and prepare, then confirm with a qualified human or official source.</p></details>
-      <label class="got"><input type="checkbox" data-l="8"> I've got lesson 8</label>
+      <details class="deeper"><summary><span class="dt">Go deeper</span><span class="dm">4 resources · about 3 hours</span></summary><div class="dbody"><p>For the policy side, read India's approach: the DPDP Act and Rules for personal data, and the India AI Governance Guidelines, which favour principles and existing laws over a new AI-specific law. Compare it with the EU's risk-based AI Act. For the technical side, look up <b>AI alignment</b> (making AI systems pursue what people actually intend) and <b>interpretability</b> (understanding what happens inside a model).</p><ul class="res-list"><li><a href="https://course.elementsofai.com/">Elements of AI, chapter 6: Implications</a><span class="src">University of Helsinki · free · 1–2 hrs</span><span>Bias, privacy, AI-generated content and work.</span></li><li><a href="https://www.microsoft.com/en-us/ai/responsible-ai">Microsoft: Responsible AI principles</a><span class="src">Microsoft · overview · 20 min</span><span>Fairness, reliability and safety, privacy and security, inclusiveness, transparency, accountability.</span></li><li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf">PIB explainer: DPDP Rules, 2025</a><span class="src">Government of India · PDF · 20 min</span><span>What India's data protection law means for citizens.</span></li><li><a href="https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/">EU AI Act timeline</a><span class="src">Council of the EU · official timeline</span><span>How the world's first broad AI law is being phased in.</span></li></ul></div></details>
+      <label class="got"><input type="checkbox" data-l="12"> I've got this lesson</label>
     </div>
     <div class="card stick">
       <h3>The good-user checklist</h3>
@@ -332,11 +479,12 @@
   </div>
 </article>
 
+
 <!-- EXAM -->
 <section class="lesson" id="exam">
-  <div class="lh"><div class="lnum">10</div><div><h2>Final quiz: 10 questions</h2><p>Score 7 or more and you've got the foundations. Tap an answer to see why straight away.</p></div></div>
+  <div class="lh"><div class="lnum">✓</div><div><h2>Final quiz: 15 questions</h2><p>Score 11 or more and you've got the foundations. Tap an answer to see why straight away.</p></div></div>
   <div class="card">
-    <div class="score"><span class="readout" id="score" aria-live="polite">0 / 10</span><span id="verdict" class="verdict" aria-live="polite"></span><button class="btn btn-secondary" id="retake" type="button">Retake</button></div>
+    <div class="score"><span class="readout" id="score" aria-live="polite">0 / 15</span><span id="verdict" class="verdict" aria-live="polite"></span><button class="btn btn-secondary" id="retake" type="button">Retake</button></div>
     <div id="qs"></div>
   </div>
   <div class="btn-row" style="margin-top:28px"><a class="btn btn-primary" href="course.html#week-2">Next: how ChatGPT answers (Week 2)</a><a class="btn btn-secondary" href="./#start">Find my path</a></div>
@@ -353,14 +501,14 @@
         <a class="brand" href="./" aria-label="AI for Real Life, home"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#2A36B1"/><g fill="#fff"><circle cx="9" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><circle cx="23" cy="9" r="2"/><circle cx="9" cy="16" r="2"/><circle cx="23" cy="16" r="2"/><circle cx="9" cy="23" r="2"/><circle cx="16" cy="23" r="2"/></g><path d="M9 23 16 16 23 9" stroke="#F2A93B" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="16" cy="16" r="3" fill="#F2A93B"/></svg><span class="wm">AI <i>for</i> Real Life</span></a>
         <p>A free, practical way for anyone in India to learn AI by using it. Made in Chennai by Babu Balasubramanian. No ads, no sign-up, no tracking.</p>
       </div>
-      <div><h4>Learn</h4><ul><li><a href="./#start">Find my path</a></li><li><a href="basics.html">How AI works</a></li><li><a href="course.html">12-week course</a></li><li><a href="glossary.html">Glossary</a></li></ul></div>
+      <div><h4>Learn</h4><ul><li><a href="./#start">Find my path</a></li><li><a href="basics.html">How AI works</a></li><li><a href="course.html">12-week course</a></li><li><a href="syllabus.html">Syllabus</a></li><li><a href="glossary.html">Glossary</a></li></ul></div>
       <div><h4>Guides</h4><ul><li><a href="safety.html">Family AI safety</a></li><li><a href="guides.html#shop">AI for your shop</a></li><li><a href="guides.html#indian-languages">AI in Indian languages</a></li><li><a href="guides.html#jobs">AI and your job</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="about.html">About this site</a></li><li><a href="about.html#faq">FAQ</a></li><li><a href="about.html#privacy">Privacy</a></li><li><a href="https://github.com/babubl/ai-for-real-life/issues">Contact &amp; feedback</a></li></ul></div>
     </div>
     <div class="foot-bottom"><span>© 2026 Babu Balasubramanian · Last reviewed November 2026</span><span>English · தமிழ் coming soon</span><span>AI tools change fast. Check each tool's own site for current prices and features.</span></div>
   </div>
 </footer>
-<script src="assets/site.js?v=20261124d"></script>
-<script src="assets/basics.js?v=20261124d"></script>
+<script src="assets/site.js?v=20261124e"></script>
+<script src="assets/basics.js?v=20261124e"></script>
 </body>
 </html>

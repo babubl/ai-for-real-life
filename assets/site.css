@@ -214,3 +214,19 @@ tr:last-child td{border-bottom:0}
 .visually-h,.sr-status{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (max-width:600px){.subbar .container{flex-wrap:nowrap;gap:10px}.subbar label{display:none}.subbar select{flex:1 1 auto;min-width:0;font-size:14.5px}.subbar .prog{font-size:13px}}
 @media (max-width:600px){.subbar select{width:0;flex:1 1 auto}.subbar .prog{flex:none}.subbar .container{overflow:hidden}}
+/* go deeper shelf */
+details.deeper{margin-top:24px;border:1px solid var(--brand);border-radius:12px;background:var(--brand-tint)}
+details.deeper summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;padding:14px 18px;min-height:52px}
+details.deeper summary::-webkit-details-marker{display:none}
+details.deeper .dt{font-weight:700;color:var(--brand)}
+details.deeper .dt::before{content:"↓ ";}
+details.deeper[open] .dt::before{content:"↑ "}
+details.deeper .dm{font-size:14px;color:var(--ink-2)}
+details.deeper .dbody{padding:0 18px 16px;background:var(--surface);border-radius:0 0 12px 12px;border-top:1px solid var(--line)}
+details.deeper .dbody>p{margin:14px 0 6px}
+.res-list{list-style:none;padding:0;margin:8px 0 0}
+.res-list li{padding:12px 0;border-top:1px solid var(--line);margin:0}
+.res-list li:first-child{border-top:0}
+.res-list a{font-weight:700}
+.res-list .src{display:block;font-size:13.5px;color:var(--ink-3);margin-top:2px}
+.res-list span:not(.src){display:block;font-size:15px;color:var(--ink-2)}

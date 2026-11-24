@@ -7,7 +7,7 @@
   var CHALLENGE='Make a 4-panel comic of a funny family moment with any AI image tool (ChatGPT, Gemini or Canva). Show it to your buddy by Sunday.';
   var NEWS=[
     {m:'November 2026',items:[
-      'AI for Real Life launched: eight lessons on how AI works, a 12-week hands-on course, six tracks and nine agent recipes.',
+      'AI for Real Life launched: twelve lessons on how AI works, a 12-week hands-on course, six tracks, nine agent recipes and a Go deeper shelf on every topic.',
       'Video: Google Veo, OpenAI Sora and Kling lead on quality, and most now create sound with the picture.',
       'Agents: no-code builders such as Zapier, Make and n8n are the easiest way in. Most multi-step automations need a paid plan.',
       'India: if you claimed OpenAI\'s free year of ChatGPT Go when it was offered from November 2025, check your plan\'s renewal date.'
@@ -57,7 +57,7 @@
   var route=function(w,g,t){
     var tr=T[w],extra=(Q2.filter(function(q){return q[0]===g})[0]||[0,0,[]])[2];
     var rest=[2].concat(tr.weeks,extra).filter(function(v,i,a){return a.indexOf(v)===i}).sort(function(a,b){return a-b});
-    var items=[{h:'#first-win',t:'15-minute first win',s:'Today'},{h:'course.html#week-1',t:'Week 1 · '+W[1]},{h:'course.html#week-3',t:'Week 3 · '+W[3]},{h:'course.html#week-4',t:'Week 4 · '+W[4]},{h:'basics.html',t:'How AI works · 8 lessons',o:'recommended'}];
+    var items=[{h:'#first-win',t:'15-minute first win',s:'Today'},{h:'course.html#week-1',t:'Week 1 · '+W[1]},{h:'course.html#week-3',t:'Week 3 · '+W[3]},{h:'course.html#week-4',t:'Week 4 · '+W[4]},{h:'basics.html',t:'How AI works · 12 lessons',o:'recommended'}];
     rest.forEach(function(n){items.push({h:'course.html#week-'+n,t:'Week '+n+' · '+W[n]})});
     var tm=Q3.filter(function(q){return q[0]===t})[0];var total=Math.round((items.length-1+1)*tm[2]);
     return {tr:tr,items:items,tm:tm,total:total,weeks:[1,3,4].concat(rest)};
@@ -92,7 +92,7 @@
     panel.setAttribute('aria-labelledby','tab-'+k);
     var wk=[1,3,4].concat(t.weeks);
     panel.innerHTML='<div><h3>'+esc(t.name)+'</h3><p class="who">'+esc(t.who)+'</p><p class="first"><b>First win:</b> '+esc(t.first)+'</p><h4>You\'ll build</h4><ul>'+t.build.map(function(b){return '<li>'+esc(b)+'</li>'}).join('')+'</ul><p class="small muted">'+esc(t.tip)+'</p><a class="link-arrow" href="'+t.guide[0]+'">'+esc(t.guide[1])+'</a></div>'+
-      '<div><h4>Focus weeks</h4><ul class="weeks">'+wk.map(function(n){return '<li><a href="course.html#week-'+n+'"><span>'+esc(W[n])+'</span><small>Week '+n+'</small></a></li>'}).join('')+'<li><a href="basics.html"><span>How AI works</span><small>8 lessons</small></a></li></ul></div>';
+      '<div><h4>Focus weeks</h4><ul class="weeks">'+wk.map(function(n){return '<li><a href="course.html#week-'+n+'"><span>'+esc(W[n])+'</span><small>Week '+n+'</small></a></li>'}).join('')+'<li><a href="basics.html"><span>How AI works</span><small>12 lessons</small></a></li></ul></div>';
   };
   tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(b)pick(b.dataset.k)});
   tabs.addEventListener('keydown',function(e){var i=keys.indexOf(document.activeElement.dataset.k);if(i<0)return;if(e.key==='ArrowRight'){e.preventDefault();pick(keys[(i+1)%keys.length],true)}if(e.key==='ArrowLeft'){e.preventDefault();pick(keys[(i+keys.length-1)%keys.length],true)}});
